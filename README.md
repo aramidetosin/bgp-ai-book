@@ -11,6 +11,7 @@ chapter's bootstrap configuration, with nothing hand-typed.
 |---|---|---|
 | [ch01](ch01/) | Why Data Centers Run BGP | A guided tour of a running eBGP fabric: 4 leafs, 2 spines, BGP unnumbered, link-failure demos, packet-capture verification |
 | [ch02](ch02/) | BGP Fundamentals Without the CCNA Detour | Build a three-switch eBGP triangle by hand: numbered then unnumbered peering, a deliberate Bad Peer AS, path selection, loop prevention on the wire, and a TCP-layer break-fix |
+| [ch03](ch03/) | Frontend and Backend: Two Networks, Two Jobs | Two nodes with a NIC in each of two disjoint fabrics: run a service on one and a collective stand-in on the other, prove zero cross-traffic with simultaneous captures, and break each network while the other doesn't notice |
 
 Each chapter directory contains:
 

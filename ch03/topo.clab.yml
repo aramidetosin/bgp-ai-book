@@ -1,0 +1,48 @@
+# Chapter 3 lab: two networks, two jobs. Two GPU-node stand-ins, each with a
+# frontend NIC (eth1) and a backend NIC (eth2), plugged into two fabrics that
+# share nothing: a routed frontend leaf and a flat backend leaf. A client sits
+# on the frontend, where users live. Switches self-bootstrap at first boot.
+name: bgpbook-ch03
+mgmt:
+  network: bgpbook-ch03
+  ipv4-subnet: 172.20.33.0/24
+topology:
+  defaults:
+    kind: nvidia_cumulusvx
+    image: vrnetlab/nvidia_cumulus-vx:5.12.0
+  nodes:
+    fe-leaf:
+      startup-config: bootstrap/fe-leaf.cfg
+    be-leaf:
+      startup-config: bootstrap/be-leaf.cfg
+    nodea:
+      kind: linux
+      image: ghcr.io/srl-labs/network-multitool
+      exec:
+        - ip link set eth1 mtu 1500
+        - ip link set eth2 mtu 1500
+        - ip addr add 172.16.10.11/24 dev eth1
+        - ip addr add 172.31.1.11/24 dev eth2
+        - ip route replace default via 172.16.10.1
+    nodeb:
+      kind: linux
+      image: ghcr.io/srl-labs/network-multitool
+      exec:
+        - ip link set eth1 mtu 1500
+        - ip link set eth2 mtu 1500
+        - ip addr add 172.16.10.12/24 dev eth1
+        - ip addr add 172.31.1.12/24 dev eth2
+        - ip route replace default via 172.16.10.1
+    client:
+      kind: linux
+      image: ghcr.io/srl-labs/network-multitool
+      exec:
+        - ip link set eth1 mtu 1500
+        - ip addr add 172.16.20.100/24 dev eth1
+        - ip route replace default via 172.16.20.1
+  links:
+    - endpoints: ["fe-leaf:swp1","nodea:eth1"]
+    - endpoints: ["fe-leaf:swp2","nodeb:eth1"]
+    - endpoints: ["fe-leaf:swp3","client:eth1"]
+    - endpoints: ["be-leaf:swp1","nodea:eth2"]
+    - endpoints: ["be-leaf:swp2","nodeb:eth2"]

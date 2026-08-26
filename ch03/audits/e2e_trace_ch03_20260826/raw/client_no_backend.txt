@@ -1,0 +1,3 @@
+$ docker exec clab-bgpbook-ch03-client ip route get 172.31.1.11
+172.31.1.11 via 172.16.20.1 dev eth1 src 172.16.20.100 uid 0 
+    cache 

@@ -1,0 +1,3 @@
+$ ip -br addr show eth1; ip -br addr show eth2   (on nodea)
+eth1@if1988      UP             172.16.10.11/24 fe80::a8c1:abff:fe0c:9fa8/64 
+eth2@if1990      UP             172.31.1.11/24 fe80::a8c1:abff:fee3:98d4/64 

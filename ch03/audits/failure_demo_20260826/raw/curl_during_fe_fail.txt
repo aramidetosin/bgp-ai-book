@@ -1,0 +1,2 @@
+curl during frontend failure: 000 (exit follows)
+curl exit: 28

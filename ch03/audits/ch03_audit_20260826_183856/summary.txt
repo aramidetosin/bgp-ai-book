@@ -1,0 +1,9 @@
+=== Frontend: the service path works ===
+  client -> nodea HTTP: 200 - OK
+=== Backend: the collective path works ===
+  nodeb -> nodea over backend: 3.2 Gbit/s - OK
+=== Isolation: each network cannot do the other's job ===
+  client -> backend subnet: unreachable - OK
+=== Node view: two worlds in one routing table ===
+  nodea default via frontend, backend connected-only - OK
+

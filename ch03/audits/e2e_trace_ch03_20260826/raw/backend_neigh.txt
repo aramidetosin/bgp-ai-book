@@ -1,0 +1,2 @@
+$ docker exec clab-bgpbook-ch03-nodea ip neigh show 172.31.1.12
+172.31.1.12 dev eth2 lladdr aa:c1:ab:1c:99:32 REACHABLE 
