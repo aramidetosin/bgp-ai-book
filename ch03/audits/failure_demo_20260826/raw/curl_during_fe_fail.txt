@@ -1,2 +1,2 @@
-curl during frontend failure: 000 (exit follows)
+curl during frontend failure: 000
 curl exit: 28

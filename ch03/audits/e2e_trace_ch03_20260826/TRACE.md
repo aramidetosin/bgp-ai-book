@@ -1,9 +1,10 @@
 # End-to-end traces: one journey per network (chapter 3)
 
-Trace date: 2026-08-26. Lab: `ch03` (`bgpbook-ch03`), Cumulus Linux VX 5.12.0.
-Audit `ch03_audit_20260826_183856` fully green at collection time: HTTP 200
-across the frontend, 3.2 Gbit/s across the backend, isolation confirmed, node
-routing view as designed. Raw outputs in `raw/`; the failure demos are in
+Trace date: 2026-08-26. Lab: `ch03` (`bgpbook-ch03`), Cumulus Linux VX 5.12.0,
+all node NICs at MTU 9216 to match the switches' default. Audit
+`ch03_audit_20260826_185731` fully green at collection time: HTTP 200 across
+the frontend, 15.0 Gbit/s across the backend, isolation confirmed, node
+routing view as designed. Raw outputs in `raw/`; failure demos in
 `../failure_demo_20260826/raw/`.
 
 ## 1. Journey 1: the frontend, routed
@@ -36,35 +37,43 @@ default via 172.16.10.1 dev eth1
 ```
 
 nodea's default route points at the frontend; the backend exists only as a
-connected subnet. And from the client's side, the backend is not merely
+connected subnet. From the client's side the backend is not merely
 filtered but unroutable: `ip route get 172.31.1.11` falls to the default
 gateway, and fe-leaf holds no route there (audit: unreachable).
 
 ## 4. The wire proof
 
 Both workloads ran at once (five HTTP requests, a 6-second iperf3 run) while
-both fabrics were captured simultaneously. Top talkers per fabric:
+both fabrics were captured simultaneously.
 
-- fe-leaf capture: only `172.16.20.100 <-> 172.16.10.11:80` flows.
-- be-leaf capture: 585,000+ packets, all `172.31.1.11:5201 <-> 172.31.1.12`.
+- fe-leaf capture: 7 KB total; every packet is a
+  `172.16.20.100 <-> 172.16.10.11:80` flow.
+- be-leaf capture: 1.9 GB on disk; the decoded capture holds 64,442 packets,
+  every one between 172.31.1.11 and 172.31.1.12, and the opening SYN shows
+  `mss 9176`: jumbo frames at work under the 9216 MTU.
 
-Cross-contamination, counted with address-anchored greps:
+Cross-contamination, counted with address-anchored greps over the full
+captures:
 
 - Backend addresses seen on the frontend fabric: **0 packets**
 - Frontend addresses seen on the backend fabric: **0 packets**
 
 ## 5. The failure demos
 
-Frontend NIC down for 8 seconds while the backend flow ran: iperf3 held
-2.5 Gbit/s through every interval; the client's curl timed out (exit 28).
-Backend NIC down mid-run: iperf3 went to 0.00 bits/sec within the interval;
-the client's curl answered `200 in 0.000612s` during the failure. Each
+Frontend NIC down for 8 seconds while the backend flow ran: iperf3 averaged
+13.5 Gbit/s across the 16-second run with **zero retransmits**, every
+interval healthy, while the client's curl timed out (exit 28). Backend NIC
+down mid-run: iperf3 went to 0.00 bits/sec within the interval; the
+client's curl answered `200 in 0.000622s` during the failure. Each
 network's job dies with it, and neither notices the other's death.
 
 ## Platform notes recorded during the build
 
-- containerlab gives node veths a 9500 MTU; the VX bridge path does not
-  carry jumbo frames, so the lab pins node NICs to 1500 (in the topology).
-  The first run without this crawled at 1.5 Mbit/s on TCP retransmits.
+- **MTU: align at 9216.** Cumulus ports default to MTU 9216; containerlab
+  gives node veths 9500. Frames sized for 9500 exceed the switch MTU and
+  die silently: measured 30 Kbit/s at 9500-vs-9216, 12.8+ Gbit/s once the
+  node NICs were pinned to 9216 (the topology now does this). An earlier
+  note here blamed the emulated path for dropping jumbo frames; that was
+  wrong, and the 9216-aligned numbers prove it.
 - Taking a Linux interface down deletes routes through it, and up does not
   restore them; `make heal-frontend` re-adds nodea's default route.

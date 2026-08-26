@@ -1,7 +1,4 @@
-$ sshpass -p Clab123! ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null cumulus@clab-bgpbook-ch03-be-leaf "sudo tcpdump -r /tmp/be.pcap -n 2>/dev/null | awk '{print \$3, \$4, \$5}' | sort | uniq -c | sort -rn | head -8"
-Warning: Permanently added 'clab-bgpbook-ch03-be-leaf' (ECDSA) to the list of known hosts.
-Welcome to NVIDIA Cumulus (R) Linux (R)
- 321610 172.31.1.11.5201 > 172.31.1.12.33085:
- 264273 172.31.1.12.33085 > 172.31.1.11.5201:
-     16 172.31.1.12.50371 > 172.31.1.11.5201:
-     13 172.31.1.11.5201 > 172.31.1.12.50371:
+18:59:40.331788 IP 172.31.1.12.48253 > 172.31.1.11.5201: Flags [S], seq 2628612182, win 64232, options [mss 9176,sackOK,TS val 791128841 ecr 0,nop,wscale 10], length 0
+18:59:40.331859 IP 172.31.1.11.5201 > 172.31.1.12.48253: Flags [S.], seq 440082319, ack 2628612183, win 64148, options [mss 9176,sackOK,TS val 972499619 ecr 791128841,nop,wscale 10], length 0
+18:59:40.331897 IP 172.31.1.12.48253 > 172.31.1.11.5201: Flags [.], ack 1, win 63, options [nop,nop,TS val 791128841 ecr 972499619], length 0
+64442 packets total, all between 172.31.1.11 and 172.31.1.12

@@ -37,9 +37,10 @@ Switch password defaults to `Clab123!` (override with `CL_PASS`).
 
 ## Platform notes
 
-- Node NICs are pinned to MTU 1500 in the topology: the emulated switch
-  path drops jumbo frames, and without the pin TCP crawls on retransmits
-  (the recorded first run measured 1.5 Mbit/s; with it, 3+ Gbit/s).
+- **Node NICs are pinned to MTU 9216** to match the Cumulus ports' default.
+  containerlab gives veths 9500, and frames sized for 9500 exceed the
+  switch MTU and die silently: measured 30 Kbit/s mismatched versus
+  15 Gbit/s aligned. Jumbo works fine when both ends agree.
 - `make heal-frontend` also restores nodea's default route: Linux removes
   routes through an interface that goes down and does not re-add them.
 

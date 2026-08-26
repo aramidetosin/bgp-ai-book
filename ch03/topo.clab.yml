@@ -19,8 +19,8 @@ topology:
       kind: linux
       image: ghcr.io/srl-labs/network-multitool
       exec:
-        - ip link set eth1 mtu 1500
-        - ip link set eth2 mtu 1500
+        - ip link set eth1 mtu 9216
+        - ip link set eth2 mtu 9216
         - ip addr add 172.16.10.11/24 dev eth1
         - ip addr add 172.31.1.11/24 dev eth2
         - ip route replace default via 172.16.10.1
@@ -28,8 +28,8 @@ topology:
       kind: linux
       image: ghcr.io/srl-labs/network-multitool
       exec:
-        - ip link set eth1 mtu 1500
-        - ip link set eth2 mtu 1500
+        - ip link set eth1 mtu 9216
+        - ip link set eth2 mtu 9216
         - ip addr add 172.16.10.12/24 dev eth1
         - ip addr add 172.31.1.12/24 dev eth2
         - ip route replace default via 172.16.10.1
@@ -37,7 +37,7 @@ topology:
       kind: linux
       image: ghcr.io/srl-labs/network-multitool
       exec:
-        - ip link set eth1 mtu 1500
+        - ip link set eth1 mtu 9216
         - ip addr add 172.16.20.100/24 dev eth1
         - ip route replace default via 172.16.20.1
   links:

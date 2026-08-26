@@ -1,15 +1,15 @@
 Connecting to host 172.31.1.11, port 5201
-[  5] local 172.31.1.12 port 52437 connected to 172.31.1.11 port 5201
+[  5] local 172.31.1.12 port 53655 connected to 172.31.1.11 port 5201
 [ ID] Interval           Transfer     Bitrate         Retr  Cwnd
-[  5]   0.00-2.00   sec   686 MBytes  2.88 Gbits/sec   54   1.53 MBytes       
-[  5]   2.00-4.00   sec   622 MBytes  2.61 Gbits/sec    1   1.41 MBytes       
-[  5]   4.00-6.00   sec  3.75 MBytes  15.7 Mbits/sec    3   1.41 KBytes       
-[  5]   6.00-8.00   sec  0.00 Bytes  0.00 bits/sec    1   1.41 KBytes       
-[  5]   8.00-10.00  sec  0.00 Bytes  0.00 bits/sec    0   1.41 KBytes       
-[  5]  10.00-12.00  sec  0.00 Bytes  0.00 bits/sec    1   1.41 MBytes       
+[  5]   0.00-2.00   sec  2.49 GBytes  10.7 Gbits/sec    0   4.03 MBytes       
+[  5]   2.00-4.00   sec  2.87 GBytes  12.3 Gbits/sec    0   4.03 MBytes       
+[  5]   4.00-6.00   sec  0.00 Bytes  0.00 bits/sec    3   8.95 KBytes       
+[  5]   6.00-8.00   sec  0.00 Bytes  0.00 bits/sec    1   8.95 KBytes       
+[  5]   8.00-10.00  sec  0.00 Bytes  0.00 bits/sec    0   8.95 KBytes       
+[  5]  10.00-12.00  sec  0.00 Bytes  0.00 bits/sec    1   4.03 MBytes       
 - - - - - - - - - - - - - - - - - - - - - - - - -
 [ ID] Interval           Transfer     Bitrate         Retr
-[  5]   0.00-12.00  sec  1.28 GBytes   918 Mbits/sec   60             sender
-[  5]   0.00-12.00  sec  1.28 GBytes   915 Mbits/sec                  receiver
+[  5]   0.00-12.00  sec  5.36 GBytes  3.84 Gbits/sec    5             sender
+[  5]   0.00-12.00  sec  5.36 GBytes  3.83 Gbits/sec                  receiver
 
 iperf Done.

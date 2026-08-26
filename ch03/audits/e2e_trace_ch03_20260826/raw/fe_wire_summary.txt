@@ -1,11 +1,6 @@
-$ sshpass -p Clab123! ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null cumulus@clab-bgpbook-ch03-fe-leaf "sudo tcpdump -r /tmp/fe.pcap -n 2>/dev/null | awk '{print \$3, \$4, \$5}' | sort | uniq -c | sort -rn | head -8"
-Warning: Permanently added 'clab-bgpbook-ch03-fe-leaf' (ECDSA) to the list of known hosts.
-Welcome to NVIDIA Cumulus (R) Linux (R)
-      7 172.16.20.100.40494 > 172.16.10.11.80:
-      7 172.16.20.100.40492 > 172.16.10.11.80:
-      7 172.16.20.100.40490 > 172.16.10.11.80:
-      7 172.16.20.100.40488 > 172.16.10.11.80:
-      7 172.16.20.100.40484 > 172.16.10.11.80:
-      5 172.16.10.11.80 > 172.16.20.100.40494:
-      5 172.16.10.11.80 > 172.16.20.100.40492:
-      5 172.16.10.11.80 > 172.16.20.100.40490:
+      1 18:59:40.188764 IP 172.16.20.100.35402 > 172.16.10.11.80: Flags [.], ack 317, win 63, options [nop,nop,TS val 3860466838 ecr 2467543207], length 0
+      1 18:59:40.188735 IP 172.16.10.11.80 > 172.16.20.100.35402: Flags [F.], seq 316, ack 78, win 63, options [nop,nop,TS val 2467543207 ecr 3860466838], length 0
+      1 18:59:40.188712 IP 172.16.20.100.35402 > 172.16.10.11.80: Flags [F.], seq 77, ack 316, win 63, options [nop,nop,TS val 3860466838 ecr 2467543207], length 0
+      1 18:59:40.188692 IP 172.16.20.100.35402 > 172.16.10.11.80: Flags [.], ack 316, win 63, options [nop,nop,TS val 3860466838 ecr 2467543207], length 0
+      1 18:59:40.188661 IP 172.16.10.11.80 > 172.16.20.100.35402: Flags [P.], seq 237:316, ack 77, win 63, options [nop,nop,TS val 2467543207 ecr 3860466838], length 79: HTTP
+      1 18:59:40.188657 IP 172.16.20.100.35402 > 172.16.10.11.80: Flags [.], ack 237, win 63, options [nop,nop,TS val 3860466838 ecr 2467543207], length 0
