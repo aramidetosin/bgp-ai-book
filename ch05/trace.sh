@@ -17,5 +17,6 @@ run rail1_lldp.txt      "${SSH} cumulus@clab-${LAB}-rail1 \"sudo lldpctl -f keyv
 run node1_addr.txt      "${D}-node1 sh -c 'ip -br addr show | grep eth'"
 run rail1_ping.txt      "${D}-node1 ping -c 3 -I 172.31.1.11 172.31.1.12"
 run verify.txt          "./verify_lldp.sh"
+./paths.sh "${OUT}/raw/node1_paths.txt"
 
 echo "Raw trace outputs in ${OUT}/raw/. Write TRACE.md from them; never from memory."

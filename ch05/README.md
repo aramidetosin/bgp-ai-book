@@ -29,6 +29,7 @@ internet access at deploy time.
 | `make up` | Generate, then deploy; switches self-configure at first boot |
 | `make down` | Destroy the lab |
 | `make verify` | LLDP versus intent, every switch port, OK or MISMATCH |
+| `make paths` | The traffic-path walk: intra-rail, the cross-rail shortcut, the forced leaf-spine-leaf trace |
 | `make audit` | BGP sessions, per-rail node reachability, cabling vs intent |
 | `make trace` | Collect the evidence quoted in the chapter |
 | `make break-5a` | Redeploy with rails 2 and 3 swapped on the node side |
@@ -49,7 +50,10 @@ Change `spec.yml` (more nodes, more spines, more GPUs per node) and rerun
 ## Evidence
 
 Recorded runs backing every output printed in chapter 5 live under
-`audits/`: two green audits, the trace with the ECMP proof and the LLDP
-wire capture (`audits/e2e_trace_ch05_20260826/TRACE.md` indexes it), and
-`audits/break5a/` with the miscabled deploy's verify diff, the
-still-passing per-rail pings, and the failing gateways.
+`audits/`: two green audits, the trace with the ECMP proof, the LLDP wire
+capture, and the traffic-path walk (`node1_paths.txt`: intra-rail in one
+hop, the kernel's cross-rail shortcut, and the forced leaf-spine-leaf
+traceroute with both spine loopbacks answering), all indexed by
+`audits/e2e_trace_ch05_20260826/TRACE.md`, plus `audits/break5a/` with
+the miscabled deploy's verify diff, the still-passing per-rail pings, and
+the failing gateways.

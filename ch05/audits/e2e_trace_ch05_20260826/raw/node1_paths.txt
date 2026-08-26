@@ -1,0 +1,32 @@
+== 1. Intra-rail: node1 to node2 on rail 1 (same rail, one switch) ==
+$ traceroute -n -q 1 -w 2 172.31.1.12
+traceroute to 172.31.1.12 (172.31.1.12), 30 hops max, 46 byte packets
+ 1  172.31.1.12  0.354 ms
+
+== 2. The node's own cross-rail shortcut (what PXN does with NVLink) ==
+$ ip route get 172.31.2.12
+172.31.2.12 dev eth2 src 172.31.2.11 uid 0 
+    cache 
+
+== 3. Force the fabric path: host route via rail1's gateway ==
+$ ip route add 10.5.0.0/24 via 172.31.1.1 dev eth1
+
+$ ip route add 172.31.2.12/32 via 172.31.1.1 dev eth1
+
+$ ip route get 172.31.2.12
+172.31.2.12 via 172.31.1.1 dev eth1 src 172.31.1.11 uid 0 
+    cache 
+
+== 4. Inter-rail through the fabric: leaf, spine, destination ==
+$ traceroute -n -q 2 -w 2 172.31.2.12
+traceroute to 172.31.2.12 (172.31.2.12), 30 hops max, 46 byte packets
+ 1  172.31.1.1  0.300 ms  0.041 ms
+ 2  10.5.0.102  0.303 ms  10.5.0.101  0.365 ms
+ 3  10.5.0.2  0.482 ms  0.149 ms
+ 4  172.31.2.12  0.343 ms  0.105 ms
+
+== 5. Cleanup ==
+$ ip route del 172.31.2.12/32 via 172.31.1.1 dev eth1
+
+$ ip route del 10.5.0.0/24 via 172.31.1.1 dev eth1
+

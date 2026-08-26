@@ -3,7 +3,7 @@ PASS ?= Clab123!
 SSH   = sshpass -p $(PASS) ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null cumulus@clab-$(LAB)-
 D     = docker exec clab-$(LAB)
 
-.PHONY: generate node-image up down verify audit trace break-5a heal-5a
+.PHONY: generate node-image up down verify paths audit trace break-5a heal-5a
 .PHONY: ssh-% logs-% shell-%
 
 # The chapter's whole idea in two targets: the spec is the design,
@@ -26,6 +26,11 @@ down:
 # Does the cabling match the intent? The check that replaces eyeballs.
 verify:
 	./verify_lldp.sh
+
+# The chapter's traffic-path walk: intra-rail one hop, the node's own
+# cross-rail shortcut, then the forced leaf-spine-leaf path, recorded.
+paths:
+	./paths.sh
 
 audit:
 	./audit.sh

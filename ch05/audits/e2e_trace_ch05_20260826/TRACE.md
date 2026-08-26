@@ -55,3 +55,23 @@ check on the deliberately miscabled topology is recorded separately in
 
 The miscable that survives a smoke test, caught by the LLDP-versus-intent
 diff in one command.
+
+## 6. The traffic-path walk (raw/node1_paths.txt)
+
+The chapter's intra-rail and inter-rail journeys, demonstrated from node1
+on 2026-08-27 (`./paths.sh`, also `make paths`):
+
+- **Intra-rail** (node1 to node2 on rail 1): traceroute is a single line,
+  `1  172.31.1.12`, no routed hop at all; the rail leaf bridges it.
+- **The cross-rail shortcut**: `ip route get 172.31.2.12` resolves to
+  `dev eth2`, the node's own rail-2 NIC. The kernel converts an
+  inter-rail journey into an intra-rail one via a connected route, the
+  lab's stand-in for what NCCL's PXN does with NVLink.
+- **Inter-rail through the fabric**, forced with a /32 host route via
+  rail1's gateway: four hops, `172.31.1.1` (rail1 SVI), the spines
+  answering by loopback with BOTH `10.5.0.102` and `10.5.0.101`
+  appearing across the two probes of hop 2 (ECMP caught live in one
+  traceroute line), `10.5.0.2` (rail2's loopback, unnumbered links leave
+  it nothing else to answer from), then `172.31.2.12`.
+- Routes cleaned up at the end of the walk; the recorded file includes
+  every command.
