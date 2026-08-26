@@ -1,0 +1,8 @@
+$ sshpass -p Clab123! ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null cumulus@clab-bgpbook-ch02-r1 "grep -E 'NAME=|VERSION_ID' /etc/os-release; sudo vtysh -c 'show version' | head -1"
+Warning: Permanently added 'clab-bgpbook-ch02-r1' (ECDSA) to the list of known hosts.
+Welcome to NVIDIA Cumulus (R) Linux (R)
+NAME="Cumulus Linux"
+VERSION_ID=5.12.0
+PRETTY_NAME="Cumulus Linux"
+CPE_NAME=cpe:/o:cumulusnetworks:cumulus_linux:5.12.0
+FRRouting 8.4.3 (r1) on Linux(6.1.0-cl-1-amd64).

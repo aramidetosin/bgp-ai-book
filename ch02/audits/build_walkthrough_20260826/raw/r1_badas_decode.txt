@@ -1,0 +1,20 @@
+17:30:14.620052 IP (tos 0xc0, ttl 1, id 25672, offset 0, flags [DF], proto TCP (6), length 73)
+    10.0.1.1.55674 > 10.0.1.0.bgp: Flags [P.], cksum 0x16d0 (correct), seq 38:59, ack 39, win 251, options [nop,nop,TS val 1134274682 ecr 144834896], length 21: BGP
+	Notification Message (3), length: 21, Cease (6), subcode Peer Unconfigured (3)
+17:30:14.620100 IP (tos 0xc0, ttl 1, id 25673, offset 0, flags [DF], proto TCP (6), length 52)
+    10.0.1.1.55674 > 10.0.1.0.bgp: Flags [F.], cksum 0x1cf2 (correct), seq 59, ack 39, win 251, options [nop,nop,TS val 1134274682 ecr 144834896], length 0
+17:30:14.626573 IP (tos 0xc0, ttl 1, id 25674, offset 0, flags [DF], proto TCP (6), length 52)
+    10.0.1.1.55674 > 10.0.1.0.bgp: Flags [F.], cksum 0x1ceb (correct), seq 59, ack 39, win 251, options [nop,nop,TS val 1134274689 ecr 144834896], length 0
+--
+17:30:15.724324 IP (tos 0xc0, ttl 1, id 25432, offset 0, flags [DF], proto TCP (6), length 75)
+    10.0.1.1.34496 > 10.0.1.0.bgp: Flags [P.], cksum 0x7061 (correct), seq 95:118, ack 114, win 251, options [nop,nop,TS val 1134275786 ecr 144836831], length 23: BGP
+	Notification Message (3), length: 23, OPEN Message Error (2), subcode Bad Peer AS (2)
+17:30:15.724361 IP (tos 0xc0, ttl 1, id 27841, offset 0, flags [DF], proto TCP (6), length 52)
+    10.0.1.0.bgp > 10.0.1.1.34496: Flags [F.], cksum 0x1627 (incorrect -> 0x5f7f), seq 114, ack 118, win 251, options [nop,nop,TS val 144836831 ecr 1134275786], length 0
+17:30:15.724372 IP (tos 0xc0, ttl 1, id 25433, offset 0, flags [DF], proto TCP (6), length 52)
+    10.0.1.1.34496 > 10.0.1.0.bgp: Flags [F.], cksum 0x5f7f (correct), seq 118, ack 114, win 251, options [nop,nop,TS val 1134275786 ecr 144836831], length 0
+--
+17:30:16.632364 IP (tos 0xc0, ttl 1, id 39079, offset 0, flags [DF], proto TCP (6), length 75)
+    10.0.1.1.bgp > 10.0.1.0.44310: Flags [P.], cksum 0xefb5 (correct), seq 95:118, ack 95, win 251, options [nop,nop,TS val 1134276694 ecr 144837739], length 23: BGP
+	Notification Message (3), length: 23, OPEN Message Error (2), subcode Bad Peer AS (2)
+17:30:16.632366 IP (tos 0xc0, ttl 1, id 6184, offset 0, flags [DF], proto TCP (6), length 52)

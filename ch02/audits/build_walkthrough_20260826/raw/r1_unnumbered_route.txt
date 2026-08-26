@@ -1,0 +1,9 @@
+BGP routing table entry for 10.0.0.2/32, version 6
+Paths: (1 available, best #1, table default)
+  Advertised to non peer-group peers:
+  r2(swp1)
+  65002
+    fe80::a8c1:abff:feb1:809a (r2) from r2(swp1) (10.0.0.2)
+    (fe80::a8c1:abff:feb1:809a) (used)
+      Origin incomplete, metric 0, valid, external, bestpath-from-AS 65002, best (First path received)
+      Last update: Wed Aug 26 17:34:48 2026

@@ -1,0 +1,17 @@
+$ sshpass -p Clab123! ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null cumulus@clab-bgpbook-ch02-r1 "sudo vtysh -c 'show bgp ipv4 unicast 10.0.0.3/32'"
+Warning: Permanently added 'clab-bgpbook-ch02-r1' (ECDSA) to the list of known hosts.
+Welcome to NVIDIA Cumulus (R) Linux (R)
+BGP routing table entry for 10.0.0.3/32, version 14
+Paths: (2 available, best #1, table default)
+  Advertised to non peer-group peers:
+  r2(swp1) r3(swp2)
+  65003
+    fe80::a8c1:abff:fedb:b038 (r3) from r3(swp2) (10.0.0.3)
+    (fe80::a8c1:abff:fedb:b038) (used)
+      Origin incomplete, metric 0, valid, external, bestpath-from-AS 65003, best (AS Path)
+      Last update: Wed Aug 26 17:43:51 2026
+  65002 65003
+    fe80::a8c1:abff:feb1:809a (r2) from r2(swp1) (10.0.0.2)
+    (fe80::a8c1:abff:feb1:809a) (used)
+      Origin incomplete, valid, external, bestpath-from-AS 65002
+      Last update: Wed Aug 26 17:45:16 2026

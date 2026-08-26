@@ -1,0 +1,12 @@
+$ sshpass -p Clab123! ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null cumulus@clab-bgpbook-ch02-r1 "ping -c 3 -I 10.0.0.1 10.0.0.3"
+Warning: Permanently added 'clab-bgpbook-ch02-r1' (ECDSA) to the list of known hosts.
+Welcome to NVIDIA Cumulus (R) Linux (R)
+vrf-wrapper.sh: switching to vrf "default"; use '--no-vrf-switch' to disable
+PING 10.0.0.3 (10.0.0.3) from 10.0.0.1 : 56(84) bytes of data.
+64 bytes from 10.0.0.3: icmp_seq=1 ttl=64 time=0.228 ms
+64 bytes from 10.0.0.3: icmp_seq=2 ttl=64 time=0.222 ms
+64 bytes from 10.0.0.3: icmp_seq=3 ttl=64 time=0.234 ms
+
+--- 10.0.0.3 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2047ms
+rtt min/avg/max/mdev = 0.222/0.228/0.234/0.005 ms

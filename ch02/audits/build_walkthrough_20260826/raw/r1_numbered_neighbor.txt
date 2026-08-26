@@ -1,0 +1,32 @@
+BGP neighbor is 10.0.1.1, remote AS 65002, local AS 65001, external link
+  Local Role: undefined
+  Remote Role: undefined
+Hostname: r2
+  BGP version 4, remote router ID 10.0.0.2, local router ID 10.0.0.1
+  BGP state = Established, up for 00:00:30
+  Last read 00:00:03, Last write 00:00:03
+  Hold time is 9 seconds, keepalive interval is 3 seconds
+  Configured hold time is 9 seconds, keepalive interval is 3 seconds
+  Configured conditional advertisements interval is 60 seconds
+  Neighbor capabilities:
+    4 Byte AS: advertised and received
+    Extended Message: advertised and received
+    AddPath:
+      IPv4 Unicast: RX advertised and received
+    Long-lived Graceful Restart: advertised and received
+      Address families by peer:
+    Route refresh: advertised and received(old & new)
+    Enhanced Route Refresh: advertised and received
+    Address Family IPv4 Unicast: advertised and received
+    Hostname Capability: advertised (name: r1,domain name: n/a) received (name: r2,domain name: n/a)
+    Graceful Restart Capability: advertised and received
+      Remote Restart timer is 120 seconds
+      Address families by peer:
+            Graceful Restart Capability: advertised and received
+      Remote Restart timer is 120 seconds
+      Address families by peer:
+        none
+  Graceful restart information:
+    End-of-RIB send: IPv4 Unicast
+    End-of-RIB received: IPv4 Unicast
+    Local GR Mode: Helper*

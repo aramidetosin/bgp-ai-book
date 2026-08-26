@@ -1,0 +1,8 @@
+17:43:51.697821 IP6 fe80::a8c1:abff:feca:48ad.179 > fe80::a8c1:abff:feb1:809a.48368: Flags [F.], seq 2189909236, ack 2171432220, win 250, options [nop,nop,TS val 1695556026 ecr 1308852694], length 0
+17:43:51.714599 IP6 fe80::a8c1:abff:feb1:809a.48368 > fe80::a8c1:abff:feca:48ad.179: Flags [FP.], seq 4294967275:0, ack 0, win 247, options [nop,nop,TS val 1308852906 ecr 1695553939], length 21: BGP
+17:43:51.714611 IP6 fe80::a8c1:abff:feca:48ad.179 > fe80::a8c1:abff:feb1:809a.48368: Flags [.], ack 1, win 250, options [nop,nop,TS val 1695556042 ecr 1308852906,nop,nop,sack 1 {4294967275:1}], length 0
+17:43:51.905829 IP6 fe80::a8c1:abff:feca:48ad.179 > fe80::a8c1:abff:feb1:809a.48368: Flags [F.], seq 0, ack 1, win 250, options [nop,nop,TS val 1695556234 ecr 1308852906], length 0
+17:43:52.142644 IP6 fe80::a8c1:abff:feb1:809a.48368 > fe80::a8c1:abff:feca:48ad.179: Flags [FP.], seq 4294967275:0, ack 0, win 247, options [nop,nop,TS val 1308853334 ecr 1695553939], length 21: BGP
+17:43:52.142684 IP6 fe80::a8c1:abff:feca:48ad.179 > fe80::a8c1:abff:feb1:809a.48368: Flags [.], ack 1, win 250, options [nop,nop,TS val 1695556470 ecr 1308853334,nop,nop,sack 1 {4294967275:1}], length 0
+17:43:52.317833 IP6 fe80::a8c1:abff:feca:48ad.179 > fe80::a8c1:abff:feb1:809a.48368: Flags [F.], seq 0, ack 1, win 250, options [nop,nop,TS val 1695556646 ecr 1308853334], length 0
+17:43:53.006646 IP6 fe80::a8c1:abff:feb1:809a.48368 > fe80::a8c1:abff:feca:48ad.179: Flags [FP.], seq 4294967275:0, ack 0, win 247, options [nop,nop,TS val 1308854198 ecr 1695553939], length 21: BGP

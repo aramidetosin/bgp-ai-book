@@ -1,0 +1,11 @@
+=== r1 ===
+  BGP ipv4 sessions: 2 Established / 2 configured  - OK
+=== r2 ===
+  BGP ipv4 sessions: 2 Established / 2 configured  - OK
+=== r3 ===
+  BGP ipv4 sessions: 2 Established / 2 configured  - OK
+=== Path diversity (r3's view of r1's loopback) ===
+  r3 -> 10.0.0.1/32: 2 path(s) in table - OK
+=== Data plane (loopback to loopback) ===
+  r1 (10.0.0.1) -> 10.0.0.3: 0% packet loss
+  r3 (10.0.0.3) -> 10.0.0.2: 0% packet loss

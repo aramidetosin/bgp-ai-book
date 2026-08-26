@@ -1,0 +1,9 @@
+Warning: Permanently added 'clab-bgpbook-ch02-r1' (ECDSA) to the list of known hosts.
+Welcome to NVIDIA Cumulus (R) Linux (R)
+created [rev_id: 6]
+verifying[1000D[Jreadying[1000D[JWarning: The frr service will need to be restarted because the list of router services has changed.  This will disrupt traffic for any existing routing protocols.
+Warning: current hostname `r1` will be replaced with `cumulus`
+Warning: The following files have been changed since the last save, and they WILL be overwritten.
+	- /etc/hostname
+
+reloading[1000D[Japplied [rev_id: 6]

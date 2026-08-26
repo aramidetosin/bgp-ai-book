@@ -1,0 +1,16 @@
+BGP routing table entry for 10.0.0.1/32, version 11
+Paths: (2 available, best #1, table default)
+  Advertised to non peer-group peers:
+  r2(swp1) r1(swp2)
+  65001
+    fe80::a8c1:abff:fea8:78a9 (r1) from r1(swp2) (10.0.0.1)
+    (fe80::a8c1:abff:fea8:78a9) (used)
+      Origin incomplete, metric 0, localpref 200, valid, external, bestpath-from-AS 65001, best (Local Pref)
+      Community: 65001:100
+      Last update: Wed Aug 26 17:43:16 2026
+  65002 65001
+    fe80::a8c1:abff:fe1e:bae9 (r2) from r2(swp1) (10.0.0.2)
+    (fe80::a8c1:abff:fe1e:bae9) (used)
+      Origin incomplete, valid, external, bestpath-from-AS 65002
+      Community: 65001:100
+      Last update: Wed Aug 26 17:43:07 2026

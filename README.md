@@ -1,7 +1,7 @@
 # BGP for AI Infrastructure: the labs
 
 The companion lab repository for the book *BGP for AI Infrastructure: A DevOps
-Engineer's Guide to Routing at GPU Scale*. One directory per chapter. Every
+Engineer's Guide to AI Data Center Fabric Networking*. One directory per chapter. Every
 lab deploys a working topology from a clean clone: containerlab plus the
 chapter's bootstrap configuration, with nothing hand-typed.
 
@@ -10,6 +10,7 @@ chapter's bootstrap configuration, with nothing hand-typed.
 | Directory | Chapter | Lab |
 |---|---|---|
 | [ch01](ch01/) | Why Data Centers Run BGP | A guided tour of a running eBGP fabric: 4 leafs, 2 spines, BGP unnumbered, link-failure demos, packet-capture verification |
+| [ch02](ch02/) | BGP Fundamentals Without the CCNA Detour | Build a three-switch eBGP triangle by hand: numbered then unnumbered peering, a deliberate Bad Peer AS, path selection, loop prevention on the wire, and a TCP-layer break-fix |
 
 Each chapter directory contains:
 

@@ -1,0 +1,12 @@
+nv set interface lo ip address 10.0.0.1/32
+nv set interface lo type loopback
+nv set interface swp1 ip address 10.0.1.0/31
+nv set interface swp1 type swp
+nv set router bgp autonomous-system 65001
+nv set router bgp enable on
+nv set router bgp router-id 10.0.0.1
+nv set vrf default router bgp address-family ipv4-unicast enable on
+nv set vrf default router bgp address-family ipv4-unicast redistribute connected enable on
+nv set vrf default router bgp enable on
+nv set vrf default router bgp neighbor 10.0.1.1 remote-as external
+nv set vrf default router bgp neighbor 10.0.1.1 type numbered

@@ -1,0 +1,12 @@
+17:37:14.852247 swp1  In  IP6 (class 0xc0, flowlabel 0x514d5, hlim 1, next-header TCP (6) payload length: 119) fe80::a8c1:abff:feb1:809a.48368 > fe80::a8c1:abff:feca:48ad.bgp: Flags [P.], cksum 0x987a (correct), seq 324:411, ack 411, win 250, options [nop,nop,TS val 1308456043 ecr 1695159130], length 87: BGP
+	Update Message (2), length: 87
+	    AFI: IPv4 (1), SAFI: Unicast (1)
+	      10.0.0.1/32
+	  AS Path (2), length: 10, Flags [TE]: 65002 65001 
+
+17:37:14.852450 swp2  In  IP6 (class 0xc0, flowlabel 0x3f624, hlim 1, next-header TCP (6) payload length: 119) fe80::a8c1:abff:fedb:b038.54462 > fe80::a8c1:abff:fea8:78a9.bgp: Flags [P.], cksum 0x96a3 (correct), seq 324:411, ack 411, win 250, options [nop,nop,TS val 1433236685 ecr 3164201108], length 87: BGP
+	Update Message (2), length: 87
+	    AFI: IPv4 (1), SAFI: Unicast (1)
+	      10.0.0.1/32
+	  AS Path (2), length: 10, Flags [TE]: 65003 65001 
+

@@ -1,0 +1,8 @@
+BGP routing table entry for 10.0.0.2/32, version 3
+Paths: (1 available, best #1, table default)
+  Advertised to non peer-group peers:
+  r2(10.0.1.1)
+  65002
+    10.0.1.1 (r2) from r2(10.0.1.1) (10.0.0.2)
+      Origin incomplete, metric 0, valid, external, bestpath-from-AS 65002, best (First path received)
+      Last update: Wed Aug 26 17:29:20 2026

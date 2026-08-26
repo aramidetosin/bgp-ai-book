@@ -1,0 +1,6 @@
+Hostname: r2
+  Hold time is 9 seconds, keepalive interval is 3 seconds
+  Configured hold time is 9 seconds, keepalive interval is 3 seconds
+    4 Byte AS: advertised and received
+    Extended nexthop: advertised and received
+    Hostname Capability: advertised (name: r1,domain name: n/a) received (name: r2,domain name: n/a)

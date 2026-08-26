@@ -1,0 +1,8 @@
+BGP routing table entry for 10.0.0.1/32, version 1
+Paths: (1 available, best #1, table default)
+  Advertised to non peer-group peers:
+  r2(swp1) r3(swp2)
+  Local
+    0.0.0.0 (r1) from 0.0.0.0 (10.0.0.1)
+      Origin incomplete, metric 0, weight 32768, valid, sourced, bestpath-from-AS Local, best (First path received)
+      Last update: Wed Aug 26 17:29:17 2026

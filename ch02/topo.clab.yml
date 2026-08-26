@@ -1,0 +1,21 @@
+# Chapter 2 lab: three Cumulus Linux switches, deployed UNCONFIGURED on
+# purpose. This chapter's lab is a build, not a tour: the reader configures
+# eBGP by hand, first numbered, then unnumbered, then adds the third switch.
+# `make solution` applies the finished configuration from bootstrap/ if you
+# want to skip ahead or verify your work.
+name: bgpbook-ch02
+mgmt:
+  network: bgpbook-ch02
+  ipv4-subnet: 172.20.32.0/24
+topology:
+  defaults:
+    kind: nvidia_cumulusvx
+    image: vrnetlab/nvidia_cumulus-vx:5.12.0
+  nodes:
+    r1: {}
+    r2: {}
+    r3: {}
+  links:
+    - endpoints: ["r1:swp1","r2:swp1"]
+    - endpoints: ["r2:swp2","r3:swp1"]
+    - endpoints: ["r1:swp2","r3:swp2"]

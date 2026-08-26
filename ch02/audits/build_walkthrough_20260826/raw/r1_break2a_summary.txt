@@ -1,0 +1,5 @@
+Neighbor        V         AS   MsgRcvd   MsgSent   TblVer  InQ OutQ  Up/Down State/PfxRcd   PfxSnt Desc
+r2(swp1)        4      65002       200       209        0    0    0 00:00:03      Connect        0 N/A
+r3(swp2)        4      65003       211       215        0    0    0 00:06:41            2        3 N/A
+
+Total number of neighbors 2

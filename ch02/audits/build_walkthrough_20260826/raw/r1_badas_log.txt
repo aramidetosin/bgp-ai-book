@@ -1,0 +1,4 @@
+2026-08-26T17:30:21.727708+00:00 r1 bgpd[5535]: [HZN6M-XRM1G] %NOTIFICATION: received from neighbor 10.0.1.1 2/2 (OPEN Message Error/Bad Peer AS) 2 bytes fd e9
+2026-08-26T17:30:28.639773+00:00 r1 bgpd[5535]: [HZN6M-XRM1G] %NOTIFICATION: received from neighbor 10.0.1.1 2/2 (OPEN Message Error/Bad Peer AS) 2 bytes fd e9
+2026-08-26T17:30:29.728893+00:00 r1 bgpd[5535]: [HZN6M-XRM1G] %NOTIFICATION: received from neighbor 10.0.1.1 2/2 (OPEN Message Error/Bad Peer AS) 2 bytes fd e9
+2026-08-26T17:30:44.640967+00:00 r1 bgpd[5535]: [HZN6M-XRM1G] %NOTIFICATION: received from neighbor 10.0.1.1 2/2 (OPEN Message Error/Bad Peer AS) 2 bytes fd e9

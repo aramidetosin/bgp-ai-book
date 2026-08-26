@@ -1,0 +1,666 @@
+17:37:10.614049 swp2  In  IP6 (class 0xc0, flowlabel 0xc6c9c, hlim 1, next-header TCP (6) payload length: 51) fe80::a8c1:abff:fedb:b038.36396 > fe80::a8c1:abff:fea8:78a9.bgp: Flags [P.], cksum 0xc8ec (correct), seq 2829890257:2829890276, ack 1378837610, win 250, options [nop,nop,TS val 1433232446 ecr 3164193920], length 19: BGP
+	Keepalive Message (4), length: 19
+17:37:10.614153 swp2  Out IP6 (class 0xc0, flowlabel 0xaf46c, hlim 1, next-header TCP (6) payload length: 51) fe80::a8c1:abff:fea8:78a9.bgp > fe80::a8c1:abff:fedb:b038.36396: Flags [P.], cksum 0xcd24 (incorrect -> 0xbd21), seq 1:20, ack 19, win 250, options [nop,nop,TS val 3164196920 ecr 1433232446], length 19: BGP
+	Keepalive Message (4), length: 19
+17:37:10.614231 swp2  In  IP6 (class 0xc0, flowlabel 0xc6c9c, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:fedb:b038.36396 > fe80::a8c1:abff:fea8:78a9.bgp: Flags [.], cksum 0xc13c (correct), seq 19, ack 20, win 250, options [nop,nop,TS val 1433232446 ecr 3164196920], length 0
+17:37:11.106357 swp1  Out IP6 (class 0xc0, flowlabel 0xf288f, hlim 1, next-header TCP (6) payload length: 51) fe80::a8c1:abff:feca:48ad.bgp > fe80::a8c1:abff:feb1:809a.35706: Flags [P.], cksum 0x6d82 (incorrect -> 0x4ce9), seq 395023706:395023725, ack 1130375404, win 250, options [nop,nop,TS val 1695155434 ecr 1308449298], length 19: BGP
+	Keepalive Message (4), length: 19
+17:37:11.106681 swp1  In  IP6 (class 0xc0, flowlabel 0x0af52, hlim 1, next-header TCP (6) payload length: 51) fe80::a8c1:abff:feb1:809a.35706 > fe80::a8c1:abff:feca:48ad.bgp: Flags [P.], cksum 0x411d (correct), seq 1:20, ack 19, win 251, options [nop,nop,TS val 1308452298 ecr 1695155434], length 19: BGP
+	Keepalive Message (4), length: 19
+17:37:11.106694 swp1  Out IP6 (class 0xc0, flowlabel 0xf288f, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:feca:48ad.bgp > fe80::a8c1:abff:feb1:809a.35706: Flags [.], cksum 0x6d6f (incorrect -> 0x4539), seq 19, ack 20, win 250, options [nop,nop,TS val 1695155434 ecr 1308452298], length 0
+17:37:11.586087 swp1  Out IP6 (class 0xc0, flowlabel 0xf288f, hlim 1, next-header TCP (6) payload length: 53) fe80::a8c1:abff:feca:48ad.bgp > fe80::a8c1:abff:feb1:809a.35706: Flags [P.], cksum 0x6d84 (incorrect -> 0x3c21), seq 19:40, ack 20, win 250, options [nop,nop,TS val 1695155914 ecr 1308452298], length 21: BGP
+	Notification Message (3), length: 21, Cease (6), subcode Administrative Reset (4)
+17:37:11.586112 swp2  Out IP6 (class 0xc0, flowlabel 0xaf46c, hlim 1, next-header TCP (6) payload length: 53) fe80::a8c1:abff:fea8:78a9.bgp > fe80::a8c1:abff:fedb:b038.36396: Flags [P.], cksum 0xcd26 (incorrect -> 0xb638), seq 20:41, ack 19, win 250, options [nop,nop,TS val 3164197892 ecr 1433232446], length 21: BGP
+	Notification Message (3), length: 21, Cease (6), subcode Administrative Reset (4)
+17:37:11.586190 swp1  Out IP6 (class 0xc0, flowlabel 0xf288f, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:feca:48ad.bgp > fe80::a8c1:abff:feb1:809a.35706: Flags [F.], cksum 0x6d6f (incorrect -> 0x4343), seq 40, ack 20, win 250, options [nop,nop,TS val 1695155914 ecr 1308452298], length 0
+17:37:11.586248 swp2  Out IP6 (class 0xc0, flowlabel 0xaf46c, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:fea8:78a9.bgp > fe80::a8c1:abff:fedb:b038.36396: Flags [F.], cksum 0xcd11 (incorrect -> 0xbd5a), seq 41, ack 19, win 250, options [nop,nop,TS val 3164197892 ecr 1433232446], length 0
+17:37:11.586298 swp2  In  IP6 (class 0xc0, flowlabel 0xc6c9c, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:fedb:b038.36396 > fe80::a8c1:abff:fea8:78a9.bgp: Flags [.], cksum 0xb98f (correct), seq 19, ack 41, win 250, options [nop,nop,TS val 1433233418 ecr 3164197892], length 0
+17:37:11.586424 swp1  In  IP6 (class 0xc0, flowlabel 0x0af52, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:feb1:809a.35706 > fe80::a8c1:abff:feca:48ad.bgp: Flags [F.], cksum 0x4162 (correct), seq 20, ack 41, win 251, options [nop,nop,TS val 1308452777 ecr 1695155914], length 0
+17:37:11.586433 swp1  Out IP6 (class 0xc0, flowlabel 0xf288f, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:feca:48ad.bgp > fe80::a8c1:abff:feb1:809a.35706: Flags [.], cksum 0x6d6f (incorrect -> 0x4163), seq 41, ack 21, win 250, options [nop,nop,TS val 1695155914 ecr 1308452777], length 0
+17:37:11.596519 swp2  In  IP6 (class 0xc0, flowlabel 0xc6c9c, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:fedb:b038.36396 > fe80::a8c1:abff:fea8:78a9.bgp: Flags [F.], cksum 0xb982 (correct), seq 19, ack 42, win 250, options [nop,nop,TS val 1433233429 ecr 3164197892], length 0
+17:37:11.596531 swp2  Out IP6 (class 0xc0, flowlabel 0xaf46c, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:fea8:78a9.bgp > fe80::a8c1:abff:fedb:b038.36396: Flags [.], cksum 0xcd11 (incorrect -> 0xb978), seq 42, ack 20, win 250, options [nop,nop,TS val 3164197902 ecr 1433233429], length 0
+17:37:13.597060 swp2  In  IP6 (class 0xc0, flowlabel 0x3f624, hlim 1, next-header TCP (6) payload length: 40) fe80::a8c1:abff:fedb:b038.54462 > fe80::a8c1:abff:fea8:78a9.bgp: Flags [S], cksum 0xdd06 (correct), seq 1362532773, win 64092, options [mss 9156,sackOK,TS val 1433235429 ecr 0,nop,wscale 8], length 0
+17:37:13.597104 swp2  Out IP6 (class 0xc0, flowlabel 0x9325d, hlim 255, next-header TCP (6) payload length: 40) fe80::a8c1:abff:fea8:78a9.bgp > fe80::a8c1:abff:fedb:b038.54462: Flags [S.], cksum 0xcd19 (incorrect -> 0xb016), seq 1217023023, ack 1362532774, win 64008, options [mss 9156,sackOK,TS val 3164199903 ecr 1433235429,nop,wscale 8], length 0
+17:37:13.597114 swp1  In  IP6 (class 0xc0, flowlabel 0x514d5, hlim 1, next-header TCP (6) payload length: 40) fe80::a8c1:abff:feb1:809a.48368 > fe80::a8c1:abff:feca:48ad.bgp: Flags [S], cksum 0x64cc (correct), seq 2171429098, win 64092, options [mss 9156,sackOK,TS val 1308454788 ecr 0,nop,wscale 8], length 0
+17:37:13.597120 swp1  Out IP6 (class 0xc0, flowlabel 0x20492, hlim 255, next-header TCP (6) payload length: 40) fe80::a8c1:abff:feca:48ad.bgp > fe80::a8c1:abff:feb1:809a.48368: Flags [S.], cksum 0x6d77 (incorrect -> 0x208d), seq 2189905483, ack 2171429099, win 64008, options [mss 9156,sackOK,TS val 1695157925 ecr 1308454788,nop,wscale 8], length 0
+17:37:13.597185 swp2  In  IP6 (class 0xc0, flowlabel 0x3f624, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:fedb:b038.54462 > fe80::a8c1:abff:fea8:78a9.bgp: Flags [.], cksum 0xf601 (correct), seq 1, ack 1, win 251, options [nop,nop,TS val 1433235429 ecr 3164199903], length 0
+17:37:13.597254 swp2  In  IP6 (class 0xc0, flowlabel 0x3f624, hlim 1, next-header TCP (6) payload length: 136) fe80::a8c1:abff:fedb:b038.54462 > fe80::a8c1:abff:fea8:78a9.bgp: Flags [P.], cksum 0xebb6 (correct), seq 1:105, ack 1, win 251, options [nop,nop,TS val 1433235429 ecr 3164199903], length 104: BGP
+	Open Message (1), length: 104
+	  Version 4, my AS 65003, Holdtime 9s, ID 10.0.0.3
+	  Optional parameters, length: 75
+	    Option Capabilities Advertisement (2), length: 6
+	      Multiprotocol Extensions (1), length: 4
+		AFI IPv4 (1), SAFI Unicast (1)
+		0x0000:  0001 0001
+	    Option Capabilities Advertisement (2), length: 8
+	      Extended Next Hop Encoding (5), length: 6
+		no decoder for Capability 5
+		0x0000:  0001 0001 0002
+	    Option Capabilities Advertisement (2), length: 2
+	      Route Refresh (Cisco) (128), length: 0
+	    Option Capabilities Advertisement (2), length: 2
+	      Route Refresh (2), length: 0
+	    Option Capabilities Advertisement (2), length: 2
+	      Enhanced Route Refresh (70), length: 0
+		no decoder for Capability 70
+	    Option Capabilities Advertisement (2), length: 6
+	      32-Bit AS Number (65), length: 4
+		 4 Byte AS 65003
+		0x0000:  0000 fdeb
+	    Option Capabilities Advertisement (2), length: 2
+	      Unknown (6), length: 0
+		no decoder for Capability 6
+	    Option Capabilities Advertisement (2), length: 6
+	      Multiple Paths (69), length: 4
+		AFI IPv4 (1), SAFI Unicast (1), Send/Receive: Receive
+		0x0000:  0001 0101
+	    Option Capabilities Advertisement (2), length: 6
+	      Unknown (73), length: 4
+		no decoder for Capability 73
+		0x0000:  0272 3300
+	    Option Capabilities Advertisement (2), length: 4
+	      Graceful Restart (64), length: 2
+		Restart Flags: [none], Restart Time 120s
+		0x0000:  0078
+	    Option Capabilities Advertisement (2), length: 9
+	      Long-lived Graceful Restart (71), length: 7
+		0x0000:  0001 0180 0000 00
+17:37:13.597259 swp2  Out IP6 (class 0xc0, flowlabel 0x9325d, hlim 255, next-header TCP (6) payload length: 32) fe80::a8c1:abff:fea8:78a9.bgp > fe80::a8c1:abff:fedb:b038.54462: Flags [.], cksum 0xcd11 (incorrect -> 0xf59a), seq 1, ack 105, win 250, options [nop,nop,TS val 3164199903 ecr 1433235429], length 0
+17:37:13.597264 swp1  In  IP6 (class 0xc0, flowlabel 0x514d5, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:feb1:809a.48368 > fe80::a8c1:abff:feca:48ad.bgp: Flags [.], cksum 0x6678 (correct), seq 1, ack 1, win 251, options [nop,nop,TS val 1308454788 ecr 1695157925], length 0
+17:37:13.597311 swp1  In  IP6 (class 0xc0, flowlabel 0x514d5, hlim 1, next-header TCP (6) payload length: 136) fe80::a8c1:abff:feb1:809a.48368 > fe80::a8c1:abff:feca:48ad.bgp: Flags [P.], cksum 0x5d30 (correct), seq 1:105, ack 1, win 251, options [nop,nop,TS val 1308454788 ecr 1695157925], length 104: BGP
+	Open Message (1), length: 104
+	  Version 4, my AS 65002, Holdtime 9s, ID 10.0.0.2
+	  Optional parameters, length: 75
+	    Option Capabilities Advertisement (2), length: 6
+	      Multiprotocol Extensions (1), length: 4
+		AFI IPv4 (1), SAFI Unicast (1)
+		0x0000:  0001 0001
+	    Option Capabilities Advertisement (2), length: 8
+	      Extended Next Hop Encoding (5), length: 6
+		no decoder for Capability 5
+		0x0000:  0001 0001 0002
+	    Option Capabilities Advertisement (2), length: 2
+	      Route Refresh (Cisco) (128), length: 0
+	    Option Capabilities Advertisement (2), length: 2
+	      Route Refresh (2), length: 0
+	    Option Capabilities Advertisement (2), length: 2
+	      Enhanced Route Refresh (70), length: 0
+		no decoder for Capability 70
+	    Option Capabilities Advertisement (2), length: 6
+	      32-Bit AS Number (65), length: 4
+		 4 Byte AS 65002
+		0x0000:  0000 fdea
+	    Option Capabilities Advertisement (2), length: 2
+	      Unknown (6), length: 0
+		no decoder for Capability 6
+	    Option Capabilities Advertisement (2), length: 6
+	      Multiple Paths (69), length: 4
+		AFI IPv4 (1), SAFI Unicast (1), Send/Receive: Receive
+		0x0000:  0001 0101
+	    Option Capabilities Advertisement (2), length: 6
+	      Unknown (73), length: 4
+		no decoder for Capability 73
+		0x0000:  0272 3200
+	    Option Capabilities Advertisement (2), length: 4
+	      Graceful Restart (64), length: 2
+		Restart Flags: [none], Restart Time 120s
+		0x0000:  0078
+	    Option Capabilities Advertisement (2), length: 9
+	      Long-lived Graceful Restart (71), length: 7
+		0x0000:  0001 0180 0000 00
+17:37:13.597312 swp1  Out IP6 (class 0xc0, flowlabel 0x20492, hlim 255, next-header TCP (6) payload length: 32) fe80::a8c1:abff:feca:48ad.bgp > fe80::a8c1:abff:feb1:809a.48368: Flags [.], cksum 0x6d6f (incorrect -> 0x6611), seq 1, ack 105, win 250, options [nop,nop,TS val 1695157925 ecr 1308454788], length 0
+17:37:13.597322 swp1  Out IP6 (class 0xc0, flowlabel 0xffbf9, hlim 1, next-header TCP (6) payload length: 40) fe80::a8c1:abff:feca:48ad.53270 > fe80::a8c1:abff:feb1:809a.bgp: Flags [S], cksum 0x6d77 (incorrect -> 0x5657), seq 3289539430, win 64092, options [mss 9156,sackOK,TS val 1695157925 ecr 0,nop,wscale 8], length 0
+17:37:13.597344 swp2  Out IP6 (class 0xc0, flowlabel 0x11b08, hlim 1, next-header TCP (6) payload length: 40) fe80::a8c1:abff:fea8:78a9.58466 > fe80::a8c1:abff:fedb:b038.bgp: Flags [S], cksum 0xcd19 (incorrect -> 0xb339), seq 2318641066, win 64092, options [mss 9156,sackOK,TS val 3164199903 ecr 0,nop,wscale 8], length 0
+17:37:13.597362 swp1  In  IP6 (class 0xc0, flowlabel 0x13d61, hlim 255, next-header TCP (6) payload length: 40) fe80::a8c1:abff:feb1:809a.bgp > fe80::a8c1:abff:feca:48ad.53270: Flags [S.], cksum 0x8c62 (correct), seq 4175500244, ack 3289539431, win 64008, options [mss 9156,sackOK,TS val 1308454788 ecr 1695157925,nop,wscale 8], length 0
+17:37:13.597366 swp1  Out IP6 (class 0xc0, flowlabel 0xffbf9, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:feca:48ad.53270 > fe80::a8c1:abff:feb1:809a.bgp: Flags [.], cksum 0x6d6f (incorrect -> 0xd24d), seq 1, ack 1, win 251, options [nop,nop,TS val 1695157925 ecr 1308454788], length 0
+17:37:13.597386 swp2  In  IP6 (class 0xc0, flowlabel 0x51c9c, hlim 255, next-header TCP (6) payload length: 40) fe80::a8c1:abff:fedb:b038.bgp > fe80::a8c1:abff:fea8:78a9.58466: Flags [S.], cksum 0x6a61 (correct), seq 2289630030, ack 2318641067, win 64008, options [mss 9156,sackOK,TS val 1433235430 ecr 3164199903,nop,wscale 8], length 0
+17:37:13.597388 swp2  Out IP6 (class 0xc0, flowlabel 0x11b08, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:fea8:78a9.58466 > fe80::a8c1:abff:fedb:b038.bgp: Flags [.], cksum 0xcd11 (incorrect -> 0xb04c), seq 1, ack 1, win 251, options [nop,nop,TS val 3164199903 ecr 1433235430], length 0
+17:37:13.597506 swp1  In  IP6 (class 0xc0, flowlabel 0x13d61, hlim 1, next-header TCP (6) payload length: 136) fe80::a8c1:abff:feb1:809a.bgp > fe80::a8c1:abff:feca:48ad.53270: Flags [P.], cksum 0xc905 (correct), seq 1:105, ack 1, win 251, options [nop,nop,TS val 1308454788 ecr 1695157925], length 104: BGP
+	Open Message (1), length: 104
+	  Version 4, my AS 65002, Holdtime 9s, ID 10.0.0.2
+	  Optional parameters, length: 75
+	    Option Capabilities Advertisement (2), length: 6
+	      Multiprotocol Extensions (1), length: 4
+		AFI IPv4 (1), SAFI Unicast (1)
+		0x0000:  0001 0001
+	    Option Capabilities Advertisement (2), length: 8
+	      Extended Next Hop Encoding (5), length: 6
+		no decoder for Capability 5
+		0x0000:  0001 0001 0002
+	    Option Capabilities Advertisement (2), length: 2
+	      Route Refresh (Cisco) (128), length: 0
+	    Option Capabilities Advertisement (2), length: 2
+	      Route Refresh (2), length: 0
+	    Option Capabilities Advertisement (2), length: 2
+	      Enhanced Route Refresh (70), length: 0
+		no decoder for Capability 70
+	    Option Capabilities Advertisement (2), length: 6
+	      32-Bit AS Number (65), length: 4
+		 4 Byte AS 65002
+		0x0000:  0000 fdea
+	    Option Capabilities Advertisement (2), length: 2
+	      Unknown (6), length: 0
+		no decoder for Capability 6
+	    Option Capabilities Advertisement (2), length: 6
+	      Multiple Paths (69), length: 4
+		AFI IPv4 (1), SAFI Unicast (1), Send/Receive: Receive
+		0x0000:  0001 0101
+	    Option Capabilities Advertisement (2), length: 6
+	      Unknown (73), length: 4
+		no decoder for Capability 73
+		0x0000:  0272 3200
+	    Option Capabilities Advertisement (2), length: 4
+	      Graceful Restart (64), length: 2
+		Restart Flags: [none], Restart Time 120s
+		0x0000:  0078
+	    Option Capabilities Advertisement (2), length: 9
+	      Long-lived Graceful Restart (71), length: 7
+		0x0000:  0001 0180 0000 00
+17:37:13.597508 swp1  Out IP6 (class 0xc0, flowlabel 0xffbf9, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:feca:48ad.53270 > fe80::a8c1:abff:feb1:809a.bgp: Flags [.], cksum 0x6d6f (incorrect -> 0xd1e5), seq 1, ack 105, win 251, options [nop,nop,TS val 1695157925 ecr 1308454788], length 0
+17:37:13.597562 swp2  In  IP6 (class 0xc0, flowlabel 0x51c9c, hlim 1, next-header TCP (6) payload length: 136) fe80::a8c1:abff:fedb:b038.bgp > fe80::a8c1:abff:fea8:78a9.58466: Flags [P.], cksum 0xa601 (correct), seq 1:105, ack 1, win 251, options [nop,nop,TS val 1433235430 ecr 3164199903], length 104: BGP
+	Open Message (1), length: 104
+	  Version 4, my AS 65003, Holdtime 9s, ID 10.0.0.3
+	  Optional parameters, length: 75
+	    Option Capabilities Advertisement (2), length: 6
+	      Multiprotocol Extensions (1), length: 4
+		AFI IPv4 (1), SAFI Unicast (1)
+		0x0000:  0001 0001
+	    Option Capabilities Advertisement (2), length: 8
+	      Extended Next Hop Encoding (5), length: 6
+		no decoder for Capability 5
+		0x0000:  0001 0001 0002
+	    Option Capabilities Advertisement (2), length: 2
+	      Route Refresh (Cisco) (128), length: 0
+	    Option Capabilities Advertisement (2), length: 2
+	      Route Refresh (2), length: 0
+	    Option Capabilities Advertisement (2), length: 2
+	      Enhanced Route Refresh (70), length: 0
+		no decoder for Capability 70
+	    Option Capabilities Advertisement (2), length: 6
+	      32-Bit AS Number (65), length: 4
+		 4 Byte AS 65003
+		0x0000:  0000 fdeb
+	    Option Capabilities Advertisement (2), length: 2
+	      Unknown (6), length: 0
+		no decoder for Capability 6
+	    Option Capabilities Advertisement (2), length: 6
+	      Multiple Paths (69), length: 4
+		AFI IPv4 (1), SAFI Unicast (1), Send/Receive: Receive
+		0x0000:  0001 0101
+	    Option Capabilities Advertisement (2), length: 6
+	      Unknown (73), length: 4
+		no decoder for Capability 73
+		0x0000:  0272 3300
+	    Option Capabilities Advertisement (2), length: 4
+	      Graceful Restart (64), length: 2
+		Restart Flags: [none], Restart Time 120s
+		0x0000:  0078
+	    Option Capabilities Advertisement (2), length: 9
+	      Long-lived Graceful Restart (71), length: 7
+		0x0000:  0001 0180 0000 00
+17:37:13.597563 swp2  Out IP6 (class 0xc0, flowlabel 0x11b08, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:fea8:78a9.58466 > fe80::a8c1:abff:fedb:b038.bgp: Flags [.], cksum 0xcd11 (incorrect -> 0xafe4), seq 1, ack 105, win 251, options [nop,nop,TS val 3164199903 ecr 1433235430], length 0
+17:37:13.597581 swp2  Out IP6 (class 0xc0, flowlabel 0x9325d, hlim 1, next-header TCP (6) payload length: 136) fe80::a8c1:abff:fea8:78a9.bgp > fe80::a8c1:abff:fedb:b038.54462: Flags [P.], cksum 0xcd79 (incorrect -> 0xed55), seq 1:105, ack 105, win 250, options [nop,nop,TS val 3164199903 ecr 1433235429], length 104: BGP
+	Open Message (1), length: 104
+	  Version 4, my AS 65001, Holdtime 9s, ID 10.0.0.1
+	  Optional parameters, length: 75
+	    Option Capabilities Advertisement (2), length: 6
+	      Multiprotocol Extensions (1), length: 4
+		AFI IPv4 (1), SAFI Unicast (1)
+		0x0000:  0001 0001
+	    Option Capabilities Advertisement (2), length: 8
+	      Extended Next Hop Encoding (5), length: 6
+		no decoder for Capability 5
+		0x0000:  0001 0001 0002
+	    Option Capabilities Advertisement (2), length: 2
+	      Route Refresh (Cisco) (128), length: 0
+	    Option Capabilities Advertisement (2), length: 2
+	      Route Refresh (2), length: 0
+	    Option Capabilities Advertisement (2), length: 2
+	      Enhanced Route Refresh (70), length: 0
+		no decoder for Capability 70
+	    Option Capabilities Advertisement (2), length: 6
+	      32-Bit AS Number (65), length: 4
+		 4 Byte AS 65001
+		0x0000:  0000 fde9
+	    Option Capabilities Advertisement (2), length: 2
+	      Unknown (6), length: 0
+		no decoder for Capability 6
+	    Option Capabilities Advertisement (2), length: 6
+	      Multiple Paths (69), length: 4
+		AFI IPv4 (1), SAFI Unicast (1), Send/Receive: Receive
+		0x0000:  0001 0101
+	    Option Capabilities Advertisement (2), length: 6
+	      Unknown (73), length: 4
+		no decoder for Capability 73
+		0x0000:  0272 3100
+	    Option Capabilities Advertisement (2), length: 4
+	      Graceful Restart (64), length: 2
+		Restart Flags: [none], Restart Time 120s
+		0x0000:  0078
+	    Option Capabilities Advertisement (2), length: 9
+	      Long-lived Graceful Restart (71), length: 7
+		0x0000:  0001 0180 0000 00
+17:37:13.597589 swp1  Out IP6 (class 0xc0, flowlabel 0x20492, hlim 1, next-header TCP (6) payload length: 136) fe80::a8c1:abff:feca:48ad.bgp > fe80::a8c1:abff:feb1:809a.48368: Flags [P.], cksum 0x6dd7 (incorrect -> 0x5dcc), seq 1:105, ack 105, win 250, options [nop,nop,TS val 1695157925 ecr 1308454788], length 104: BGP
+	Open Message (1), length: 104
+	  Version 4, my AS 65001, Holdtime 9s, ID 10.0.0.1
+	  Optional parameters, length: 75
+	    Option Capabilities Advertisement (2), length: 6
+	      Multiprotocol Extensions (1), length: 4
+		AFI IPv4 (1), SAFI Unicast (1)
+		0x0000:  0001 0001
+	    Option Capabilities Advertisement (2), length: 8
+	      Extended Next Hop Encoding (5), length: 6
+		no decoder for Capability 5
+		0x0000:  0001 0001 0002
+	    Option Capabilities Advertisement (2), length: 2
+	      Route Refresh (Cisco) (128), length: 0
+	    Option Capabilities Advertisement (2), length: 2
+	      Route Refresh (2), length: 0
+	    Option Capabilities Advertisement (2), length: 2
+	      Enhanced Route Refresh (70), length: 0
+		no decoder for Capability 70
+	    Option Capabilities Advertisement (2), length: 6
+	      32-Bit AS Number (65), length: 4
+		 4 Byte AS 65001
+		0x0000:  0000 fde9
+	    Option Capabilities Advertisement (2), length: 2
+	      Unknown (6), length: 0
+		no decoder for Capability 6
+	    Option Capabilities Advertisement (2), length: 6
+	      Multiple Paths (69), length: 4
+		AFI IPv4 (1), SAFI Unicast (1), Send/Receive: Receive
+		0x0000:  0001 0101
+	    Option Capabilities Advertisement (2), length: 6
+	      Unknown (73), length: 4
+		no decoder for Capability 73
+		0x0000:  0272 3100
+	    Option Capabilities Advertisement (2), length: 4
+	      Graceful Restart (64), length: 2
+		Restart Flags: [none], Restart Time 120s
+		0x0000:  0078
+	    Option Capabilities Advertisement (2), length: 9
+	      Long-lived Graceful Restart (71), length: 7
+		0x0000:  0001 0180 0000 00
+17:37:13.597597 swp1  Out IP6 (class 0xc0, flowlabel 0xffbf9, hlim 1, next-header TCP (6) payload length: 136) fe80::a8c1:abff:feca:48ad.53270 > fe80::a8c1:abff:feb1:809a.bgp: Flags [P.], cksum 0x6dd7 (incorrect -> 0xc9a0), seq 1:105, ack 105, win 251, options [nop,nop,TS val 1695157925 ecr 1308454788], length 104: BGP
+	Open Message (1), length: 104
+	  Version 4, my AS 65001, Holdtime 9s, ID 10.0.0.1
+	  Optional parameters, length: 75
+	    Option Capabilities Advertisement (2), length: 6
+	      Multiprotocol Extensions (1), length: 4
+		AFI IPv4 (1), SAFI Unicast (1)
+		0x0000:  0001 0001
+	    Option Capabilities Advertisement (2), length: 8
+	      Extended Next Hop Encoding (5), length: 6
+		no decoder for Capability 5
+		0x0000:  0001 0001 0002
+	    Option Capabilities Advertisement (2), length: 2
+	      Route Refresh (Cisco) (128), length: 0
+	    Option Capabilities Advertisement (2), length: 2
+	      Route Refresh (2), length: 0
+	    Option Capabilities Advertisement (2), length: 2
+	      Enhanced Route Refresh (70), length: 0
+		no decoder for Capability 70
+	    Option Capabilities Advertisement (2), length: 6
+	      32-Bit AS Number (65), length: 4
+		 4 Byte AS 65001
+		0x0000:  0000 fde9
+	    Option Capabilities Advertisement (2), length: 2
+	      Unknown (6), length: 0
+		no decoder for Capability 6
+	    Option Capabilities Advertisement (2), length: 6
+	      Multiple Paths (69), length: 4
+		AFI IPv4 (1), SAFI Unicast (1), Send/Receive: Receive
+		0x0000:  0001 0101
+	    Option Capabilities Advertisement (2), length: 6
+	      Unknown (73), length: 4
+		no decoder for Capability 73
+		0x0000:  0272 3100
+	    Option Capabilities Advertisement (2), length: 4
+	      Graceful Restart (64), length: 2
+		Restart Flags: [none], Restart Time 120s
+		0x0000:  0078
+	    Option Capabilities Advertisement (2), length: 9
+	      Long-lived Graceful Restart (71), length: 7
+		0x0000:  0001 0180 0000 00
+17:37:13.597599 swp2  Out IP6 (class 0xc0, flowlabel 0x11b08, hlim 1, next-header TCP (6) payload length: 136) fe80::a8c1:abff:fea8:78a9.58466 > fe80::a8c1:abff:fedb:b038.bgp: Flags [P.], cksum 0xcd79 (incorrect -> 0xa79f), seq 1:105, ack 105, win 251, options [nop,nop,TS val 3164199903 ecr 1433235430], length 104: BGP
+	Open Message (1), length: 104
+	  Version 4, my AS 65001, Holdtime 9s, ID 10.0.0.1
+	  Optional parameters, length: 75
+	    Option Capabilities Advertisement (2), length: 6
+	      Multiprotocol Extensions (1), length: 4
+		AFI IPv4 (1), SAFI Unicast (1)
+		0x0000:  0001 0001
+	    Option Capabilities Advertisement (2), length: 8
+	      Extended Next Hop Encoding (5), length: 6
+		no decoder for Capability 5
+		0x0000:  0001 0001 0002
+	    Option Capabilities Advertisement (2), length: 2
+	      Route Refresh (Cisco) (128), length: 0
+	    Option Capabilities Advertisement (2), length: 2
+	      Route Refresh (2), length: 0
+	    Option Capabilities Advertisement (2), length: 2
+	      Enhanced Route Refresh (70), length: 0
+		no decoder for Capability 70
+	    Option Capabilities Advertisement (2), length: 6
+	      32-Bit AS Number (65), length: 4
+		 4 Byte AS 65001
+		0x0000:  0000 fde9
+	    Option Capabilities Advertisement (2), length: 2
+	      Unknown (6), length: 0
+		no decoder for Capability 6
+	    Option Capabilities Advertisement (2), length: 6
+	      Multiple Paths (69), length: 4
+		AFI IPv4 (1), SAFI Unicast (1), Send/Receive: Receive
+		0x0000:  0001 0101
+	    Option Capabilities Advertisement (2), length: 6
+	      Unknown (73), length: 4
+		no decoder for Capability 73
+		0x0000:  0272 3100
+	    Option Capabilities Advertisement (2), length: 4
+	      Graceful Restart (64), length: 2
+		Restart Flags: [none], Restart Time 120s
+		0x0000:  0078
+	    Option Capabilities Advertisement (2), length: 9
+	      Long-lived Graceful Restart (71), length: 7
+		0x0000:  0001 0180 0000 00
+17:37:13.597619 swp2  In  IP6 (class 0xc0, flowlabel 0x3f624, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:fedb:b038.54462 > fe80::a8c1:abff:fea8:78a9.bgp: Flags [.], cksum 0xf530 (correct), seq 105, ack 105, win 251, options [nop,nop,TS val 1433235430 ecr 3164199903], length 0
+17:37:13.597628 swp1  In  IP6 (class 0xc0, flowlabel 0x514d5, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:feb1:809a.48368 > fe80::a8c1:abff:feca:48ad.bgp: Flags [.], cksum 0x65a7 (correct), seq 105, ack 105, win 251, options [nop,nop,TS val 1308454789 ecr 1695157925], length 0
+17:37:13.597628 swp1  In  IP6 (class 0xc0, flowlabel 0x13d61, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:feb1:809a.bgp > fe80::a8c1:abff:feca:48ad.53270: Flags [.], cksum 0xd17c (correct), seq 105, ack 105, win 251, options [nop,nop,TS val 1308454789 ecr 1695157925], length 0
+17:37:13.597637 swp2  In  IP6 (class 0xc0, flowlabel 0x51c9c, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:fedb:b038.bgp > fe80::a8c1:abff:fea8:78a9.58466: Flags [.], cksum 0xaf7c (correct), seq 105, ack 105, win 251, options [nop,nop,TS val 1433235430 ecr 3164199903], length 0
+17:37:13.597639 swp2  Out IP6 (class 0xc0, flowlabel 0x11b08, hlim 1, next-header TCP (6) payload length: 53) fe80::a8c1:abff:fea8:78a9.58466 > fe80::a8c1:abff:fedb:b038.bgp: Flags [P.], cksum 0xcd26 (incorrect -> 0xa544), seq 105:126, ack 105, win 251, options [nop,nop,TS val 3164199903 ecr 1433235430], length 21: BGP
+	Notification Message (3), length: 21, Cease (6), subcode Connection Collision Resolution (7)
+17:37:13.597659 swp1  In  IP6 (class 0xc0, flowlabel 0x13d61, hlim 1, next-header TCP (6) payload length: 53) fe80::a8c1:abff:feb1:809a.bgp > fe80::a8c1:abff:feca:48ad.53270: Flags [P.], cksum 0xc744 (correct), seq 105:126, ack 105, win 251, options [nop,nop,TS val 1308454789 ecr 1695157925], length 21: BGP
+	Notification Message (3), length: 21, Cease (6), subcode Connection Collision Resolution (7)
+17:37:13.597664 swp2  In  IP6 (class 0xc0, flowlabel 0x51c9c, hlim 1, next-header TCP (6) payload length: 53) fe80::a8c1:abff:fedb:b038.bgp > fe80::a8c1:abff:fea8:78a9.58466: Flags [P.], cksum 0xa544 (correct), seq 105:126, ack 105, win 251, options [nop,nop,TS val 1433235430 ecr 3164199903], length 21: BGP
+	Notification Message (3), length: 21, Cease (6), subcode Connection Collision Resolution (7)
+17:37:13.597667 swp1  Out IP6 (class 0xc0, flowlabel 0xffbf9, hlim 1, next-header TCP (6) payload length: 53) fe80::a8c1:abff:feca:48ad.53270 > fe80::a8c1:abff:feb1:809a.bgp: Flags [P.], cksum 0x6d84 (incorrect -> 0xc72f), seq 105:126, ack 126, win 251, options [nop,nop,TS val 1695157925 ecr 1308454789], length 21: BGP
+	Notification Message (3), length: 21, Cease (6), subcode Connection Collision Resolution (7)
+17:37:13.597675 swp1  Out IP6 (class 0xc0, flowlabel 0xffbf9, hlim 1, next-header TCP (6) payload length: 53) fe80::a8c1:abff:feca:48ad.53270 > fe80::a8c1:abff:feb1:809a.bgp: Flags [P.], cksum 0x6d84 (incorrect -> 0xc71a), seq 126:147, ack 126, win 251, options [nop,nop,TS val 1695157925 ecr 1308454789], length 21: BGP
+	Notification Message (3), length: 21, Cease (6), subcode Connection Collision Resolution (7)
+17:37:13.597684 swp1  In  IP6 (class 0xc0, flowlabel 0x514d5, hlim 1, next-header TCP (6) payload length: 51) fe80::a8c1:abff:feb1:809a.48368 > fe80::a8c1:abff:feca:48ad.bgp: Flags [P.], cksum 0x6179 (correct), seq 105:124, ack 105, win 251, options [nop,nop,TS val 1308454789 ecr 1695157925], length 19: BGP
+	Keepalive Message (4), length: 19
+17:37:13.597694 swp2  In  IP6 (class 0xc0, flowlabel 0x3f624, hlim 1, next-header TCP (6) payload length: 51) fe80::a8c1:abff:fedb:b038.54462 > fe80::a8c1:abff:fea8:78a9.bgp: Flags [P.], cksum 0xf102 (correct), seq 105:124, ack 105, win 251, options [nop,nop,TS val 1433235430 ecr 3164199903], length 19: BGP
+	Keepalive Message (4), length: 19
+17:37:13.597710 swp1  In  IP6 (class 0xc0, flowlabel 0x13d61, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:feb1:809a.bgp > fe80::a8c1:abff:feca:48ad.53270: Flags [.], cksum 0xd13d (correct), seq 126, ack 147, win 251, options [nop,nop,TS val 1308454789 ecr 1695157925], length 0
+17:37:13.597710 swp1  In  IP6 (class 0xc0, flowlabel 0x13d61, hlim 1, next-header TCP (6) payload length: 53) fe80::a8c1:abff:feb1:809a.bgp > fe80::a8c1:abff:feca:48ad.53270: Flags [P.], cksum 0xc705 (correct), seq 126:147, ack 147, win 251, options [nop,nop,TS val 1308454789 ecr 1695157925], length 21: BGP
+	Notification Message (3), length: 21, Cease (6), subcode Connection Collision Resolution (7)
+17:37:13.598091 swp2  In  IP6 (class 0xc0, flowlabel 0x51c9c, hlim 1, next-header TCP (6) payload length: 53) fe80::a8c1:abff:fedb:b038.bgp > fe80::a8c1:abff:fea8:78a9.58466: Flags [P.], cksum 0xa51a (correct), seq 126:147, ack 126, win 251, options [nop,nop,TS val 1433235430 ecr 3164199903], length 21: BGP
+	Notification Message (3), length: 21, Cease (6), subcode Connection Collision Resolution (7)
+17:37:13.598101 swp2  Out IP6 (class 0xc0, flowlabel 0x11b08, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:fea8:78a9.58466 > fe80::a8c1:abff:fedb:b038.bgp: Flags [.], cksum 0xcd11 (incorrect -> 0xaf3c), seq 126, ack 147, win 251, options [nop,nop,TS val 3164199904 ecr 1433235430], length 0
+17:37:13.598110 swp2  Out IP6 (class 0xc0, flowlabel 0x9325d, hlim 1, next-header TCP (6) payload length: 51) fe80::a8c1:abff:fea8:78a9.bgp > fe80::a8c1:abff:fedb:b038.54462: Flags [P.], cksum 0xcd24 (incorrect -> 0xf0ef), seq 105:124, ack 124, win 250, options [nop,nop,TS val 3164199904 ecr 1433235430], length 19: BGP
+	Keepalive Message (4), length: 19
+17:37:13.598113 swp1  Out IP6 (class 0xc0, flowlabel 0x20492, hlim 1, next-header TCP (6) payload length: 51) fe80::a8c1:abff:feca:48ad.bgp > fe80::a8c1:abff:feb1:809a.48368: Flags [P.], cksum 0x6d82 (incorrect -> 0x6166), seq 105:124, ack 124, win 250, options [nop,nop,TS val 1695157926 ecr 1308454789], length 19: BGP
+	Keepalive Message (4), length: 19
+17:37:13.598217 swp2  In  IP6 (class 0xc0, flowlabel 0x51c9c, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:fedb:b038.bgp > fe80::a8c1:abff:fea8:78a9.58466: Flags [F.], cksum 0xaf3b (correct), seq 147, ack 126, win 251, options [nop,nop,TS val 1433235430 ecr 3164199904], length 0
+17:37:13.598255 swp1  Out IP6 (class 0xc0, flowlabel 0xffbf9, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:feca:48ad.53270 > fe80::a8c1:abff:feb1:809a.bgp: Flags [F.], cksum 0x6d6f (incorrect -> 0xd126), seq 147, ack 147, win 251, options [nop,nop,TS val 1695157926 ecr 1308454789], length 0
+17:37:13.598274 swp2  Out IP6 (class 0xc0, flowlabel 0x11b08, hlim 1, next-header TCP (6) payload length: 53) fe80::a8c1:abff:fea8:78a9.58466 > fe80::a8c1:abff:fedb:b038.bgp: Flags [P.], cksum 0xcd26 (incorrect -> 0xa503), seq 126:147, ack 148, win 251, options [nop,nop,TS val 3164199904 ecr 1433235430], length 21: BGP
+	Notification Message (3), length: 21, Cease (6), subcode Connection Collision Resolution (7)
+17:37:13.598318 swp2  In  IP6 (class 0xc0, flowlabel 0x51c9c, hlim 64, next-header TCP (6) payload length: 20) fe80::a8c1:abff:fedb:b038.bgp > fe80::a8c1:abff:fea8:78a9.58466: Flags [R], cksum 0x7984 (correct), seq 2289630178, win 0, length 0
+17:37:13.598584 swp1  In  IP6 (class 0xc0, flowlabel 0x13d61, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:feb1:809a.bgp > fe80::a8c1:abff:feca:48ad.53270: Flags [F.], cksum 0xd124 (correct), seq 147, ack 148, win 251, options [nop,nop,TS val 1308454790 ecr 1695157926], length 0
+17:37:13.598588 swp1  Out IP6 (class 0xc0, flowlabel 0xffbf9, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:feca:48ad.53270 > fe80::a8c1:abff:feb1:809a.bgp: Flags [.], cksum 0x6d6f (incorrect -> 0xd124), seq 148, ack 148, win 251, options [nop,nop,TS val 1695157926 ecr 1308454790], length 0
+17:37:13.638582 swp1  In  IP6 (class 0xc0, flowlabel 0x514d5, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:feb1:809a.48368 > fe80::a8c1:abff:feca:48ad.bgp: Flags [.], cksum 0x6557 (correct), seq 124, ack 124, win 251, options [nop,nop,TS val 1308454830 ecr 1695157926], length 0
+17:37:13.641391 swp2  In  IP6 (class 0xc0, flowlabel 0x3f624, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:fedb:b038.54462 > fe80::a8c1:abff:fea8:78a9.bgp: Flags [.], cksum 0xf4dd (correct), seq 124, ack 124, win 251, options [nop,nop,TS val 1433235474 ecr 3164199904], length 0
+17:37:14.749248 swp2  In  IP6 (class 0xc0, flowlabel 0x3f624, hlim 1, next-header TCP (6) payload length: 232) fe80::a8c1:abff:fedb:b038.54462 > fe80::a8c1:abff:fea8:78a9.bgp: Flags [P.], cksum 0x74c5 (correct), seq 124:324, ack 124, win 251, options [nop,nop,TS val 1433236581 ecr 3164199904], length 200: BGP
+	Update Message (2), length: 87
+	  Multi-Protocol Reach NLRI (14), length: 42, Flags [OE]: 
+	    AFI: IPv4 (1), SAFI: Unicast (1)
+	    nexthop: 254.128.0.0, 0.0.0.0, 168.193.171.255, 254.219.176.56, 254.128.0.0, 0.0.0.0, 168.193.171.255, 254.219.176.56, nh-length: 32, no SNPA
+	      10.0.0.2/32
+	    0x0000:  0001 0120 fe80 0000 0000 0000 a8c1 abff
+	    0x0010:  fedb b038 fe80 0000 0000 0000 a8c1 abff
+	    0x0020:  fedb b038 0020 0a00 0002
+	  Origin (1), length: 1, Flags [T]: Incomplete
+	    0x0000:  02
+	  AS Path (2), length: 10, Flags [TE]: 65003 65002 
+	    0x0000:  0202 0000 fdeb 0000 fdea
+	Update Message (2), length: 90
+	  Multi-Protocol Reach NLRI (14), length: 42, Flags [OE]: 
+	    AFI: IPv4 (1), SAFI: Unicast (1)
+	    nexthop: 254.128.0.0, 0.0.0.0, 168.193.171.255, 254.219.176.56, 254.128.0.0, 0.0.0.0, 168.193.171.255, 254.219.176.56, nh-length: 32, no SNPA
+	      10.0.0.3/32
+	    0x0000:  0001 0120 fe80 0000 0000 0000 a8c1 abff
+	    0x0010:  fedb b038 fe80 0000 0000 0000 a8c1 abff
+	    0x0020:  fedb b038 0020 0a00 0003
+	  Origin (1), length: 1, Flags [T]: Incomplete
+	    0x0000:  02
+	  AS Path (2), length: 6, Flags [TE]: 65003 
+	    0x0000:  0201 0000 fdeb
+	  Multi Exit Discriminator (4), length: 4, Flags [O]: 0
+	    0x0000:  0000 0000
+	Update Message (2), length: 23
+	  End-of-Rib Marker (empty NLRI)
+17:37:14.749330 swp1  In  IP6 (class 0xc0, flowlabel 0x514d5, hlim 1, next-header TCP (6) payload length: 232) fe80::a8c1:abff:feb1:809a.48368 > fe80::a8c1:abff:feca:48ad.bgp: Flags [P.], cksum 0xa958 (correct), seq 124:324, ack 124, win 251, options [nop,nop,TS val 1308455940 ecr 1695157926], length 200: BGP
+	Update Message (2), length: 90
+	  Multi-Protocol Reach NLRI (14), length: 42, Flags [OE]: 
+	    AFI: IPv4 (1), SAFI: Unicast (1)
+	    nexthop: 254.128.0.0, 0.0.0.0, 168.193.171.255, 254.177.128.154, 254.128.0.0, 0.0.0.0, 168.193.171.255, 254.177.128.154, nh-length: 32, no SNPA
+	      10.0.0.2/32
+	    0x0000:  0001 0120 fe80 0000 0000 0000 a8c1 abff
+	    0x0010:  feb1 809a fe80 0000 0000 0000 a8c1 abff
+	    0x0020:  feb1 809a 0020 0a00 0002
+	  Origin (1), length: 1, Flags [T]: Incomplete
+	    0x0000:  02
+	  AS Path (2), length: 6, Flags [TE]: 65002 
+	    0x0000:  0201 0000 fdea
+	  Multi Exit Discriminator (4), length: 4, Flags [O]: 0
+	    0x0000:  0000 0000
+	Update Message (2), length: 87
+	  Multi-Protocol Reach NLRI (14), length: 42, Flags [OE]: 
+	    AFI: IPv4 (1), SAFI: Unicast (1)
+	    nexthop: 254.128.0.0, 0.0.0.0, 168.193.171.255, 254.177.128.154, 254.128.0.0, 0.0.0.0, 168.193.171.255, 254.177.128.154, nh-length: 32, no SNPA
+	      10.0.0.3/32
+	    0x0000:  0001 0120 fe80 0000 0000 0000 a8c1 abff
+	    0x0010:  feb1 809a fe80 0000 0000 0000 a8c1 abff
+	    0x0020:  feb1 809a 0020 0a00 0003
+	  Origin (1), length: 1, Flags [T]: Incomplete
+	    0x0000:  02
+	  AS Path (2), length: 10, Flags [TE]: 65002 65003 
+	    0x0000:  0202 0000 fdea 0000 fdeb
+	Update Message (2), length: 23
+	  End-of-Rib Marker (empty NLRI)
+17:37:14.789826 swp1  Out IP6 (class 0xc0, flowlabel 0x20492, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:feca:48ad.bgp > fe80::a8c1:abff:feb1:809a.48368: Flags [.], cksum 0x6d6f (incorrect -> 0x5b92), seq 124, ack 324, win 250, options [nop,nop,TS val 1695159118 ecr 1308455940], length 0
+17:37:14.789839 swp2  Out IP6 (class 0xc0, flowlabel 0x9325d, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:fea8:78a9.bgp > fe80::a8c1:abff:fedb:b038.54462: Flags [.], cksum 0xcd11 (incorrect -> 0xeb1b), seq 124, ack 324, win 250, options [nop,nop,TS val 3164201096 ecr 1433236581], length 0
+17:37:14.801944 swp2  Out IP6 (class 0xc0, flowlabel 0x9325d, hlim 1, next-header TCP (6) payload length: 319) fe80::a8c1:abff:fea8:78a9.bgp > fe80::a8c1:abff:fedb:b038.54462: Flags [P.], cksum 0xce30 (incorrect -> 0x1e4b), seq 124:411, ack 324, win 250, options [nop,nop,TS val 3164201108 ecr 1433236581], length 287: BGP
+	Update Message (2), length: 90
+	  Multi-Protocol Reach NLRI (14), length: 42, Flags [OE]: 
+	    AFI: IPv4 (1), SAFI: Unicast (1)
+	    nexthop: 254.128.0.0, 0.0.0.0, 168.193.171.255, 254.168.120.169, 254.128.0.0, 0.0.0.0, 168.193.171.255, 254.168.120.169, nh-length: 32, no SNPA
+	      10.0.0.1/32
+	    0x0000:  0001 0120 fe80 0000 0000 0000 a8c1 abff
+	    0x0010:  fea8 78a9 fe80 0000 0000 0000 a8c1 abff
+	    0x0020:  fea8 78a9 0020 0a00 0001
+	  Origin (1), length: 1, Flags [T]: Incomplete
+	    0x0000:  02
+	  AS Path (2), length: 6, Flags [TE]: 65001 
+	    0x0000:  0201 0000 fde9
+	  Multi Exit Discriminator (4), length: 4, Flags [O]: 0
+	    0x0000:  0000 0000
+	Update Message (2), length: 87
+	  Multi-Protocol Reach NLRI (14), length: 42, Flags [OE]: 
+	    AFI: IPv4 (1), SAFI: Unicast (1)
+	    nexthop: 254.128.0.0, 0.0.0.0, 168.193.171.255, 254.168.120.169, 254.128.0.0, 0.0.0.0, 168.193.171.255, 254.168.120.169, nh-length: 32, no SNPA
+	      10.0.0.2/32
+	    0x0000:  0001 0120 fe80 0000 0000 0000 a8c1 abff
+	    0x0010:  fea8 78a9 fe80 0000 0000 0000 a8c1 abff
+	    0x0020:  fea8 78a9 0020 0a00 0002
+	  Origin (1), length: 1, Flags [T]: Incomplete
+	    0x0000:  02
+	  AS Path (2), length: 10, Flags [TE]: 65001 65002 
+	    0x0000:  0202 0000 fde9 0000 fdea
+	Update Message (2), length: 87
+	  Multi-Protocol Reach NLRI (14), length: 42, Flags [OE]: 
+	    AFI: IPv4 (1), SAFI: Unicast (1)
+	    nexthop: 254.128.0.0, 0.0.0.0, 168.193.171.255, 254.168.120.169, 254.128.0.0, 0.0.0.0, 168.193.171.255, 254.168.120.169, nh-length: 32, no SNPA
+	      10.0.0.3/32
+	    0x0000:  0001 0120 fe80 0000 0000 0000 a8c1 abff
+	    0x0010:  fea8 78a9 fe80 0000 0000 0000 a8c1 abff
+	    0x0020:  fea8 78a9 0020 0a00 0003
+	  Origin (1), length: 1, Flags [T]: Incomplete
+	    0x0000:  02
+	  AS Path (2), length: 10, Flags [TE]: 65001 65003 
+	    0x0000:  0202 0000 fde9 0000 fdeb
+	Update Message (2), length: 23
+	  End-of-Rib Marker (empty NLRI)
+17:37:14.801962 swp1  Out IP6 (class 0xc0, flowlabel 0x20492, hlim 1, next-header TCP (6) payload length: 319) fe80::a8c1:abff:feca:48ad.bgp > fe80::a8c1:abff:feb1:809a.48368: Flags [P.], cksum 0x6e8e (incorrect -> 0x5735), seq 124:411, ack 324, win 250, options [nop,nop,TS val 1695159130 ecr 1308455940], length 287: BGP
+	Update Message (2), length: 90
+	  Multi-Protocol Reach NLRI (14), length: 42, Flags [OE]: 
+	    AFI: IPv4 (1), SAFI: Unicast (1)
+	    nexthop: 254.128.0.0, 0.0.0.0, 168.193.171.255, 254.202.72.173, 254.128.0.0, 0.0.0.0, 168.193.171.255, 254.202.72.173, nh-length: 32, no SNPA
+	      10.0.0.1/32
+	    0x0000:  0001 0120 fe80 0000 0000 0000 a8c1 abff
+	    0x0010:  feca 48ad fe80 0000 0000 0000 a8c1 abff
+	    0x0020:  feca 48ad 0020 0a00 0001
+	  Origin (1), length: 1, Flags [T]: Incomplete
+	    0x0000:  02
+	  AS Path (2), length: 6, Flags [TE]: 65001 
+	    0x0000:  0201 0000 fde9
+	  Multi Exit Discriminator (4), length: 4, Flags [O]: 0
+	    0x0000:  0000 0000
+	Update Message (2), length: 87
+	  Multi-Protocol Reach NLRI (14), length: 42, Flags [OE]: 
+	    AFI: IPv4 (1), SAFI: Unicast (1)
+	    nexthop: 254.128.0.0, 0.0.0.0, 168.193.171.255, 254.202.72.173, 254.128.0.0, 0.0.0.0, 168.193.171.255, 254.202.72.173, nh-length: 32, no SNPA
+	      10.0.0.2/32
+	    0x0000:  0001 0120 fe80 0000 0000 0000 a8c1 abff
+	    0x0010:  feca 48ad fe80 0000 0000 0000 a8c1 abff
+	    0x0020:  feca 48ad 0020 0a00 0002
+	  Origin (1), length: 1, Flags [T]: Incomplete
+	    0x0000:  02
+	  AS Path (2), length: 10, Flags [TE]: 65001 65002 
+	    0x0000:  0202 0000 fde9 0000 fdea
+	Update Message (2), length: 87
+	  Multi-Protocol Reach NLRI (14), length: 42, Flags [OE]: 
+	    AFI: IPv4 (1), SAFI: Unicast (1)
+	    nexthop: 254.128.0.0, 0.0.0.0, 168.193.171.255, 254.202.72.173, 254.128.0.0, 0.0.0.0, 168.193.171.255, 254.202.72.173, nh-length: 32, no SNPA
+	      10.0.0.3/32
+	    0x0000:  0001 0120 fe80 0000 0000 0000 a8c1 abff
+	    0x0010:  feca 48ad fe80 0000 0000 0000 a8c1 abff
+	    0x0020:  feca 48ad 0020 0a00 0003
+	  Origin (1), length: 1, Flags [T]: Incomplete
+	    0x0000:  02
+	  AS Path (2), length: 10, Flags [TE]: 65001 65003 
+	    0x0000:  0202 0000 fde9 0000 fdeb
+	Update Message (2), length: 23
+	  End-of-Rib Marker (empty NLRI)
+17:37:14.802046 swp2  In  IP6 (class 0xc0, flowlabel 0x3f624, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:fedb:b038.54462 > fe80::a8c1:abff:fea8:78a9.bgp: Flags [.], cksum 0xe9bb (correct), seq 324, ack 411, win 250, options [nop,nop,TS val 1433236634 ecr 3164201108], length 0
+17:37:14.802066 swp1  In  IP6 (class 0xc0, flowlabel 0x514d5, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:feb1:809a.48368 > fe80::a8c1:abff:feca:48ad.bgp: Flags [.], cksum 0x5a32 (correct), seq 324, ack 411, win 250, options [nop,nop,TS val 1308455993 ecr 1695159130], length 0
+17:37:14.852247 swp1  In  IP6 (class 0xc0, flowlabel 0x514d5, hlim 1, next-header TCP (6) payload length: 119) fe80::a8c1:abff:feb1:809a.48368 > fe80::a8c1:abff:feca:48ad.bgp: Flags [P.], cksum 0x987a (correct), seq 324:411, ack 411, win 250, options [nop,nop,TS val 1308456043 ecr 1695159130], length 87: BGP
+	Update Message (2), length: 87
+	  Multi-Protocol Reach NLRI (14), length: 42, Flags [OE]: 
+	    AFI: IPv4 (1), SAFI: Unicast (1)
+	    nexthop: 254.128.0.0, 0.0.0.0, 168.193.171.255, 254.177.128.154, 254.128.0.0, 0.0.0.0, 168.193.171.255, 254.177.128.154, nh-length: 32, no SNPA
+	      10.0.0.1/32
+	    0x0000:  0001 0120 fe80 0000 0000 0000 a8c1 abff
+	    0x0010:  feb1 809a fe80 0000 0000 0000 a8c1 abff
+	    0x0020:  feb1 809a 0020 0a00 0001
+	  Origin (1), length: 1, Flags [T]: Incomplete
+	    0x0000:  02
+	  AS Path (2), length: 10, Flags [TE]: 65002 65001 
+	    0x0000:  0202 0000 fdea 0000 fde9
+17:37:14.852263 swp1  Out IP6 (class 0xc0, flowlabel 0x20492, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:feca:48ad.bgp > fe80::a8c1:abff:feb1:809a.48368: Flags [.], cksum 0x6d6f (incorrect -> 0x5977), seq 411, ack 411, win 250, options [nop,nop,TS val 1695159180 ecr 1308456043], length 0
+17:37:14.852450 swp2  In  IP6 (class 0xc0, flowlabel 0x3f624, hlim 1, next-header TCP (6) payload length: 119) fe80::a8c1:abff:fedb:b038.54462 > fe80::a8c1:abff:fea8:78a9.bgp: Flags [P.], cksum 0x96a3 (correct), seq 324:411, ack 411, win 250, options [nop,nop,TS val 1433236685 ecr 3164201108], length 87: BGP
+	Update Message (2), length: 87
+	  Multi-Protocol Reach NLRI (14), length: 42, Flags [OE]: 
+	    AFI: IPv4 (1), SAFI: Unicast (1)
+	    nexthop: 254.128.0.0, 0.0.0.0, 168.193.171.255, 254.219.176.56, 254.128.0.0, 0.0.0.0, 168.193.171.255, 254.219.176.56, nh-length: 32, no SNPA
+	      10.0.0.1/32
+	    0x0000:  0001 0120 fe80 0000 0000 0000 a8c1 abff
+	    0x0010:  fedb b038 fe80 0000 0000 0000 a8c1 abff
+	    0x0020:  fedb b038 0020 0a00 0001
+	  Origin (1), length: 1, Flags [T]: Incomplete
+	    0x0000:  02
+	  AS Path (2), length: 10, Flags [TE]: 65003 65001 
+	    0x0000:  0202 0000 fdeb 0000 fde9
+17:37:14.852453 swp2  Out IP6 (class 0xc0, flowlabel 0x9325d, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:fea8:78a9.bgp > fe80::a8c1:abff:fedb:b038.54462: Flags [.], cksum 0xcd11 (incorrect -> 0xe8ff), seq 411, ack 411, win 250, options [nop,nop,TS val 3164201158 ecr 1433236685], length 0
+17:37:16.597934 swp2  In  IP6 (class 0xc0, flowlabel 0x3f624, hlim 1, next-header TCP (6) payload length: 51) fe80::a8c1:abff:fedb:b038.54462 > fe80::a8c1:abff:fea8:78a9.bgp: Flags [P.], cksum 0xde00 (correct), seq 411:430, ack 411, win 250, options [nop,nop,TS val 1433238430 ecr 3164201158], length 19: BGP
+	Keepalive Message (4), length: 19
+17:37:16.597974 swp2  Out IP6 (class 0xc0, flowlabel 0x9325d, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:fea8:78a9.bgp > fe80::a8c1:abff:fedb:b038.54462: Flags [.], cksum 0xcd11 (incorrect -> 0xdb49), seq 411, ack 430, win 250, options [nop,nop,TS val 3164202904 ecr 1433238430], length 0
+17:37:16.597987 swp1  In  IP6 (class 0xc0, flowlabel 0x514d5, hlim 1, next-header TCP (6) payload length: 51) fe80::a8c1:abff:feb1:809a.48368 > fe80::a8c1:abff:feca:48ad.bgp: Flags [P.], cksum 0x4e77 (correct), seq 411:430, ack 411, win 250, options [nop,nop,TS val 1308457789 ecr 1695159180], length 19: BGP
+	Keepalive Message (4), length: 19
+17:37:16.597993 swp1  Out IP6 (class 0xc0, flowlabel 0x20492, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:feca:48ad.bgp > fe80::a8c1:abff:feb1:809a.48368: Flags [.], cksum 0x6d6f (incorrect -> 0x4bc0), seq 411, ack 430, win 250, options [nop,nop,TS val 1695160926 ecr 1308457789], length 0
+17:37:16.602003 swp2  Out IP6 (class 0xc0, flowlabel 0x9325d, hlim 1, next-header TCP (6) payload length: 51) fe80::a8c1:abff:fea8:78a9.bgp > fe80::a8c1:abff:fedb:b038.54462: Flags [P.], cksum 0xcd24 (incorrect -> 0xd717), seq 411:430, ack 430, win 250, options [nop,nop,TS val 3164202908 ecr 1433238430], length 19: BGP
+	Keepalive Message (4), length: 19
+17:37:16.602029 swp1  Out IP6 (class 0xc0, flowlabel 0x20492, hlim 1, next-header TCP (6) payload length: 51) fe80::a8c1:abff:feca:48ad.bgp > fe80::a8c1:abff:feb1:809a.48368: Flags [P.], cksum 0x6d82 (incorrect -> 0x478e), seq 411:430, ack 430, win 250, options [nop,nop,TS val 1695160930 ecr 1308457789], length 19: BGP
+	Keepalive Message (4), length: 19
+17:37:16.602062 swp2  In  IP6 (class 0xc0, flowlabel 0x3f624, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:fedb:b038.54462 > fe80::a8c1:abff:fea8:78a9.bgp: Flags [.], cksum 0xdb2e (correct), seq 430, ack 430, win 250, options [nop,nop,TS val 1433238434 ecr 3164202908], length 0
+17:37:16.602082 swp1  In  IP6 (class 0xc0, flowlabel 0x514d5, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:feb1:809a.48368 > fe80::a8c1:abff:feca:48ad.bgp: Flags [.], cksum 0x4ba5 (correct), seq 430, ack 430, win 250, options [nop,nop,TS val 1308457793 ecr 1695160930], length 0
+17:37:19.598021 swp2  In  IP6 (class 0xc0, flowlabel 0x3f624, hlim 1, next-header TCP (6) payload length: 51) fe80::a8c1:abff:fedb:b038.54462 > fe80::a8c1:abff:fea8:78a9.bgp: Flags [P.], cksum 0xcb4c (correct), seq 430:449, ack 430, win 250, options [nop,nop,TS val 1433241430 ecr 3164202908], length 19: BGP
+	Keepalive Message (4), length: 19
+17:37:19.598049 swp1  In  IP6 (class 0xc0, flowlabel 0x514d5, hlim 1, next-header TCP (6) payload length: 51) fe80::a8c1:abff:feb1:809a.48368 > fe80::a8c1:abff:feca:48ad.bgp: Flags [P.], cksum 0x3bc3 (correct), seq 430:449, ack 430, win 250, options [nop,nop,TS val 1308460789 ecr 1695160930], length 19: BGP
+	Keepalive Message (4), length: 19
+17:37:19.602077 swp2  Out IP6 (class 0xc0, flowlabel 0x9325d, hlim 1, next-header TCP (6) payload length: 51) fe80::a8c1:abff:fea8:78a9.bgp > fe80::a8c1:abff:fedb:b038.54462: Flags [P.], cksum 0xcd24 (incorrect -> 0xbf81), seq 430:449, ack 449, win 250, options [nop,nop,TS val 3164205908 ecr 1433241430], length 19: BGP
+	Keepalive Message (4), length: 19
+17:37:19.602113 swp1  Out IP6 (class 0xc0, flowlabel 0x20492, hlim 1, next-header TCP (6) payload length: 51) fe80::a8c1:abff:feca:48ad.bgp > fe80::a8c1:abff:feb1:809a.48368: Flags [P.], cksum 0x6d82 (incorrect -> 0x2ff8), seq 430:449, ack 449, win 250, options [nop,nop,TS val 1695163930 ecr 1308460789], length 19: BGP
+	Keepalive Message (4), length: 19
+17:37:19.602241 swp2  In  IP6 (class 0xc0, flowlabel 0x3f624, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:fedb:b038.54462 > fe80::a8c1:abff:fea8:78a9.bgp: Flags [.], cksum 0xc398 (correct), seq 449, ack 449, win 250, options [nop,nop,TS val 1433241434 ecr 3164205908], length 0
+17:37:19.602278 swp1  In  IP6 (class 0xc0, flowlabel 0x514d5, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:feb1:809a.48368 > fe80::a8c1:abff:feca:48ad.bgp: Flags [.], cksum 0x340f (correct), seq 449, ack 449, win 250, options [nop,nop,TS val 1308460793 ecr 1695163930], length 0
+17:37:22.598098 swp2  In  IP6 (class 0xc0, flowlabel 0x3f624, hlim 1, next-header TCP (6) payload length: 51) fe80::a8c1:abff:fedb:b038.54462 > fe80::a8c1:abff:fea8:78a9.bgp: Flags [P.], cksum 0xb3b6 (correct), seq 449:468, ack 449, win 250, options [nop,nop,TS val 1433244430 ecr 3164205908], length 19: BGP
+	Keepalive Message (4), length: 19
+17:37:22.598126 swp1  In  IP6 (class 0xc0, flowlabel 0x514d5, hlim 1, next-header TCP (6) payload length: 51) fe80::a8c1:abff:feb1:809a.48368 > fe80::a8c1:abff:feca:48ad.bgp: Flags [P.], cksum 0x242d (correct), seq 449:468, ack 449, win 250, options [nop,nop,TS val 1308463789 ecr 1695163930], length 19: BGP
+	Keepalive Message (4), length: 19
+17:37:22.602133 swp2  Out IP6 (class 0xc0, flowlabel 0x9325d, hlim 1, next-header TCP (6) payload length: 51) fe80::a8c1:abff:fea8:78a9.bgp > fe80::a8c1:abff:fedb:b038.54462: Flags [P.], cksum 0xcd24 (incorrect -> 0xa7eb), seq 449:468, ack 468, win 250, options [nop,nop,TS val 3164208908 ecr 1433244430], length 19: BGP
+	Keepalive Message (4), length: 19
+17:37:22.602153 swp1  Out IP6 (class 0xc0, flowlabel 0x20492, hlim 1, next-header TCP (6) payload length: 51) fe80::a8c1:abff:feca:48ad.bgp > fe80::a8c1:abff:feb1:809a.48368: Flags [P.], cksum 0x6d82 (incorrect -> 0x1862), seq 449:468, ack 468, win 250, options [nop,nop,TS val 1695166930 ecr 1308463789], length 19: BGP
+	Keepalive Message (4), length: 19
+17:37:22.602232 swp2  In  IP6 (class 0xc0, flowlabel 0x3f624, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:fedb:b038.54462 > fe80::a8c1:abff:fea8:78a9.bgp: Flags [.], cksum 0xac02 (correct), seq 468, ack 468, win 250, options [nop,nop,TS val 1433244434 ecr 3164208908], length 0
+17:37:22.602242 swp1  In  IP6 (class 0xc0, flowlabel 0x514d5, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:feb1:809a.48368 > fe80::a8c1:abff:feca:48ad.bgp: Flags [.], cksum 0x1c79 (correct), seq 468, ack 468, win 250, options [nop,nop,TS val 1308463793 ecr 1695166930], length 0
+17:37:25.598138 swp2  In  IP6 (class 0xc0, flowlabel 0x3f624, hlim 1, next-header TCP (6) payload length: 51) fe80::a8c1:abff:fedb:b038.54462 > fe80::a8c1:abff:fea8:78a9.bgp: Flags [P.], cksum 0x9c20 (correct), seq 468:487, ack 468, win 250, options [nop,nop,TS val 1433247430 ecr 3164208908], length 19: BGP
+	Keepalive Message (4), length: 19
+17:37:25.598167 swp1  In  IP6 (class 0xc0, flowlabel 0x514d5, hlim 1, next-header TCP (6) payload length: 51) fe80::a8c1:abff:feb1:809a.48368 > fe80::a8c1:abff:feca:48ad.bgp: Flags [P.], cksum 0x0c97 (correct), seq 468:487, ack 468, win 250, options [nop,nop,TS val 1308466789 ecr 1695166930], length 19: BGP
+	Keepalive Message (4), length: 19
+17:37:25.602183 swp2  Out IP6 (class 0xc0, flowlabel 0x9325d, hlim 1, next-header TCP (6) payload length: 51) fe80::a8c1:abff:fea8:78a9.bgp > fe80::a8c1:abff:fedb:b038.54462: Flags [P.], cksum 0xcd24 (incorrect -> 0x9055), seq 468:487, ack 487, win 250, options [nop,nop,TS val 3164211908 ecr 1433247430], length 19: BGP
+	Keepalive Message (4), length: 19
+17:37:25.602200 swp1  Out IP6 (class 0xc0, flowlabel 0x20492, hlim 1, next-header TCP (6) payload length: 51) fe80::a8c1:abff:feca:48ad.bgp > fe80::a8c1:abff:feb1:809a.48368: Flags [P.], cksum 0x6d82 (incorrect -> 0x00cc), seq 468:487, ack 487, win 250, options [nop,nop,TS val 1695169930 ecr 1308466789], length 19: BGP
+	Keepalive Message (4), length: 19
+17:37:25.602356 swp1  In  IP6 (class 0xc0, flowlabel 0x514d5, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:feb1:809a.48368 > fe80::a8c1:abff:feca:48ad.bgp: Flags [.], cksum 0x04e3 (correct), seq 487, ack 487, win 250, options [nop,nop,TS val 1308466793 ecr 1695169930], length 0
+17:37:25.602364 swp2  In  IP6 (class 0xc0, flowlabel 0x3f624, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:fedb:b038.54462 > fe80::a8c1:abff:fea8:78a9.bgp: Flags [.], cksum 0x946c (correct), seq 487, ack 487, win 250, options [nop,nop,TS val 1433247434 ecr 3164211908], length 0
+17:37:28.598277 swp2  In  IP6 (class 0xc0, flowlabel 0x3f624, hlim 1, next-header TCP (6) payload length: 51) fe80::a8c1:abff:fedb:b038.54462 > fe80::a8c1:abff:fea8:78a9.bgp: Flags [P.], cksum 0x848a (correct), seq 487:506, ack 487, win 250, options [nop,nop,TS val 1433250430 ecr 3164211908], length 19: BGP
+	Keepalive Message (4), length: 19
+17:37:28.598312 swp1  In  IP6 (class 0xc0, flowlabel 0x514d5, hlim 1, next-header TCP (6) payload length: 51) fe80::a8c1:abff:feb1:809a.48368 > fe80::a8c1:abff:feca:48ad.bgp: Flags [P.], cksum 0xf500 (correct), seq 487:506, ack 487, win 250, options [nop,nop,TS val 1308469789 ecr 1695169930], length 19: BGP
+	Keepalive Message (4), length: 19
+17:37:28.602239 swp2  Out IP6 (class 0xc0, flowlabel 0x9325d, hlim 1, next-header TCP (6) payload length: 51) fe80::a8c1:abff:fea8:78a9.bgp > fe80::a8c1:abff:fedb:b038.54462: Flags [P.], cksum 0xcd24 (incorrect -> 0x78bf), seq 487:506, ack 506, win 250, options [nop,nop,TS val 3164214908 ecr 1433250430], length 19: BGP
+	Keepalive Message (4), length: 19
+17:37:28.602255 swp1  Out IP6 (class 0xc0, flowlabel 0x20492, hlim 1, next-header TCP (6) payload length: 51) fe80::a8c1:abff:feca:48ad.bgp > fe80::a8c1:abff:feb1:809a.48368: Flags [P.], cksum 0x6d82 (incorrect -> 0xe935), seq 487:506, ack 506, win 250, options [nop,nop,TS val 1695172930 ecr 1308469789], length 19: BGP
+	Keepalive Message (4), length: 19
+17:37:28.602346 swp2  In  IP6 (class 0xc0, flowlabel 0x3f624, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:fedb:b038.54462 > fe80::a8c1:abff:fea8:78a9.bgp: Flags [.], cksum 0x7cd6 (correct), seq 506, ack 506, win 250, options [nop,nop,TS val 1433250434 ecr 3164214908], length 0
+17:37:28.602400 swp1  In  IP6 (class 0xc0, flowlabel 0x514d5, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:feb1:809a.48368 > fe80::a8c1:abff:feca:48ad.bgp: Flags [.], cksum 0xed4c (correct), seq 506, ack 506, win 250, options [nop,nop,TS val 1308469793 ecr 1695172930], length 0
+17:37:31.598341 swp2  In  IP6 (class 0xc0, flowlabel 0x3f624, hlim 1, next-header TCP (6) payload length: 51) fe80::a8c1:abff:fedb:b038.54462 > fe80::a8c1:abff:fea8:78a9.bgp: Flags [P.], cksum 0x6cf4 (correct), seq 506:525, ack 506, win 250, options [nop,nop,TS val 1433253430 ecr 3164214908], length 19: BGP
+	Keepalive Message (4), length: 19
+17:37:31.598378 swp1  In  IP6 (class 0xc0, flowlabel 0x514d5, hlim 1, next-header TCP (6) payload length: 51) fe80::a8c1:abff:feb1:809a.48368 > fe80::a8c1:abff:feca:48ad.bgp: Flags [P.], cksum 0xdd6a (correct), seq 506:525, ack 506, win 250, options [nop,nop,TS val 1308472789 ecr 1695172930], length 19: BGP
+	Keepalive Message (4), length: 19
+17:37:31.602309 swp2  Out IP6 (class 0xc0, flowlabel 0x9325d, hlim 1, next-header TCP (6) payload length: 51) fe80::a8c1:abff:fea8:78a9.bgp > fe80::a8c1:abff:fedb:b038.54462: Flags [P.], cksum 0xcd24 (incorrect -> 0x6129), seq 506:525, ack 525, win 250, options [nop,nop,TS val 3164217908 ecr 1433253430], length 19: BGP
+	Keepalive Message (4), length: 19
+17:37:31.602325 swp1  Out IP6 (class 0xc0, flowlabel 0x20492, hlim 1, next-header TCP (6) payload length: 51) fe80::a8c1:abff:feca:48ad.bgp > fe80::a8c1:abff:feb1:809a.48368: Flags [P.], cksum 0x6d82 (incorrect -> 0xd19f), seq 506:525, ack 525, win 250, options [nop,nop,TS val 1695175930 ecr 1308472789], length 19: BGP
+	Keepalive Message (4), length: 19
+17:37:31.602425 swp1  In  IP6 (class 0xc0, flowlabel 0x514d5, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:feb1:809a.48368 > fe80::a8c1:abff:feca:48ad.bgp: Flags [.], cksum 0xd5b6 (correct), seq 525, ack 525, win 250, options [nop,nop,TS val 1308472793 ecr 1695175930], length 0
+17:37:31.602456 swp2  In  IP6 (class 0xc0, flowlabel 0x3f624, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:fedb:b038.54462 > fe80::a8c1:abff:fea8:78a9.bgp: Flags [.], cksum 0x653f (correct), seq 525, ack 525, win 250, options [nop,nop,TS val 1433253435 ecr 3164217908], length 0
+17:37:34.598421 swp2  In  IP6 (class 0xc0, flowlabel 0x3f624, hlim 1, next-header TCP (6) payload length: 51) fe80::a8c1:abff:fedb:b038.54462 > fe80::a8c1:abff:fea8:78a9.bgp: Flags [P.], cksum 0x555e (correct), seq 525:544, ack 525, win 250, options [nop,nop,TS val 1433256430 ecr 3164217908], length 19: BGP
+	Keepalive Message (4), length: 19
+17:37:34.598459 swp1  In  IP6 (class 0xc0, flowlabel 0x514d5, hlim 1, next-header TCP (6) payload length: 51) fe80::a8c1:abff:feb1:809a.48368 > fe80::a8c1:abff:feca:48ad.bgp: Flags [P.], cksum 0xc5d4 (correct), seq 525:544, ack 525, win 250, options [nop,nop,TS val 1308475789 ecr 1695175930], length 19: BGP
+	Keepalive Message (4), length: 19
+17:37:34.602358 swp2  Out IP6 (class 0xc0, flowlabel 0x9325d, hlim 1, next-header TCP (6) payload length: 51) fe80::a8c1:abff:fea8:78a9.bgp > fe80::a8c1:abff:fedb:b038.54462: Flags [P.], cksum 0xcd24 (incorrect -> 0x4993), seq 525:544, ack 544, win 250, options [nop,nop,TS val 3164220908 ecr 1433256430], length 19: BGP
+	Keepalive Message (4), length: 19
+17:37:34.602372 swp1  Out IP6 (class 0xc0, flowlabel 0x20492, hlim 1, next-header TCP (6) payload length: 51) fe80::a8c1:abff:feca:48ad.bgp > fe80::a8c1:abff:feb1:809a.48368: Flags [P.], cksum 0x6d82 (incorrect -> 0xba09), seq 525:544, ack 544, win 250, options [nop,nop,TS val 1695178930 ecr 1308475789], length 19: BGP
+	Keepalive Message (4), length: 19
+17:37:34.602446 swp2  In  IP6 (class 0xc0, flowlabel 0x3f624, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:fedb:b038.54462 > fe80::a8c1:abff:fea8:78a9.bgp: Flags [.], cksum 0x4da9 (correct), seq 544, ack 544, win 250, options [nop,nop,TS val 1433256435 ecr 3164220908], length 0
+17:37:34.602452 swp1  In  IP6 (class 0xc0, flowlabel 0x514d5, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:feb1:809a.48368 > fe80::a8c1:abff:feca:48ad.bgp: Flags [.], cksum 0xbe20 (correct), seq 544, ack 544, win 250, options [nop,nop,TS val 1308475793 ecr 1695178930], length 0
+17:37:37.598510 swp2  In  IP6 (class 0xc0, flowlabel 0x3f624, hlim 1, next-header TCP (6) payload length: 51) fe80::a8c1:abff:fedb:b038.54462 > fe80::a8c1:abff:fea8:78a9.bgp: Flags [P.], cksum 0x3dc7 (correct), seq 544:563, ack 544, win 250, options [nop,nop,TS val 1433259431 ecr 3164220908], length 19: BGP
+	Keepalive Message (4), length: 19
+17:37:37.598543 swp1  In  IP6 (class 0xc0, flowlabel 0x514d5, hlim 1, next-header TCP (6) payload length: 51) fe80::a8c1:abff:feb1:809a.48368 > fe80::a8c1:abff:feca:48ad.bgp: Flags [P.], cksum 0xae3e (correct), seq 544:563, ack 544, win 250, options [nop,nop,TS val 1308478789 ecr 1695178930], length 19: BGP
+	Keepalive Message (4), length: 19
+17:37:37.602439 swp2  Out IP6 (class 0xc0, flowlabel 0x9325d, hlim 1, next-header TCP (6) payload length: 51) fe80::a8c1:abff:fea8:78a9.bgp > fe80::a8c1:abff:fedb:b038.54462: Flags [P.], cksum 0xcd24 (incorrect -> 0x31fc), seq 544:563, ack 563, win 250, options [nop,nop,TS val 3164223908 ecr 1433259431], length 19: BGP
+	Keepalive Message (4), length: 19
+17:37:37.602457 swp1  Out IP6 (class 0xc0, flowlabel 0x20492, hlim 1, next-header TCP (6) payload length: 51) fe80::a8c1:abff:feca:48ad.bgp > fe80::a8c1:abff:feb1:809a.48368: Flags [P.], cksum 0x6d82 (incorrect -> 0xa273), seq 544:563, ack 563, win 250, options [nop,nop,TS val 1695181930 ecr 1308478789], length 19: BGP
+	Keepalive Message (4), length: 19
+17:37:37.602613 swp2  In  IP6 (class 0xc0, flowlabel 0x3f624, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:fedb:b038.54462 > fe80::a8c1:abff:fea8:78a9.bgp: Flags [.], cksum 0x3613 (correct), seq 563, ack 563, win 250, options [nop,nop,TS val 1433259435 ecr 3164223908], length 0
+17:37:37.602624 swp1  In  IP6 (class 0xc0, flowlabel 0x514d5, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:feb1:809a.48368 > fe80::a8c1:abff:feca:48ad.bgp: Flags [.], cksum 0xa689 (correct), seq 563, ack 563, win 250, options [nop,nop,TS val 1308478794 ecr 1695181930], length 0
+17:37:40.598552 swp2  In  IP6 (class 0xc0, flowlabel 0x3f624, hlim 1, next-header TCP (6) payload length: 51) fe80::a8c1:abff:fedb:b038.54462 > fe80::a8c1:abff:fea8:78a9.bgp: Flags [P.], cksum 0x2631 (correct), seq 563:582, ack 563, win 250, options [nop,nop,TS val 1433262431 ecr 3164223908], length 19: BGP
+	Keepalive Message (4), length: 19
+17:37:40.598594 swp1  In  IP6 (class 0xc0, flowlabel 0x514d5, hlim 1, next-header TCP (6) payload length: 51) fe80::a8c1:abff:feb1:809a.48368 > fe80::a8c1:abff:feca:48ad.bgp: Flags [P.], cksum 0x96a7 (correct), seq 563:582, ack 563, win 250, options [nop,nop,TS val 1308481790 ecr 1695181930], length 19: BGP
+	Keepalive Message (4), length: 19
+17:37:40.602524 swp2  Out IP6 (class 0xc0, flowlabel 0x9325d, hlim 1, next-header TCP (6) payload length: 51) fe80::a8c1:abff:fea8:78a9.bgp > fe80::a8c1:abff:fedb:b038.54462: Flags [P.], cksum 0xcd24 (incorrect -> 0x1a66), seq 563:582, ack 582, win 250, options [nop,nop,TS val 3164226908 ecr 1433262431], length 19: BGP
+	Keepalive Message (4), length: 19
+17:37:40.602542 swp1  Out IP6 (class 0xc0, flowlabel 0x20492, hlim 1, next-header TCP (6) payload length: 51) fe80::a8c1:abff:feca:48ad.bgp > fe80::a8c1:abff:feb1:809a.48368: Flags [P.], cksum 0x6d82 (incorrect -> 0x8adc), seq 563:582, ack 582, win 250, options [nop,nop,TS val 1695184930 ecr 1308481790], length 19: BGP
+	Keepalive Message (4), length: 19
+17:37:40.602626 swp2  In  IP6 (class 0xc0, flowlabel 0x3f624, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:fedb:b038.54462 > fe80::a8c1:abff:fea8:78a9.bgp: Flags [.], cksum 0x1e7d (correct), seq 582, ack 582, win 250, options [nop,nop,TS val 1433262435 ecr 3164226908], length 0
+17:37:40.602757 swp1  In  IP6 (class 0xc0, flowlabel 0x514d5, hlim 1, next-header TCP (6) payload length: 32) fe80::a8c1:abff:feb1:809a.48368 > fe80::a8c1:abff:feca:48ad.bgp: Flags [.], cksum 0x8ef3 (correct), seq 582, ack 582, win 250, options [nop,nop,TS val 1308481794 ecr 1695184930], length 0

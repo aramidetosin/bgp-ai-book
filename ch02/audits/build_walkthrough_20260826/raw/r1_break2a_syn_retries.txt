@@ -1,0 +1,6 @@
+17:44:50.670672 IP6 fe80::a8c1:abff:feb1:809a.40302 > fe80::a8c1:abff:feca:48ad.179: Flags [S], seq 644587665, win 64092, options [mss 9156,sackOK,TS val 1308911862 ecr 0,nop,wscale 8], length 0
+17:44:50.685824 IP6 fe80::a8c1:abff:feca:48ad.47374 > fe80::a8c1:abff:feb1:809a.179: Flags [S], seq 3440564684, win 64092, options [mss 9156,sackOK,TS val 1695615014 ecr 0,nop,wscale 8], length 0
+17:44:53.427954 IP6 fe80::a8c1:abff:feca:48ad.40978 > fe80::a8c1:abff:feb1:809a.179: Flags [S], seq 2164940922, win 64092, options [mss 9156,sackOK,TS val 1695617756 ecr 0,nop,wscale 8], length 0
+17:44:53.428318 IP6 fe80::a8c1:abff:feb1:809a.60570 > fe80::a8c1:abff:feca:48ad.179: Flags [S], seq 3641807874, win 64092, options [mss 9156,sackOK,TS val 1308914619 ecr 0,nop,wscale 8], length 0
+17:44:54.429867 IP6 fe80::a8c1:abff:feca:48ad.40978 > fe80::a8c1:abff:feb1:809a.179: Flags [S], seq 2164940922, win 64092, options [mss 9156,sackOK,TS val 1695618758 ecr 0,nop,wscale 8], length 0
+17:44:54.446595 IP6 fe80::a8c1:abff:feb1:809a.60570 > fe80::a8c1:abff:feca:48ad.179: Flags [S], seq 3641807874, win 64092, options [mss 9156,sackOK,TS val 1308915638 ecr 0,nop,wscale 8], length 0
