@@ -1,0 +1,7 @@
+$ docker exec clab-bgpbook-ch04-node ip route
+default via 172.16.10.1 dev eth1 
+172.16.10.0/24 dev eth1 proto kernel scope link src 172.16.10.11 
+172.20.34.0/24 dev eth0 proto kernel scope link src 172.20.34.8 
+172.30.1.0/24 dev eth3 proto kernel scope link src 172.30.1.11 
+172.30.2.0/24 via 172.30.1.1 dev eth3 
+172.31.1.0/24 dev eth2 proto kernel scope link src 172.31.1.11 

@@ -1,0 +1,15 @@
+=== Each network does its job ===
+  frontend  client -> node HTTP: 200 - OK
+  backend   gpu-peer -> node iperf3: 12.4 Gbit/s - OK
+  storage   node <- storage-srv dataset: 2257.1 MB/s - OK
+  oob       mgmt -> BMC ping: reachable - OK
+=== The VRF fences the BMC ===
+  node default VRF -> oob-mgmt: unreachable - OK
+  node vrf mgmt    -> oob-mgmt: reachable - OK
+=== Isolation matrix (packets on each fabric, by subnet family) ===
+  capture    frontend    backend    storage        oob
+  fe-leaf          36          0          0          0
+  be-leaf           0      97671          0          0
+  st-leaf           0          0      13282          0
+  oob-sw            0          0          0         10
+

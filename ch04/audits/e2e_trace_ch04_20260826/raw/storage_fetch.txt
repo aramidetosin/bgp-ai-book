@@ -1,0 +1,2 @@
+$ docker exec clab-bgpbook-ch04-node sh -c "curl -s -o /dev/null -w 'fetched at %{speed_download} bytes/s over %{time_total}s\n' http://172.30.2.12/dataset.bin"
+fetched at 2330249800 bytes/s over 0.230392s

@@ -1,0 +1,2 @@
+$ docker exec clab-bgpbook-ch04-node ip route show vrf mgmt
+10.99.0.0/24 dev eth4 proto kernel scope link src 10.99.0.11 

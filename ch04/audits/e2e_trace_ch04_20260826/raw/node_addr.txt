@@ -1,0 +1,5 @@
+$ docker exec clab-bgpbook-ch04-node sh -c 'ip -br addr show eth1; ip -br addr show eth2; ip -br addr show eth3; ip -br addr show eth4'
+eth1@if2008      UP             172.16.10.11/24 fe80::a8c1:abff:fe9b:844d/64 
+eth2@if2015      UP             172.31.1.11/24 fe80::a8c1:abff:fe7c:30ef/64 
+eth3@if2003      UP             172.30.1.11/24 fe80::a8c1:abff:fe4e:5690/64 
+eth4@if2017      UP             10.99.0.11/24 fe80::a8c1:abff:fe68:a9a2/64 

@@ -1,0 +1,4 @@
+$ docker exec clab-bgpbook-ch04-node ip vrf show
+Name              Table
+-----------------------
+mgmt               100

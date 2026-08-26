@@ -1,0 +1,74 @@
+# Chapter 4 lab: the four-fabric node. One specimen node with a NIC into each
+# of the cluster's four networks, plus a peer on each fabric so every network
+# has real traffic: a client on the frontend, a GPU-node stand-in on the
+# backend, a storage server behind a routed storage leaf, and a management
+# station on the out-of-band switch. The node's BMC port lives in a VRF.
+name: bgpbook-ch04
+mgmt:
+  network: bgpbook-ch04
+  ipv4-subnet: 172.20.34.0/24
+topology:
+  defaults:
+    kind: nvidia_cumulusvx
+    image: vrnetlab/nvidia_cumulus-vx:5.12.0
+  nodes:
+    fe-leaf:
+      startup-config: bootstrap/fe-leaf.cfg
+    be-leaf:
+      startup-config: bootstrap/be-leaf.cfg
+    st-leaf:
+      startup-config: bootstrap/st-leaf.cfg
+    oob-sw:
+      startup-config: bootstrap/oob-sw.cfg
+    node:
+      kind: linux
+      image: ghcr.io/srl-labs/network-multitool
+      exec:
+        - ip link set eth1 mtu 9216
+        - ip link set eth2 mtu 9216
+        - ip link set eth3 mtu 9216
+        - ip addr add 172.16.10.11/24 dev eth1
+        - ip addr add 172.31.1.11/24 dev eth2
+        - ip addr add 172.30.1.11/24 dev eth3
+        - ip route replace default via 172.16.10.1
+        - ip route replace 172.30.2.0/24 via 172.30.1.1
+        - ip link add mgmt type vrf table 100
+        - ip link set mgmt up
+        - ip link set eth4 master mgmt
+        - ip addr add 10.99.0.11/24 dev eth4
+        - ip link set eth4 up
+    client:
+      kind: linux
+      image: ghcr.io/srl-labs/network-multitool
+      exec:
+        - ip link set eth1 mtu 9216
+        - ip addr add 172.16.20.100/24 dev eth1
+        - ip route replace default via 172.16.20.1
+    gpu-peer:
+      kind: linux
+      image: ghcr.io/srl-labs/network-multitool
+      exec:
+        - ip link set eth1 mtu 9216
+        - ip addr add 172.31.1.12/24 dev eth1
+    storage-srv:
+      kind: linux
+      image: ghcr.io/srl-labs/network-multitool
+      exec:
+        - ip link set eth1 mtu 9216
+        - ip addr add 172.30.2.12/24 dev eth1
+        - ip route replace 172.30.1.0/24 via 172.30.2.1
+        - dd if=/dev/urandom of=/usr/share/nginx/html/dataset.bin bs=1M count=512
+    oob-mgmt:
+      kind: linux
+      image: ghcr.io/srl-labs/network-multitool
+      exec:
+        - ip addr add 10.99.0.100/24 dev eth1
+  links:
+    - endpoints: ["fe-leaf:swp1","node:eth1"]
+    - endpoints: ["fe-leaf:swp2","client:eth1"]
+    - endpoints: ["be-leaf:swp1","node:eth2"]
+    - endpoints: ["be-leaf:swp2","gpu-peer:eth1"]
+    - endpoints: ["st-leaf:swp1","node:eth3"]
+    - endpoints: ["st-leaf:swp2","storage-srv:eth1"]
+    - endpoints: ["oob-sw:swp1","node:eth4"]
+    - endpoints: ["oob-sw:swp2","oob-mgmt:eth1"]

@@ -1,0 +1,3 @@
+$ docker exec clab-bgpbook-ch04-client curl -s -o /dev/null -w 'frontend during blackout: %{http_code}\n' --max-time 4 http://172.16.10.11/ ; echo exit $?
+frontend during blackout: 000
+exit 28
