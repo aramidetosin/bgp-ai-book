@@ -1,0 +1,7 @@
+$ sshpass -p Clab123! ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null cumulus@clab-bgpbook-ch01-leaf01 "ip route show 172.16.3.0/24; ip nexthop show"
+Warning: Permanently added 'clab-bgpbook-ch01-leaf01' (ECDSA) to the list of known hosts.
+Welcome to NVIDIA Cumulus (R) Linux (R)
+172.16.3.0/24 nhid 40 proto bgp metric 20 
+id 29 via fe80::a8c1:abff:fe09:4ce7 dev swp3 scope link proto zebra 
+id 40 group 29/41 proto zebra 
+id 41 via fe80::a8c1:abff:fe48:b819 dev swp2 scope link proto zebra 

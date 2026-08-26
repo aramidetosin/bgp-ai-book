@@ -1,0 +1,13 @@
+# VM images: licensed, bring your own (see the image build guide)
+*.qcow2
+images/
+
+# containerlab runtime state (per-node overlay disks, first-boot markers, etc.)
+clab-bgpbook-*/
+**/clab-*/
+.*.clab.yml.bak
+*.bak
+**/deploy.log
+
+.DS_Store
+__pycache__/

@@ -1,0 +1,28 @@
+=== spine01 (cumulus spine, AS 65100) ===
+  BGP ipv4 sessions: 4 Established / 4 configured  - OK
+=== spine02 (cumulus spine, AS 65100) ===
+  BGP ipv4 sessions: 4 Established / 4 configured  - OK
+=== leaf01 (cumulus leaf, AS 65101) ===
+  BGP ipv4 sessions: 2 Established / 2 configured  - OK
+=== leaf02 (cumulus leaf, AS 65102) ===
+  BGP ipv4 sessions: 2 Established / 2 configured  - OK
+=== leaf03 (cumulus leaf, AS 65103) ===
+  BGP ipv4 sessions: 2 Established / 2 configured  - OK
+=== leaf04 (cumulus leaf, AS 65104) ===
+  BGP ipv4 sessions: 2 Established / 2 configured  - OK
+=== ECMP spot checks (each leaf's route to every other server subnet) ===
+  leaf01 -> 172.16.2.0/24: 2 next-hop(s) - OK
+  leaf01 -> 172.16.3.0/24: 2 next-hop(s) - OK
+  leaf01 -> 172.16.4.0/24: 2 next-hop(s) - OK
+  leaf02 -> 172.16.1.0/24: 2 next-hop(s) - OK
+  leaf02 -> 172.16.3.0/24: 2 next-hop(s) - OK
+  leaf02 -> 172.16.4.0/24: 2 next-hop(s) - OK
+  leaf03 -> 172.16.1.0/24: 2 next-hop(s) - OK
+  leaf03 -> 172.16.2.0/24: 2 next-hop(s) - OK
+  leaf03 -> 172.16.4.0/24: 2 next-hop(s) - OK
+  leaf04 -> 172.16.1.0/24: 2 next-hop(s) - OK
+  leaf04 -> 172.16.2.0/24: 2 next-hop(s) - OK
+  leaf04 -> 172.16.3.0/24: 2 next-hop(s) - OK
+=== Data plane ===
+  server01 -> 172.16.3.10: 0% packet loss
+  server03 -> 172.16.1.10: 0% packet loss

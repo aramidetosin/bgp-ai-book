@@ -1,0 +1,9 @@
+$ sshpass -p Clab123! ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null cumulus@clab-bgpbook-ch01-leaf03 "sudo vtysh -c 'show ip route 172.16.3.0/24'; ip neigh show 172.16.3.10"
+Warning: Permanently added 'clab-bgpbook-ch01-leaf03' (ECDSA) to the list of known hosts.
+Welcome to NVIDIA Cumulus (R) Linux (R)
+Routing entry for 172.16.3.0/24
+  Known via "connected", distance 0, metric 0, best
+  Last update 00:11:45 ago
+  * directly connected, swp1
+
+172.16.3.10 dev swp1 lladdr aa:c1:ab:7a:0f:ff REACHABLE 

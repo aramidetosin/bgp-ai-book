@@ -1,0 +1,9 @@
+$ docker exec clab-bgpbook-ch01-server01 ping -c 3 172.16.3.10
+PING 172.16.3.10 (172.16.3.10): 56 data bytes
+64 bytes from 172.16.3.10: seq=0 ttl=61 time=0.458 ms
+64 bytes from 172.16.3.10: seq=1 ttl=61 time=0.343 ms
+64 bytes from 172.16.3.10: seq=2 ttl=61 time=0.419 ms
+
+--- 172.16.3.10 ping statistics ---
+3 packets transmitted, 3 packets received, 0% packet loss
+round-trip min/avg/max = 0.343/0.406/0.458 ms

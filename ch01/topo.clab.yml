@@ -1,0 +1,48 @@
+# Chapter 1 lab: 4 leafs, 2 spines, eBGP unnumbered, two Linux hosts.
+# Switches self-bootstrap on deploy: the vrnetlab image's patched launcher applies
+# bootstrap/<node>.cfg at first boot (ecloud-containerlab convention). If your
+# image lacks that patch, run ./configure.sh after deploy instead.
+name: bgpbook-ch01
+mgmt:
+  network: bgpbook-ch01
+  ipv4-subnet: 172.20.31.0/24
+topology:
+  defaults:
+    kind: nvidia_cumulusvx
+    image: vrnetlab/nvidia_cumulus-vx:5.12.0
+  nodes:
+    spine01:
+      startup-config: bootstrap/spine01.cfg
+    spine02:
+      startup-config: bootstrap/spine02.cfg
+    leaf01:
+      startup-config: bootstrap/leaf01.cfg
+    leaf02:
+      startup-config: bootstrap/leaf02.cfg
+    leaf03:
+      startup-config: bootstrap/leaf03.cfg
+    leaf04:
+      startup-config: bootstrap/leaf04.cfg
+    server01:
+      kind: linux
+      image: alpine:3.20
+      exec:
+        - ip addr add 172.16.1.10/24 dev eth1
+        - ip route replace default via 172.16.1.1
+    server03:
+      kind: linux
+      image: alpine:3.20
+      exec:
+        - ip addr add 172.16.3.10/24 dev eth1
+        - ip route replace default via 172.16.3.1
+  links:
+    - endpoints: ["spine01:swp1","leaf01:swp2"]
+    - endpoints: ["spine01:swp2","leaf02:swp2"]
+    - endpoints: ["spine01:swp3","leaf03:swp2"]
+    - endpoints: ["spine01:swp4","leaf04:swp2"]
+    - endpoints: ["spine02:swp1","leaf01:swp3"]
+    - endpoints: ["spine02:swp2","leaf02:swp3"]
+    - endpoints: ["spine02:swp3","leaf03:swp3"]
+    - endpoints: ["spine02:swp4","leaf04:swp3"]
+    - endpoints: ["leaf01:swp1","server01:eth1"]
+    - endpoints: ["leaf03:swp1","server03:eth1"]

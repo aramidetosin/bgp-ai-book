@@ -1,0 +1,9 @@
+PING 172.16.1.10 (172.16.1.10): 56 data bytes
+64 bytes from 172.16.1.10: seq=0 ttl=61 time=0.638 ms
+64 bytes from 172.16.1.10: seq=1 ttl=61 time=0.540 ms
+64 bytes from 172.16.1.10: seq=2 ttl=61 time=0.539 ms
+64 bytes from 172.16.1.10: seq=3 ttl=61 time=0.452 ms
+
+--- 172.16.1.10 ping statistics ---
+4 packets transmitted, 4 packets received, 0% packet loss
+round-trip min/avg/max = 0.452/0.542/0.638 ms
