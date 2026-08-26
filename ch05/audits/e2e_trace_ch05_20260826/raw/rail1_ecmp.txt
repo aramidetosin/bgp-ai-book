@@ -1,0 +1,9 @@
+$ sudo vtysh -c "show ip route 172.31.2.0/24"
+Warning: Permanently added 'clab-bgpbook-ch05-rail1' (ECDSA) to the list of known hosts.
+Welcome to NVIDIA Cumulus (R) Linux (R)
+Routing entry for 172.31.2.0/24
+  Known via "bgp", distance 20, metric 0, best
+  Last update 00:04:10 ago
+  * fe80::a8c1:abff:fe08:1d6b, via swp3, weight 1
+  * fe80::a8c1:abff:feb5:78e7, via swp4, weight 1
+

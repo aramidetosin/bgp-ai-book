@@ -1,0 +1,15 @@
+=== BGP sessions on the generated fabric ===
+  rail1: 2/2 Established - OK
+  rail2: 2/2 Established - OK
+  rail3: 2/2 Established - OK
+  rail4: 2/2 Established - OK
+  spine1: 4/4 Established - OK
+  spine2: 4/4 Established - OK
+=== Every rail carries its nodes (node1 to node2, per rail) ===
+  rail1: node1 -> node2 on 172.31.1.0/24 - OK
+  rail2: node1 -> node2 on 172.31.2.0/24 - OK
+  rail3: node1 -> node2 on 172.31.3.0/24 - OK
+  rail4: node1 -> node2 on 172.31.4.0/24 - OK
+=== Cabling versus intent (LLDP) ===
+  CABLING MATCHES INTENT
+

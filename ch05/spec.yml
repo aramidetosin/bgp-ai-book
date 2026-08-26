@@ -1,0 +1,17 @@
+# Chapter 5: the fabric as data. This file is the design; everything else is
+# generated from it. Change a number, regenerate, redeploy.
+name: bgpbook-ch05
+mgmt_subnet: 172.20.35.0/24
+
+nodes: 2            # GPU-node stand-ins
+gpus_per_node: 4    # one backend NIC per GPU, so also the rail count
+spines: 2
+
+switch_image: vrnetlab/nvidia_cumulus-vx:5.12.0
+# node image is the multitool plus lldpd, built once by `make node-image`
+# (Dockerfile.node), so nodes can speak LLDP without internet at deploy time
+node_image: bgpbook-multitool-lldpd
+
+# ASN plan: spines share one ASN, each rail leaf gets its own.
+spine_asn: 65100
+rail_asn_base: 65100   # rail i gets rail_asn_base + i

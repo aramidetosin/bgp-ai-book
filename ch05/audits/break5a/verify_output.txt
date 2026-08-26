@@ -1,0 +1,27 @@
+$ make verify
+  OK        rail1:swp1 <-> node1:eth1
+  OK        rail1:swp2 <-> node2:eth1
+  OK        rail1:swp3 <-> spine1:swp1
+  OK        rail1:swp4 <-> spine2:swp1
+  MISMATCH  rail2:swp1 expected node1:eth2, sees node1:eth3
+  MISMATCH  rail2:swp2 expected node2:eth2, sees node2:eth3
+  OK        rail2:swp3 <-> spine1:swp2
+  OK        rail2:swp4 <-> spine2:swp2
+  MISMATCH  rail3:swp1 expected node1:eth3, sees node1:eth2
+  MISMATCH  rail3:swp2 expected node2:eth3, sees node2:eth2
+  OK        rail3:swp3 <-> spine1:swp3
+  OK        rail3:swp4 <-> spine2:swp3
+  OK        rail4:swp1 <-> node1:eth4
+  OK        rail4:swp2 <-> node2:eth4
+  OK        rail4:swp3 <-> spine1:swp4
+  OK        rail4:swp4 <-> spine2:swp4
+  OK        spine1:swp1 <-> rail1:swp3
+  OK        spine1:swp2 <-> rail2:swp3
+  OK        spine1:swp3 <-> rail3:swp3
+  OK        spine1:swp4 <-> rail4:swp3
+  OK        spine2:swp1 <-> rail1:swp4
+  OK        spine2:swp2 <-> rail2:swp4
+  OK        spine2:swp3 <-> rail3:swp4
+  OK        spine2:swp4 <-> rail4:swp4
+
+4 MISMATCHES: the fabric is not the design

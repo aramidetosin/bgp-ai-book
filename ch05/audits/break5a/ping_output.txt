@@ -1,0 +1,5 @@
+$ per-rail pings
+rail1 ping: OK
+rail2 ping: OK
+rail3 ping: OK
+rail4 ping: OK

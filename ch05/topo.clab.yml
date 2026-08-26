@@ -1,0 +1,96 @@
+name: bgpbook-ch05
+mgmt:
+  network: bgpbook-ch05
+  ipv4-subnet: 172.20.35.0/24
+topology:
+  defaults:
+    kind: nvidia_cumulusvx
+    image: vrnetlab/nvidia_cumulus-vx:5.12.0
+  nodes:
+    rail1:
+      startup-config: bootstrap/rail1.cfg
+    rail2:
+      startup-config: bootstrap/rail2.cfg
+    rail3:
+      startup-config: bootstrap/rail3.cfg
+    rail4:
+      startup-config: bootstrap/rail4.cfg
+    spine1:
+      startup-config: bootstrap/spine1.cfg
+    spine2:
+      startup-config: bootstrap/spine2.cfg
+    node1:
+      kind: linux
+      image: bgpbook-multitool-lldpd
+      exec:
+      - ip link set eth1 mtu 9216
+      - ip addr add 172.31.1.11/24 dev eth1
+      - ip link set eth2 mtu 9216
+      - ip addr add 172.31.2.11/24 dev eth2
+      - ip link set eth3 mtu 9216
+      - ip addr add 172.31.3.11/24 dev eth3
+      - ip link set eth4 mtu 9216
+      - ip addr add 172.31.4.11/24 dev eth4
+      - lldpd
+    node2:
+      kind: linux
+      image: bgpbook-multitool-lldpd
+      exec:
+      - ip link set eth1 mtu 9216
+      - ip addr add 172.31.1.12/24 dev eth1
+      - ip link set eth2 mtu 9216
+      - ip addr add 172.31.2.12/24 dev eth2
+      - ip link set eth3 mtu 9216
+      - ip addr add 172.31.3.12/24 dev eth3
+      - ip link set eth4 mtu 9216
+      - ip addr add 172.31.4.12/24 dev eth4
+      - lldpd
+  links:
+  - endpoints:
+    - rail1:swp1
+    - node1:eth1
+  - endpoints:
+    - rail1:swp2
+    - node2:eth1
+  - endpoints:
+    - rail1:swp3
+    - spine1:swp1
+  - endpoints:
+    - rail1:swp4
+    - spine2:swp1
+  - endpoints:
+    - rail2:swp1
+    - node1:eth2
+  - endpoints:
+    - rail2:swp2
+    - node2:eth2
+  - endpoints:
+    - rail2:swp3
+    - spine1:swp2
+  - endpoints:
+    - rail2:swp4
+    - spine2:swp2
+  - endpoints:
+    - rail3:swp1
+    - node1:eth3
+  - endpoints:
+    - rail3:swp2
+    - node2:eth3
+  - endpoints:
+    - rail3:swp3
+    - spine1:swp3
+  - endpoints:
+    - rail3:swp4
+    - spine2:swp3
+  - endpoints:
+    - rail4:swp1
+    - node1:eth4
+  - endpoints:
+    - rail4:swp2
+    - node2:eth4
+  - endpoints:
+    - rail4:swp3
+    - spine1:swp4
+  - endpoints:
+    - rail4:swp4
+    - spine2:swp4

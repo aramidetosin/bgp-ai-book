@@ -1,0 +1,104 @@
+$ timeout 40 tcpdump -i eth1 -c 2 -vv ether proto 0x88cc
+tcpdump: listening on eth1, link-type EN10MB (Ethernet), snapshot length 262144 bytes
+20:53:39.062729 LLDP, length 205
+	Chassis ID TLV (1), length 7
+	  Subtype MAC address (4): 3a:19:7e:8a:42:bf (oui Unknown)
+	  0x0000:  043a 197e 8a42 bf
+	Port ID TLV (2), length 7
+	  Subtype MAC address (3): aa:c1:ab:12:7d:ba (oui Unknown)
+	  0x0000:  03aa c1ab 127d ba
+	Time to Live TLV (3), length 2: TTL 120s
+	  0x0000:  0078
+	System Name TLV (5), length 5: node1
+	  0x0000:  6e6f 6465 31
+	System Description TLV (6), length 98
+	  Alpine Linux v3.18 Linux 7.1.1-eve-ksm+ #1 SMP PREEMPT_DYNAMIC Sun Jun 21 08:15:27 UTC 2026 x86_64
+	  0x0000:  416c 7069 6e65 204c 696e 7578 2076 332e
+	  0x0010:  3138 204c 696e 7578 2037 2e31 2e31 2d65
+	  0x0020:  7665 2d6b 736d 2b20 2331 2053 4d50 2050
+	  0x0030:  5245 454d 5054 5f44 594e 414d 4943 2053
+	  0x0040:  756e 204a 756e 2032 3120 3038 3a31 353a
+	  0x0050:  3237 2055 5443 2032 3032 3620 7838 365f
+	  0x0060:  3634
+	System Capabilities TLV (7), length 4
+	  System  Capabilities [Bridge, WLAN AP, Router, Station Only] (0x009c)
+	  Enabled Capabilities [Router] (0x0010)
+	  0x0000:  009c 0010
+	Management Address TLV (8), length 12
+	  Management Address length 5, AFI IPv4 (1): node1
+	  Interface Index Interface Numbering (2): 2
+	  0x0000:  0501 ac14 2304 0200 0000 0200
+	Management Address TLV (8), length 24
+	  Management Address length 17, AFI IPv6 (2): fe80::a8c1:abff:fe12:7dba
+	  Interface Index Interface Numbering (2): 2177
+	  0x0000:  1102 fe80 0000 0000 0000 a8c1 abff fe12
+	  0x0010:  7dba 0200 0008 8100
+	Port Description TLV (4), length 4: eth1
+	  0x0000:  6574 6831
+	Organization specific TLV (127), length 9: OUI IEEE 802.3 Private (0x00120f)
+	  Link aggregation Subtype (3)
+	    aggregation status [supported], aggregation port ID 0
+	  0x0000:  0012 0f03 0100 0000 00
+	Organization specific TLV (127), length 9: OUI IEEE 802.3 Private (0x00120f)
+	  MAC/PHY configuration/status Subtype (1)
+	    autonegotiation [none] (0x00)
+	    PMD autoneg capability [unknown] (0x8000)
+	    MAU type unknown (0x0036)
+	  0x0000:  0012 0f01 0080 0000 36
+	End TLV (0), length 0
+20:53:51.121963 LLDP, length 200
+	Chassis ID TLV (1), length 7
+	  Subtype MAC address (4): 0c:00:fe:9b:38:00 (oui Unknown)
+	  0x0000:  040c 00fe 9b38 00
+	Port ID TLV (2), length 5
+	  Subtype Interface Name (5): swp1
+	  0x0000:  0573 7770 31
+	Time to Live TLV (3), length 2: TTL 120s
+	  0x0000:  0078
+	System Name TLV (5), length 5: rail1
+	  0x0000:  7261 696c 31
+	System Description TLV (6), length 78
+	  Cumulus Linux version 5.12.0 running on QEMU Standard PC (i440FX + PIIX, 1996)
+	  0x0000:  4375 6d75 6c75 7320 4c69 6e75 7820 7665
+	  0x0010:  7273 696f 6e20 352e 3132 2e30 2072 756e
+	  0x0020:  6e69 6e67 206f 6e20 5145 4d55 2053 7461
+	  0x0030:  6e64 6172 6420 5043 2028 6934 3430 4658
+	  0x0040:  202b 2050 4949 582c 2031 3939 3629
+	System Capabilities TLV (7), length 4
+	  System  Capabilities [Bridge, Router] (0x0014)
+	  Enabled Capabilities [Bridge, Router] (0x0014)
+	  0x0000:  0014 0014
+	Management Address TLV (8), length 12
+	  Management Address length 5, AFI IPv4 (1): 10.5.0.1
+	  Interface Index Interface Numbering (2): 1
+	  0x0000:  0501 0a05 0001 0200 0000 0100
+	Management Address TLV (8), length 24
+	  Management Address length 17, AFI IPv6 (2): fec0::e00:feff:fe9b:3800
+	  Interface Index Interface Numbering (2): 2
+	  0x0000:  1102 fec0 0000 0000 0000 0e00 feff fe9b
+	  0x0010:  3800 0200 0000 0200
+	Port Description TLV (4), length 4: swp1
+	  0x0000:  7377 7031
+	Organization specific TLV (127), length 9: OUI IEEE 802.3 Private (0x00120f)
+	  Link aggregation Subtype (3)
+	    aggregation status [supported], aggregation port ID 0
+	  0x0000:  0012 0f03 0100 0000 00
+	Organization specific TLV (127), length 9: OUI IEEE 802.3 Private (0x00120f)
+	  MAC/PHY configuration/status Subtype (1)
+	    autonegotiation [none] (0x00)
+	    PMD autoneg capability [unknown] (0x0000)
+	    MAU type 1000BASET fdx (0x001e)
+	  0x0000:  0012 0f01 0000 0000 1e
+	Organization specific TLV (127), length 6: OUI IEEE 802.3 Private (0x00120f)
+	  Max frame size Subtype (4)
+	    MTU size 9216
+	  0x0000:  0012 0f04 2400
+	Organization specific TLV (127), length 7: OUI ANSI/TIA (0x0012bb)
+	  LLDP-MED Capabilities Subtype (1)
+	    Media capabilities [LLDP-MED capabilities, network policy, location identification, extended power via MDI-PSE, extended power via MDI-PD, Inventory] (0x003f)
+	    Device type [network connectivity] (0x04)
+	  0x0000:  0012 bb01 003f 04
+	End TLV (0), length 0
+2 packets captured
+2 packets received by filter
+0 packets dropped by kernel

@@ -1,0 +1,11 @@
+$ sshpass -p Clab123! ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null cumulus@clab-bgpbook-ch05-rail1 "sudo lldpctl -f keyvalue | grep -E 'chassis.name|port.descr'"
+Warning: Permanently added 'clab-bgpbook-ch05-rail1' (ECDSA) to the list of known hosts.
+Welcome to NVIDIA Cumulus (R) Linux (R)
+lldp.swp1.chassis.name=node1
+lldp.swp1.port.descr=eth1
+lldp.swp2.chassis.name=node2
+lldp.swp2.port.descr=eth1
+lldp.swp3.chassis.name=spine1
+lldp.swp3.port.descr=swp1
+lldp.swp4.chassis.name=spine2
+lldp.swp4.port.descr=swp1

@@ -1,0 +1,6 @@
+$ docker exec clab-bgpbook-ch05-node1 sh -c 'ip -br addr show | grep eth'
+eth0@if2174      UP             172.20.35.4/24 
+eth1@if2178      UP             172.31.1.11/24 fe80::a8c1:abff:fe12:7dba/64 
+eth2@if2181      UP             172.31.2.11/24 fe80::a8c1:abff:fe6f:8f44/64 
+eth3@if2197      UP             172.31.3.11/24 fe80::a8c1:abff:fe0c:c24d/64 
+eth4@if2203      UP             172.31.4.11/24 fe80::a8c1:abff:fe0f:2b90/64 

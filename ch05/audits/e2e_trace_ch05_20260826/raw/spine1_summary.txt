@@ -1,0 +1,17 @@
+$ sshpass -p Clab123! ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null cumulus@clab-bgpbook-ch05-spine1 "sudo vtysh -c 'show bgp summary'"
+Warning: Permanently added 'clab-bgpbook-ch05-spine1' (ECDSA) to the list of known hosts.
+Welcome to NVIDIA Cumulus (R) Linux (R)
+
+IPv4 Unicast Summary (VRF default):
+BGP router identifier 10.5.0.101, local AS number 65100 vrf-id 0
+BGP table version 9
+RIB entries 17, using 3808 bytes of memory
+Peers 4, using 79 KiB of memory
+
+Neighbor        V         AS   MsgRcvd   MsgSent   TblVer  InQ OutQ  Up/Down State/PfxRcd   PfxSnt Desc
+rail1(swp1)     4      65101        86        84        0    0    0 00:03:49            2        9 N/A
+rail2(swp2)     4      65102        86        84        0    0    0 00:03:49            2        9 N/A
+rail3(swp3)     4      65103        86        84        0    0    0 00:03:49            2        9 N/A
+rail4(swp4)     4      65104        86        84        0    0    0 00:03:49            2        9 N/A
+
+Total number of neighbors 4

@@ -1,0 +1,2 @@
+NOTE: emitted topology with rails 2 and 3 swapped on the node side
+generated: 4 rail leafs, 2 spines, 2 nodes, 16 links, intent for 32 endpoints

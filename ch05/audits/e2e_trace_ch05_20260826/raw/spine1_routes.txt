@@ -1,0 +1,18 @@
+$ sshpass -p Clab123! ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null cumulus@clab-bgpbook-ch05-spine1 "sudo vtysh -c 'show ip route bgp'"
+Warning: Permanently added 'clab-bgpbook-ch05-spine1' (ECDSA) to the list of known hosts.
+Welcome to NVIDIA Cumulus (R) Linux (R)
+Codes: K - kernel route, C - connected, S - static, R - RIP,
+       O - OSPF, I - IS-IS, B - BGP, E - EIGRP, N - NHRP,
+       T - Table, A - Babel, D - SHARP, F - PBR, f - OpenFabric,
+       Z - FRR,
+       > - selected route, * - FIB route, q - queued, r - rejected, b - backup
+       t - trapped, o - offload failure
+
+B>* 10.5.0.1/32 [20/0] via fe80::a8c1:abff:fe61:8ff, swp1, weight 1, 00:03:49
+B>* 10.5.0.2/32 [20/0] via fe80::a8c1:abff:fef0:4d6, swp2, weight 1, 00:03:49
+B>* 10.5.0.3/32 [20/0] via fe80::a8c1:abff:fe3e:8b9a, swp3, weight 1, 00:03:49
+B>* 10.5.0.4/32 [20/0] via fe80::a8c1:abff:fefa:8694, swp4, weight 1, 00:03:49
+B>* 172.31.1.0/24 [20/0] via fe80::a8c1:abff:fe61:8ff, swp1, weight 1, 00:03:49
+B>* 172.31.2.0/24 [20/0] via fe80::a8c1:abff:fef0:4d6, swp2, weight 1, 00:03:49
+B>* 172.31.3.0/24 [20/0] via fe80::a8c1:abff:fe3e:8b9a, swp3, weight 1, 00:03:49
+B>* 172.31.4.0/24 [20/0] via fe80::a8c1:abff:fefa:8694, swp4, weight 1, 00:03:49
