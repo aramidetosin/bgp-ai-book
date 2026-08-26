@@ -34,8 +34,18 @@ member through spine02 at every moment.
 
 ## Recovery note
 
-`docker start` alone does not heal a stopped node: the containerlab veth
-links died with the container's old network namespace, and the VM launcher
-waits forever for interfaces that no longer exist. `make heal-spine`
-recreates the four links with `containerlab tools veth create`, after which
-the VM boots and rejoins on its saved configuration.
+`docker start` alone does not heal a stopped node. Three separate things
+break when the container stops, and the recorded recovery confirmed each
+one. The veth links die with the container's network namespace and must be
+recreated using the container-side names, eth1 through eth4 (the VM maps
+them to swp names internally; links created with swp names are invisible
+to the launcher). They must exist within the launcher's startup wait, or
+qemu never starts (links created 7 minutes late left the launcher stalled;
+links created seconds after a restart let it proceed within its next
+poll). And each leaf's replacement eth2 needs its tc redirect to the VM
+tap rebuilt, because the old rules pointed at the destroyed device.
+
+`make heal-spine` runs the whole sequence (see `heal-spine.sh`). After
+this recovery, the full fabric audit came back green:
+`ch01_audit_20260826_165442`, all sessions established, all ECMP checks at
+two next hops, zero loss both directions.
