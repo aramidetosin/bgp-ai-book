@@ -14,7 +14,7 @@ node-image:
 	docker image inspect bgpbook-frr-host >/dev/null 2>&1 || \
 	  docker build --network host -t bgpbook-frr-host -f ../ch09/Dockerfile.host ../ch09
 
-# The firewall pair boots and self-configures in roughly 19 minutes.
+# The firewall pair boots and self-configures in about six minutes.
 up: generate node-image
 	sudo containerlab deploy -t topo.clab.yml --reconfigure
 

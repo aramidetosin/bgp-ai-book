@@ -7,8 +7,8 @@ provider router (FRR, bridging the outside segment across both
 firewalls' outside ports), and an external client on "the internet".
 The firewall pair's full configuration is generated XML
 (`gen_fw_xml.py`), loaded and committed by the patched launcher at
-first boot; both units boot and self-configure in about six and a half
-minutes here.
+first boot; both units boot and self-configure in about six minutes
+here (recorded in audits/edge/boot.txt).
 
 ## Targets
 

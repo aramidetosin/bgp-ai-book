@@ -1,0 +1,7 @@
+=== The staged sync failure that would not fail ===
+--- HA2 links down on both units; a transfer with a mid-flight failover ---
+--- suspending the active (172.20.40.12) eight seconds in ---
+<result>Successfully changed HA state to suspended
+--- the verdict ---
+  bytes received: 62914560 of 62914560
+--- HA2 restored ---

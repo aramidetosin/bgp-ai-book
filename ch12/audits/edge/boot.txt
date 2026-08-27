@@ -1,0 +1,5 @@
+=== The launcher log, both units ===
+--- fw-a ---
+2026-08-27 19:50:02,476: launch     [1;32m	INFO[0m Startup complete in: 0:06:00.416750
+--- fw-b ---
+2026-08-27 19:50:02,611: launch     [1;32m	INFO[0m Startup complete in: 0:06:00.553024

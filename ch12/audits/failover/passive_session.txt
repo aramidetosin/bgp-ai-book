@@ -1,0 +1,6 @@
+=== The passive holds the session, mid-flow, before any failover ===
+--- a transfer runs; the PASSIVE (172.20.40.11) is asked for the flow ---
+      <dst>203.0.113.100</dst>
+      <xdst>172.16.200.1</xdst>
+      <state>ACTIVE</state>
+      <application>web-browsing</application>
