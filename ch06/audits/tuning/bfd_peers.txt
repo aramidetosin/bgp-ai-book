@@ -1,0 +1,6 @@
+$ sudo vtysh -c "show bgp neighbors swp2" | grep -A 4 "BFD"   (leaf04)
+  BFD: Type: single hop
+  Detect Multiplier: 3, Min Rx interval: 300, Min Tx interval: 300
+  Status: Up, Last update: 0:00:00:48
+
+

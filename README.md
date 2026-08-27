@@ -14,6 +14,7 @@ chapter's bootstrap configuration, with nothing hand-typed.
 | [ch03](ch03/) | Frontend and Backend: Two Networks, Two Jobs | Two nodes with a NIC in each of two disjoint fabrics: run a service on one and a collective stand-in on the other, prove zero cross-traffic with simultaneous captures, and break each network while the other doesn't notice |
 | [ch04](ch04/) | Completing the Map | One node, four fabrics: frontend, backend, routed storage, and out-of-band with the BMC in a VRF; four simultaneous jobs, a diagonal isolation matrix, and a blackout demo where only the OOB path survives |
 | [ch05](ch05/) | Clos and Rail-Optimized Topologies | The topology generator's debut: a rail-optimized backend (4 rail leafs, 2 spines, 2 nodes) generated from a five-number YAML spec, verified against generated intent with LLDP, plus a miscable that survives smoke tests and gets caught by the diff |
+| [ch06](ch06/) | eBGP Underlay Design | The book's core underlay, generated and measured: the failover ladder (6.77 s bare, 3.01 s tuned, sub-second with BFD), graceful-restart and reconnect timings, the over-tuning trap sprung with deterministic CPU stalls, a duplicate-ASN break-fix, and the whole fabric converted to numbered peering and back with one generator flag |
 
 Each chapter directory contains:
 

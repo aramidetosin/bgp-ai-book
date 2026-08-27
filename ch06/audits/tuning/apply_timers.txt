@@ -1,0 +1,50 @@
+== leaf01 ==
+nv set vrf default router bgp neighbor swp2 timers keepalive 1 
+nv set vrf default router bgp neighbor swp2 timers hold 3 
+nv set vrf default router bgp neighbor swp3 timers keepalive 1 
+nv set vrf default router bgp neighbor swp3 timers hold 3 
+nv config apply -y
+leaf01: applied timers
+== leaf02 ==
+nv set vrf default router bgp neighbor swp2 timers keepalive 1 
+nv set vrf default router bgp neighbor swp2 timers hold 3 
+nv set vrf default router bgp neighbor swp3 timers keepalive 1 
+nv set vrf default router bgp neighbor swp3 timers hold 3 
+nv config apply -y
+leaf02: applied timers
+== leaf03 ==
+nv set vrf default router bgp neighbor swp2 timers keepalive 1 
+nv set vrf default router bgp neighbor swp2 timers hold 3 
+nv set vrf default router bgp neighbor swp3 timers keepalive 1 
+nv set vrf default router bgp neighbor swp3 timers hold 3 
+nv config apply -y
+leaf03: applied timers
+== leaf04 ==
+nv set vrf default router bgp neighbor swp2 timers keepalive 1 
+nv set vrf default router bgp neighbor swp2 timers hold 3 
+nv set vrf default router bgp neighbor swp3 timers keepalive 1 
+nv set vrf default router bgp neighbor swp3 timers hold 3 
+nv config apply -y
+leaf04: applied timers
+== spine01 ==
+nv set vrf default router bgp neighbor swp1 timers keepalive 1 
+nv set vrf default router bgp neighbor swp1 timers hold 3 
+nv set vrf default router bgp neighbor swp2 timers keepalive 1 
+nv set vrf default router bgp neighbor swp2 timers hold 3 
+nv set vrf default router bgp neighbor swp3 timers keepalive 1 
+nv set vrf default router bgp neighbor swp3 timers hold 3 
+nv set vrf default router bgp neighbor swp4 timers keepalive 1 
+nv set vrf default router bgp neighbor swp4 timers hold 3 
+nv config apply -y
+spine01: applied timers
+== spine02 ==
+nv set vrf default router bgp neighbor swp1 timers keepalive 1 
+nv set vrf default router bgp neighbor swp1 timers hold 3 
+nv set vrf default router bgp neighbor swp2 timers keepalive 1 
+nv set vrf default router bgp neighbor swp2 timers hold 3 
+nv set vrf default router bgp neighbor swp3 timers keepalive 1 
+nv set vrf default router bgp neighbor swp3 timers hold 3 
+nv set vrf default router bgp neighbor swp4 timers keepalive 1 
+nv set vrf default router bgp neighbor swp4 timers hold 3 
+nv config apply -y
+spine02: applied timers

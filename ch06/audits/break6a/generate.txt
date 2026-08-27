@@ -1,0 +1,2 @@
+NOTE: leaf04 emitted with leaf01's ASN 65101
+generated: 4 leafs, 2 spines, 2 servers, 10 links (unnumbered), intent for 20 endpoints

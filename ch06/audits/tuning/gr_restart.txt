@@ -1,0 +1,6 @@
+== planned maintenance: systemctl restart frr on spine01, ping running ==
+frr restarted on spine01 mid-ping
+1122 packets transmitted, 1120 received, 0.178253% packet loss, time 29982ms
+rtt min/avg/max/mdev = 0.123/0.233/1.402/0.076 ms
+2026-08-27T04:38:23.203800+00:00 leaf04 bgpd[4102]: [PXVXG-TFNNT] %ADJCHANGE: neighbor swp2(spine01) in vrf default Down BGP Notification received
+2026-08-27T04:38:28.773456+00:00 leaf04 bgpd[4102]: [N9HHH-F8H1M] %ADJCHANGE: neighbor swp2(spine01) in vrf default Up

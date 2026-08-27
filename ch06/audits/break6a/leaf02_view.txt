@@ -1,0 +1,15 @@
+$ sudo vtysh -c "show ip bgp 172.16.4.0/24"   (leaf02: sees leaf04 fine)
+BGP routing table entry for 172.16.4.0/24, version 12
+Paths: (2 available, best #1, table default)
+  Advertised to non peer-group peers:
+  spine01(swp2) spine02(swp3)
+  65100 65101
+    fe80::a8c1:abff:fef6:7c59 (spine02) from spine02(swp3) (10.0.0.102)
+    (fe80::a8c1:abff:fef6:7c59) (used)
+      Origin incomplete, valid, external, multipath, bestpath-from-AS 65100, best (Older Path)
+      Last update: Thu Aug 27 04:54:45 2026
+  65100 65101
+    fe80::a8c1:abff:febb:4776 (spine01) from spine01(swp2) (10.0.0.101)
+    (fe80::a8c1:abff:febb:4776) (used)
+      Origin incomplete, valid, external, multipath
+      Last update: Thu Aug 27 04:54:45 2026

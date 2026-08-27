@@ -1,0 +1,34 @@
+== leaf01 ==
+nv set vrf default router bgp neighbor swp2 timers connection-retry 1 
+nv set vrf default router bgp neighbor swp3 timers connection-retry 1 
+nv config apply -y
+leaf01: applied connect
+== leaf02 ==
+nv set vrf default router bgp neighbor swp2 timers connection-retry 1 
+nv set vrf default router bgp neighbor swp3 timers connection-retry 1 
+nv config apply -y
+leaf02: applied connect
+== leaf03 ==
+nv set vrf default router bgp neighbor swp2 timers connection-retry 1 
+nv set vrf default router bgp neighbor swp3 timers connection-retry 1 
+nv config apply -y
+leaf03: applied connect
+== leaf04 ==
+nv set vrf default router bgp neighbor swp2 timers connection-retry 1 
+nv set vrf default router bgp neighbor swp3 timers connection-retry 1 
+nv config apply -y
+leaf04: applied connect
+== spine01 ==
+nv set vrf default router bgp neighbor swp1 timers connection-retry 1 
+nv set vrf default router bgp neighbor swp2 timers connection-retry 1 
+nv set vrf default router bgp neighbor swp3 timers connection-retry 1 
+nv set vrf default router bgp neighbor swp4 timers connection-retry 1 
+nv config apply -y
+spine01: applied connect
+== spine02 ==
+nv set vrf default router bgp neighbor swp1 timers connection-retry 1 
+nv set vrf default router bgp neighbor swp2 timers connection-retry 1 
+nv set vrf default router bgp neighbor swp3 timers connection-retry 1 
+nv set vrf default router bgp neighbor swp4 timers connection-retry 1 
+nv config apply -y
+spine02: applied connect

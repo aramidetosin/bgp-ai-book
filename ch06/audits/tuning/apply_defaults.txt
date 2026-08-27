@@ -1,0 +1,50 @@
+== leaf01 ==
+nv unset vrf default router bgp neighbor swp2 timers 
+nv unset vrf default router bgp neighbor swp2 bfd 
+nv unset vrf default router bgp neighbor swp3 timers 
+nv unset vrf default router bgp neighbor swp3 bfd 
+nv config apply -y
+leaf01: applied defaults
+== leaf02 ==
+nv unset vrf default router bgp neighbor swp2 timers 
+nv unset vrf default router bgp neighbor swp2 bfd 
+nv unset vrf default router bgp neighbor swp3 timers 
+nv unset vrf default router bgp neighbor swp3 bfd 
+nv config apply -y
+leaf02: applied defaults
+== leaf03 ==
+nv unset vrf default router bgp neighbor swp2 timers 
+nv unset vrf default router bgp neighbor swp2 bfd 
+nv unset vrf default router bgp neighbor swp3 timers 
+nv unset vrf default router bgp neighbor swp3 bfd 
+nv config apply -y
+leaf03: applied defaults
+== leaf04 ==
+nv unset vrf default router bgp neighbor swp2 timers 
+nv unset vrf default router bgp neighbor swp2 bfd 
+nv unset vrf default router bgp neighbor swp3 timers 
+nv unset vrf default router bgp neighbor swp3 bfd 
+nv config apply -y
+leaf04: applied defaults
+== spine01 ==
+nv unset vrf default router bgp neighbor swp1 timers 
+nv unset vrf default router bgp neighbor swp1 bfd 
+nv unset vrf default router bgp neighbor swp2 timers 
+nv unset vrf default router bgp neighbor swp2 bfd 
+nv unset vrf default router bgp neighbor swp3 timers 
+nv unset vrf default router bgp neighbor swp3 bfd 
+nv unset vrf default router bgp neighbor swp4 timers 
+nv unset vrf default router bgp neighbor swp4 bfd 
+nv config apply -y
+spine01: applied defaults
+== spine02 ==
+nv unset vrf default router bgp neighbor swp1 timers 
+nv unset vrf default router bgp neighbor swp1 bfd 
+nv unset vrf default router bgp neighbor swp2 timers 
+nv unset vrf default router bgp neighbor swp2 bfd 
+nv unset vrf default router bgp neighbor swp3 timers 
+nv unset vrf default router bgp neighbor swp3 bfd 
+nv unset vrf default router bgp neighbor swp4 timers 
+nv unset vrf default router bgp neighbor swp4 bfd 
+nv config apply -y
+spine02: applied defaults

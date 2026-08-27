@@ -1,0 +1,82 @@
+== leaf01 ==
+nv set vrf default router bgp neighbor swp2 bfd enable on 
+nv set vrf default router bgp neighbor swp2 bfd min-rx-interval 50 
+nv set vrf default router bgp neighbor swp2 bfd min-tx-interval 50 
+nv set vrf default router bgp neighbor swp2 bfd detect-multiplier 2 
+nv set vrf default router bgp neighbor swp3 bfd enable on 
+nv set vrf default router bgp neighbor swp3 bfd min-rx-interval 50 
+nv set vrf default router bgp neighbor swp3 bfd min-tx-interval 50 
+nv set vrf default router bgp neighbor swp3 bfd detect-multiplier 2 
+nv config apply -y
+leaf01: applied bfd-fast
+== leaf02 ==
+nv set vrf default router bgp neighbor swp2 bfd enable on 
+nv set vrf default router bgp neighbor swp2 bfd min-rx-interval 50 
+nv set vrf default router bgp neighbor swp2 bfd min-tx-interval 50 
+nv set vrf default router bgp neighbor swp2 bfd detect-multiplier 2 
+nv set vrf default router bgp neighbor swp3 bfd enable on 
+nv set vrf default router bgp neighbor swp3 bfd min-rx-interval 50 
+nv set vrf default router bgp neighbor swp3 bfd min-tx-interval 50 
+nv set vrf default router bgp neighbor swp3 bfd detect-multiplier 2 
+nv config apply -y
+leaf02: applied bfd-fast
+== leaf03 ==
+nv set vrf default router bgp neighbor swp2 bfd enable on 
+nv set vrf default router bgp neighbor swp2 bfd min-rx-interval 50 
+nv set vrf default router bgp neighbor swp2 bfd min-tx-interval 50 
+nv set vrf default router bgp neighbor swp2 bfd detect-multiplier 2 
+nv set vrf default router bgp neighbor swp3 bfd enable on 
+nv set vrf default router bgp neighbor swp3 bfd min-rx-interval 50 
+nv set vrf default router bgp neighbor swp3 bfd min-tx-interval 50 
+nv set vrf default router bgp neighbor swp3 bfd detect-multiplier 2 
+nv config apply -y
+leaf03: applied bfd-fast
+== leaf04 ==
+nv set vrf default router bgp neighbor swp2 bfd enable on 
+nv set vrf default router bgp neighbor swp2 bfd min-rx-interval 50 
+nv set vrf default router bgp neighbor swp2 bfd min-tx-interval 50 
+nv set vrf default router bgp neighbor swp2 bfd detect-multiplier 2 
+nv set vrf default router bgp neighbor swp3 bfd enable on 
+nv set vrf default router bgp neighbor swp3 bfd min-rx-interval 50 
+nv set vrf default router bgp neighbor swp3 bfd min-tx-interval 50 
+nv set vrf default router bgp neighbor swp3 bfd detect-multiplier 2 
+nv config apply -y
+leaf04: applied bfd-fast
+== spine01 ==
+nv set vrf default router bgp neighbor swp1 bfd enable on 
+nv set vrf default router bgp neighbor swp1 bfd min-rx-interval 50 
+nv set vrf default router bgp neighbor swp1 bfd min-tx-interval 50 
+nv set vrf default router bgp neighbor swp1 bfd detect-multiplier 2 
+nv set vrf default router bgp neighbor swp2 bfd enable on 
+nv set vrf default router bgp neighbor swp2 bfd min-rx-interval 50 
+nv set vrf default router bgp neighbor swp2 bfd min-tx-interval 50 
+nv set vrf default router bgp neighbor swp2 bfd detect-multiplier 2 
+nv set vrf default router bgp neighbor swp3 bfd enable on 
+nv set vrf default router bgp neighbor swp3 bfd min-rx-interval 50 
+nv set vrf default router bgp neighbor swp3 bfd min-tx-interval 50 
+nv set vrf default router bgp neighbor swp3 bfd detect-multiplier 2 
+nv set vrf default router bgp neighbor swp4 bfd enable on 
+nv set vrf default router bgp neighbor swp4 bfd min-rx-interval 50 
+nv set vrf default router bgp neighbor swp4 bfd min-tx-interval 50 
+nv set vrf default router bgp neighbor swp4 bfd detect-multiplier 2 
+nv config apply -y
+spine01: applied bfd-fast
+== spine02 ==
+nv set vrf default router bgp neighbor swp1 bfd enable on 
+nv set vrf default router bgp neighbor swp1 bfd min-rx-interval 50 
+nv set vrf default router bgp neighbor swp1 bfd min-tx-interval 50 
+nv set vrf default router bgp neighbor swp1 bfd detect-multiplier 2 
+nv set vrf default router bgp neighbor swp2 bfd enable on 
+nv set vrf default router bgp neighbor swp2 bfd min-rx-interval 50 
+nv set vrf default router bgp neighbor swp2 bfd min-tx-interval 50 
+nv set vrf default router bgp neighbor swp2 bfd detect-multiplier 2 
+nv set vrf default router bgp neighbor swp3 bfd enable on 
+nv set vrf default router bgp neighbor swp3 bfd min-rx-interval 50 
+nv set vrf default router bgp neighbor swp3 bfd min-tx-interval 50 
+nv set vrf default router bgp neighbor swp3 bfd detect-multiplier 2 
+nv set vrf default router bgp neighbor swp4 bfd enable on 
+nv set vrf default router bgp neighbor swp4 bfd min-rx-interval 50 
+nv set vrf default router bgp neighbor swp4 bfd min-tx-interval 50 
+nv set vrf default router bgp neighbor swp4 bfd detect-multiplier 2 
+nv config apply -y
+spine02: applied bfd-fast

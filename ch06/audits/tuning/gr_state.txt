@@ -1,0 +1,7 @@
+$ nv show router bgp graceful-restart   (leaf04)
+                              applied    
+----------------------------  -----------
+mode                          helper-only
+restart-time                  120        
+path-selection-deferral-time  360        
+stale-routes-time             360        

@@ -1,0 +1,19 @@
+=== BGP sessions on the core underlay ===
+  leaf01: 2/2 Established - OK
+  leaf02: 2/2 Established - OK
+  leaf03: 2/2 Established - OK
+  leaf04: 2/2 Established - OK
+  spine01: 4/4 Established - OK
+  spine02: 4/4 Established - OK
+=== Every loopback reachable from leaf01 ===
+  leaf01 -> 10.0.0.2 - OK
+  leaf01 -> 10.0.0.3 - OK
+  leaf01 -> 10.0.0.4 - FAIL
+  leaf01 -> 10.0.0.101 - OK
+  leaf01 -> 10.0.0.102 - OK
+=== Server to server across the fabric ===
+  server01 -> server02 (172.16.4.11) - FAIL
+=== Cabling versus intent (LLDP) ===
+  CABLING MATCHES INTENT
+
+Audit written to audits/ch06_audit_20260827_045545/

@@ -1,0 +1,73 @@
+$ nv set vrf default router bgp neighbor swp2 timers hold --help   (leaf01)
+usage: 
+  nv [options] set vrf <vrf-id> router bgp neighbor <neighbor-id> timers hold <arg>
+
+Description:
+  hold           Hold timer.  If `none`, keepalives from the peer are not tracked and the peering session will not experience a hold timeout.  If `auto`, the global value is used.  This is the default.
+
+Identifiers:
+  <vrf-id>       VRF (vrf-name)
+  <neighbor-id>  Peer ID (ipv6 | ipv4 | interface-name)
+  <arg>           (default:auto | enum:auto, none | integer:3 - 65535 |
+                 string)
+
+General Options:
+  -h, --help     Show help.
+
+== peer-group ==
+usage: 
+  nv [options] set vrf <vrf-id> router bgp peer-group <peer-group-id>
+
+Description:
+  peer-group       Peer-groups configuration
+
+Identifiers:
+  <vrf-id>         VRF (vrf-name)
+  <peer-group-id>  Domain (generic-name)
+
+
+== multipath ==
+Error: 'path-selection' is not one of ['graceful-restart', 'convergence-wait', 'queue-limit', 'autonomous-system', 'router-id', 'policy-update-timer', 'graceful-shutdown', 'wait-for-install', 'enable']
+
+== FRR render of the tuned neighbor ==
+router bgp 65101
+ bgp router-id 10.0.0.1
+ neighbor swp2 interface remote-as external
+ neighbor swp2 bfd 3 300 300
+ neighbor swp2 advertisement-interval 0
+ neighbor swp2 timers 3 9
+ neighbor swp2 timers connect 10
+ neighbor swp2 bfd 3 300 300
+ neighbor swp3 bfd 3 300 300
+
+== multipath, second probe ==
+usage: 
+  nv [options] set vrf <vrf-id> router bgp address-family ipv4-unicast multipaths [compare-cluster-length ...]
+  nv [options] set vrf <vrf-id> router bgp address-family ipv4-unicast multipaths [ebgp ...]
+  nv [options] set vrf <vrf-id> router bgp address-family ipv4-unicast multipaths [ibgp ...]
+
+Description:
+  multipaths            Multipaths
+
+Identifiers:
+  <vrf-id>              VRF (vrf-name)
+
+Attributes:
+
+Error: 'route-selection' is not one of ['address-family', 'neighbor', 'peer-group', 'path-selection', 'route-reflection', 'route-export', 'route-import', 'timers', 'confederation', 'dynamic-neighbor', 'autonomous-system', 'router-id', 'rd', 'enable']
+
+== path-selection, the right tree ==
+usage: 
+  nv [options] set vrf <vrf-id> router bgp path-selection multipath [aspath-ignore ...]
+  nv [options] set vrf <vrf-id> router bgp path-selection multipath [bandwidth ...]
+  nv [options] set vrf <vrf-id> router bgp path-selection multipath [generate-asset ...]
+
+Description:
+  multipath       BGP multipath path-selection config, applicable to this BGP instance
+
+Identifiers:
+  <vrf-id>        VRF (vrf-name)
+
+Attributes:
+  aspath-ignore   Ignore AS path when determining multipath routing.
+  bandwidth       Perform multipath route selection based on bandwidth.

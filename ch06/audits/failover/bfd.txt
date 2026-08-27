@@ -1,0 +1,9 @@
+== bfd: fail spine01:swp4 (leaf04-facing, spine side) ==
+--- 172.16.1.11 ping statistics ---
+1619 packets transmitted, 1577 received, 2.59419% packet loss, time 29997ms
+rtt min/avg/max/mdev = 0.120/0.218/3.881/0.119 ms
+lost 42 of 1619 packets in 30 s: outage about 0.78 s
+leaf04 log:
+2026-08-27T04:30:41.731784+00:00 leaf04 bgpd[4102]: [N9HHH-F8H1M] %ADJCHANGE: neighbor swp2(spine01) in vrf default Up
+2026-08-27T04:31:43.346814+00:00 leaf04 bgpd[4102]: [PXVXG-TFNNT] %ADJCHANGE: neighbor swp2(spine01) in vrf default Down BGP Notification send
+healed: leaf04 back to 2/2 Established

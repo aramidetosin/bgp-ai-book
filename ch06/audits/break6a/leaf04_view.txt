@@ -1,0 +1,9 @@
+$ sudo vtysh -c "show bgp summary" | grep -E "Neighbor|swp"   (leaf04: sessions are UP)
+Neighbor        V         AS   MsgRcvd   MsgSent   TblVer  InQ OutQ  Up/Down State/PfxRcd   PfxSnt Desc
+spine01(swp2)   4      65100        27        29        0    0    0 00:00:59            3        6 N/A
+spine02(swp3)   4      65100        27        29        0    0    0 00:00:59            3        6 N/A
+
+$ sudo vtysh -c "show ip bgp 172.16.1.0/24"   (leaf04: leaf01 has vanished)
+% Network not in table
+
+$ sudo vtysh -c "show ip route bgp" | grep 172.16   (leaf04: what survives)

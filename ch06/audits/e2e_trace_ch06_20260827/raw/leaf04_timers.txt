@@ -1,0 +1,7 @@
+$ sshpass -p Clab123! ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null cumulus@clab-bgpbook-ch06-leaf04 "sudo vtysh -c 'show bgp neighbors swp2' | grep -E 'Hold time|keepalive|BFD|Last reset'"
+Warning: Permanently added 'clab-bgpbook-ch06-leaf04' (ECDSA) to the list of known hosts.
+Welcome to NVIDIA Cumulus (R) Linux (R)
+  Hold time is 9 seconds, keepalive interval is 3 seconds
+  Configured hold time is 9 seconds, keepalive interval is 3 seconds
+  Last reset 00:01:55,  Waiting for peer OPEN
+  BFD: Type: single hop

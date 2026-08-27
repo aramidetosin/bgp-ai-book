@@ -1,0 +1,18 @@
+# Chapter 6: the book's core underlay as data, chapter 1's fabric shape
+# generated: 4 leafs, 2 spines, eBGP unnumbered, one server subnet per
+# leaf that has a server. Later chapters build on this topology.
+name: bgpbook-ch06
+mgmt_subnet: 172.20.36.0/24
+
+leafs: 4
+spines: 2
+servers_on: [1, 4]   # which leafs carry a server (server01 on leaf01, ...)
+
+switch_image: vrnetlab/nvidia_cumulus-vx:5.12.0
+# multitool plus lldpd, built once by `make node-image` (Dockerfile.node)
+node_image: bgpbook-multitool-lldpd
+
+# ASN plan: spines share one ASN, each leaf gets its own. The allocation
+# policy this encodes is the subject of the chapter.
+spine_asn: 65100
+leaf_asn_base: 65100   # leaf i gets leaf_asn_base + i

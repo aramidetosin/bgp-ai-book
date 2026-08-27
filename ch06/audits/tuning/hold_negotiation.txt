@@ -1,0 +1,13 @@
+$ show bgp neighbors swp2 | grep -i hold   (before clearing, config already 1/3)
+  Hold time is 3 seconds, keepalive interval is 1 seconds
+  Configured hold time is 3 seconds, keepalive interval is 1 seconds
+$ show bgp neighbors swp2 | grep -i hold   (after clear ip bgp *)
+  Hold time is 3 seconds, keepalive interval is 1 seconds
+  Configured hold time is 3 seconds, keepalive interval is 1 seconds
+
+== run 2: change the configuration, do not clear the session ==
+$ nv set vrf default router bgp neighbor swp2 timers hold 3 && nv set vrf default router bgp neighbor swp2 timers keepalive 1 && nv config apply -y   (leaf04)
+$ sudo vtysh -c "show bgp neighbors swp2" | grep -i "hold time"
+  Hold time is 9 seconds, keepalive interval is 3 seconds
+  Configured hold time is 3 seconds, keepalive interval is 1 seconds
+(the session still runs the negotiated 9; the configured 3 waits for the next establishment)

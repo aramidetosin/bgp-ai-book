@@ -1,0 +1,7 @@
+== fast-bfd: 60 s of CPU starvation on spine01, ping running ==
+stress window complete
+--- 172.16.1.11 ping statistics ---
+4036 packets transmitted, 4036 received, 0% packet loss, time 74985ms
+rtt min/avg/max/mdev = 0.115/0.217/4.465/0.105 ms
+leaf04 ADJCHANGE lines before=28 after=28
+no session flap during stress

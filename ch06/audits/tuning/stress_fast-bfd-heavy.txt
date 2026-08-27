@@ -1,0 +1,4 @@
+== fast-bfd-heavy: 45 s of 16 CPU hogs plus a hammered CLI on spine01, BFD 50 ms x2 armed ==
+stress window complete
+leaf04 ADJCHANGE lines before=2 after=2
+no session flap under load

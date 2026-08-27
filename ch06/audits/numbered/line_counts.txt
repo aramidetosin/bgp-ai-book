@@ -1,0 +1,27 @@
+$ python3 gen_topo.py && wc -l bootstrap/*.cfg
+generated: 4 leafs, 2 spines, 2 servers, 10 links (unnumbered), intent for 20 endpoints
+  21 bootstrap/leaf01.cfg
+  20 bootstrap/leaf02.cfg
+  20 bootstrap/leaf03.cfg
+  21 bootstrap/leaf04.cfg
+  24 bootstrap/spine01.cfg
+  24 bootstrap/spine02.cfg
+ 130 total
+
+$ python3 gen_topo.py --numbered && wc -l bootstrap/*.cfg
+generated: 4 leafs, 2 spines, 2 servers, 10 links (numbered), intent for 20 endpoints
+  21 bootstrap/leaf01.cfg
+  20 bootstrap/leaf02.cfg
+  20 bootstrap/leaf03.cfg
+  21 bootstrap/leaf04.cfg
+  24 bootstrap/spine01.cfg
+  24 bootstrap/spine02.cfg
+ 130 total
+
+$ grep -c "ip address 10.0.1" bootstrap/*.cfg   (the address plan entries that did not exist before)
+bootstrap/leaf01.cfg:2
+bootstrap/leaf02.cfg:2
+bootstrap/leaf03.cfg:2
+bootstrap/leaf04.cfg:2
+bootstrap/spine01.cfg:4
+bootstrap/spine02.cfg:4

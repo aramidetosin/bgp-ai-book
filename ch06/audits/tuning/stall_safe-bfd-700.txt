@@ -1,0 +1,6 @@
+== safe-bfd-700: 700 ms CPU stall on spine01, ping running ==
+stalled and resumed
+946 packets transmitted, 946 received, 0% packet loss, time 24977ms
+rtt min/avg/max/mdev = 0.155/10.339/704.232/68.843 ms, pipe 26
+leaf04 ADJCHANGE lines before=40 after=40
+no session reset: the stall fit inside the detection budget

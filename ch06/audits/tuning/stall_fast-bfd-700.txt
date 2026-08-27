@@ -1,0 +1,8 @@
+== fast-bfd-700: 700 ms CPU stall on spine01, ping running ==
+stalled and resumed
+941 packets transmitted, 941 received, 0% packet loss, time 24997ms
+rtt min/avg/max/mdev = 0.116/10.407/696.103/68.564 ms, pipe 27
+leaf04 ADJCHANGE lines before=34 after=36
+SESSION RESET by the stall; latest transitions:
+2026-08-27T04:47:58.986046+00:00 leaf04 bgpd[4102]: [PXVXG-TFNNT] %ADJCHANGE: neighbor swp2(spine01) in vrf default Down BGP Notification send
+2026-08-27T04:47:59.295256+00:00 leaf04 bgpd[4102]: [N9HHH-F8H1M] %ADJCHANGE: neighbor swp2(spine01) in vrf default Up

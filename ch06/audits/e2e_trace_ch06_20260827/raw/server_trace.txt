@@ -1,0 +1,6 @@
+$ docker exec clab-bgpbook-ch06-server02 traceroute -n -q 2 -w 2 172.16.1.11
+traceroute to 172.16.1.11 (172.16.1.11), 30 hops max, 46 byte packets
+ 1  172.16.4.1  0.139 ms  0.029 ms
+ 2  10.0.0.102  0.197 ms  0.067 ms
+ 3  10.0.0.1  0.339 ms  0.184 ms
+ 4  172.16.1.11  0.168 ms  0.131 ms

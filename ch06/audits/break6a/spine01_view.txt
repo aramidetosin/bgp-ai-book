@@ -1,0 +1,10 @@
+$ sudo vtysh -c "show ip bgp 172.16.4.0/24"   (spine01: the path carries 65101 twice in the fabric)
+BGP routing table entry for 172.16.4.0/24, version 3
+Paths: (1 available, best #1, table default)
+  Advertised to non peer-group peers:
+  leaf01(swp1) leaf02(swp2) leaf03(swp3) leaf04(swp4)
+  65101
+    fe80::a8c1:abff:fe64:49af (leaf04) from leaf04(swp4) (10.0.0.4)
+    (fe80::a8c1:abff:fe64:49af) (used)
+      Origin incomplete, metric 0, valid, external, bestpath-from-AS 65101, best (First path received)
+      Last update: Thu Aug 27 04:54:45 2026

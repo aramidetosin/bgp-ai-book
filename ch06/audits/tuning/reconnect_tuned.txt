@@ -1,0 +1,4 @@
+== tuned: bounce leaf04 swp2, timeline from leaf04's log ==
+link up at: 04:35:21.504
+2026-08-27T04:34:56.498751+00:00 leaf04 bgpd[4102]: [PXVXG-TFNNT] %ADJCHANGE: neighbor swp2(spine01) in vrf default Down Waiting for NHT
+2026-08-27T04:35:24.256993+00:00 leaf04 bgpd[4102]: [N9HHH-F8H1M] %ADJCHANGE: neighbor swp2(spine01) in vrf default Up

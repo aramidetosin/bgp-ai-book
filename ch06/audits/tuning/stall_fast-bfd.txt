@@ -1,0 +1,6 @@
+== fast-bfd: 400 ms CPU stall on spine01, ping running ==
+stalled and resumed
+947 packets transmitted, 947 received, 0% packet loss, time 24993ms
+rtt min/avg/max/mdev = 0.121/3.940/406.565/31.895 ms, pipe 17
+leaf04 ADJCHANGE lines before=28 after=28
+no session reset: the stall fit inside the detection budget

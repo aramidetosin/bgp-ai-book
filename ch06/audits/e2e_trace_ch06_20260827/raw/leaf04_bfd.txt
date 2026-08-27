@@ -1,0 +1,4 @@
+$ sshpass -p Clab123! ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null cumulus@clab-bgpbook-ch06-leaf04 "sudo vtysh -c 'show bfd peers brief'"
+Warning: Permanently added 'clab-bgpbook-ch06-leaf04' (ECDSA) to the list of known hosts.
+Welcome to NVIDIA Cumulus (R) Linux (R)
+% Unknown command: show bfd peers brief

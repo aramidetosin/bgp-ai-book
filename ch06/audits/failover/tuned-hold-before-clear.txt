@@ -1,0 +1,9 @@
+== tuned-hold: fail spine01:swp4 (leaf04-facing, spine side) ==
+--- 172.16.1.11 ping statistics ---
+1621 packets transmitted, 1227 received, 24.306% packet loss, time 29981ms
+rtt min/avg/max/mdev = 0.107/0.223/0.651/0.082 ms
+lost 394 of 1621 packets in 30 s: outage about 7.29 s
+leaf04 log:
+2026-08-27T04:23:01.686381+00:00 leaf04 bgpd[4102]: [N9HHH-F8H1M] %ADJCHANGE: neighbor swp2(spine01) in vrf default Up
+2026-08-27T04:23:58.687066+00:00 leaf04 bgpd[4102]: [PXVXG-TFNNT] %ADJCHANGE: neighbor swp2(spine01) in vrf default Down BGP Notification send
+healed: leaf04 back to 2/2 Established
