@@ -1,0 +1,14 @@
+=== Fabric BGP sessions ===
+  leaf01: 4/4 Established - OK
+  leaf02: 3/3 Established - OK
+  leaf03: 2/2 Established - OK
+  spine01: 3/3 Established - OK
+  spine02: 3/3 Established - OK
+=== The cluster ===
+  nodes Ready: 3/3 - OK
+  cilium agents Running: 3/3 - OK
+=== Pod routes across the fabric ===
+  leaf03 pod /24s: 3 - OK
+=== Cabling versus intent (LLDP) ===
+  CABLING MATCHES INTENT
+

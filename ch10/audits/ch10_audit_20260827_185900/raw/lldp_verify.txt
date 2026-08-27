@@ -1,0 +1,19 @@
+  SKIP      leaf01:swp1 <-> node01:eth1 (verified by its BGP session)
+  SKIP      leaf01:swp2 <-> node02:eth1 (verified by its BGP session)
+  OK        leaf01:swp3 <-> client01:eth1
+  OK        leaf01:swp4 <-> spine01:swp1
+  OK        leaf01:swp5 <-> spine02:swp1
+  SKIP      leaf02:swp1 <-> node03:eth1 (verified by its BGP session)
+  OK        leaf02:swp2 <-> spine01:swp2
+  OK        leaf02:swp3 <-> spine02:swp2
+  OK        leaf03:swp1 <-> client02:eth1
+  OK        leaf03:swp2 <-> spine01:swp3
+  OK        leaf03:swp3 <-> spine02:swp3
+  OK        spine01:swp1 <-> leaf01:swp4
+  OK        spine01:swp2 <-> leaf02:swp2
+  OK        spine01:swp3 <-> leaf03:swp2
+  OK        spine02:swp1 <-> leaf01:swp5
+  OK        spine02:swp2 <-> leaf02:swp3
+  OK        spine02:swp3 <-> leaf03:swp3
+
+CABLING MATCHES INTENT

@@ -1,0 +1,13 @@
+--- the leader's segment NIC dies five seconds in ---
+--- the lease, mid-failure (does it move?) ---
+cilium-l2announce-default-inference-l2   node02                                                                      6m23s
+--- the client's ARP entry now ---
+172.16.1.200             ether   aa:c1:ab:52:20:ed   C                     eth1
+--- the probe's log around the freeze ---
+  polls ok/FAIL: 8/42
+  first failure:  1787855680.
+  recovered at:   1787855728.
+  first failure:  1787855732.
+  recovered at:   1787855733.
+--- the lease after ---
+cilium-l2announce-default-inference-l2   node02                                                                      7m3s

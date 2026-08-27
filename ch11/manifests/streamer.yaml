@@ -1,0 +1,120 @@
+# The mock inference service: streams numbered tokens slowly so that
+# in-flight connections are long-lived and visibly break or survive.
+# Every response names the pod and node that served it.
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: streamer-app
+data:
+  app.py: |
+    import http.server, socketserver, time, os
+    class H(http.server.BaseHTTPRequestHandler):
+        protocol_version = "HTTP/1.1"
+        def do_GET(self):
+            self.send_response(200)
+            self.send_header("Content-Type", "text/plain")
+            self.send_header("Transfer-Encoding", "chunked")
+            self.end_headers()
+            def chunk(s):
+                b = s.encode()
+                self.wfile.write(f"{len(b):x}\r\n".encode() + b + b"\r\n")
+                self.wfile.flush()
+            chunk(f"serving pod={os.environ.get('POD_NAME')} node={os.environ.get('NODE_NAME')}\n")
+            try:
+                for i in range(20):
+                    chunk(f"token {i}\n")
+                    time.sleep(0.5)
+                chunk("done\n")
+                self.wfile.write(b"0\r\n\r\n")
+            except BrokenPipeError:
+                pass
+        def log_message(self, *a): pass
+    class S(socketserver.ThreadingTCPServer):
+        allow_reuse_address = True
+    S(("", 8080), H).serve_forever()
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: inference
+spec:
+  replicas: 3
+  selector:
+    matchLabels: {app: inference}
+  template:
+    metadata:
+      labels: {app: inference}
+    spec:
+      topologySpreadConstraints:
+      - maxSkew: 1
+        topologyKey: kubernetes.io/hostname
+        whenUnsatisfiable: DoNotSchedule
+        labelSelector:
+          matchLabels: {app: inference}
+      tolerations:
+      - key: node-role.kubernetes.io/control-plane
+        operator: Exists
+      containers:
+      - name: streamer
+        image: python:3.12-alpine
+        imagePullPolicy: Never
+        command: ["python3", "/app/app.py"]
+        env:
+        - name: POD_NAME
+          valueFrom: {fieldRef: {fieldPath: metadata.name}}
+        - name: NODE_NAME
+          valueFrom: {fieldRef: {fieldPath: spec.nodeName}}
+        ports:
+        - containerPort: 8080
+        readinessProbe:
+          tcpSocket: {port: 8080}
+          periodSeconds: 2
+        volumeMounts:
+        - {name: app, mountPath: /app}
+        lifecycle:
+          preStop:
+            exec:
+              command: ["sleep", "15"]
+      volumes:
+      - name: app
+        configMap: {name: streamer-app}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: inference
+  labels: {expose-bgp: "true"}
+  annotations:
+    io.cilium/lb-ipam-ips: "172.16.200.1"
+spec:
+  type: LoadBalancer
+  selector: {app: inference}
+  ports:
+  - port: 80
+    targetPort: 8080
+---
+# The legacy-pattern service: its address lives INSIDE the rack1 server
+# subnet, because layer 2 announcement answers ARP and ARP only works
+# for addresses the segment believes are its own. Same backends.
+apiVersion: v1
+kind: Service
+metadata:
+  name: inference-l2
+  labels: {expose-l2: "true"}
+  annotations:
+    io.cilium/lb-ipam-ips: "172.16.1.200"
+spec:
+  type: LoadBalancer
+  selector: {app: inference}
+  ports:
+  - port: 80
+    targetPort: 8080
+---
+apiVersion: cilium.io/v2alpha1
+kind: CiliumLoadBalancerIPPool
+metadata:
+  name: services
+spec:
+  blocks:
+  - cidr: 172.16.200.0/24
+  - cidr: 172.16.1.200/32

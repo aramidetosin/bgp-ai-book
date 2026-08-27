@@ -1,0 +1,16 @@
+=== The probe: client02, every half second, throughout ===
+
+=== Migration 1: L2 to BGP, make before break ===
+--- make: the service joins the BGP advertisement ---
+--- verify: the /32 exists in the fabric before the L2 path goes ---
+172.16.1.200 nhid 30 proto bgp metric 20 
+--- break: the L2 label comes off; the lease follows ---
+--- state: BGP only ---
+172.16.1.200 nhid 30 proto bgp metric 20 
+
+=== Migration 2: back to L2, the same choreography reversed ===
+--- state: the /32 is gone from the fabric; ARP answers again ---
+  (no route: the fabric reaches it as part of 172.16.1.0/24 again)
+
+=== The probe's verdict ===
+  polls: 43  failed: 0

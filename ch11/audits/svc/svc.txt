@@ -1,0 +1,6 @@
+=== The service and its backends ===
+NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE SELECTOR
+inference LoadBalancer 10.98.80.166 172.16.200.1 80:31040/TCP 7s app=inference
+  inference-6bf5b45cc-bz2ll Running node01
+  inference-6bf5b45cc-nz7gd Running node03
+  inference-6bf5b45cc-pffb8 Running node02

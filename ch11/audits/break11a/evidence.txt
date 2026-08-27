@@ -1,0 +1,15 @@
+=== The symptom that is not a symptom: the service works ===
+serving pod=inference-76bb6c7448-dlwkq node=node01
+
+=== The investigation ===
+--- leaf03's paths to the VIP: one, via one leaf ---
+Paths: (2 available, best #1, table default)
+  65100 65101 65510
+  65100 65101 65510
+--- leaf02's session to node03 is up; node03 just has nothing to say ---
+node03(172.16.2.11) 4      65510      1148      1248        0    0    0 00:03:52            1       12 N/A
+
+Total number of neighbors 3
+--- the cause, from the cluster side ---
+  inference-76bb6c7448-dlwkq node01
+  eTP: Local

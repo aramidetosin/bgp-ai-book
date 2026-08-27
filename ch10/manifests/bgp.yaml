@@ -1,0 +1,61 @@
+# Cilium's BGP control plane, chapter 10. Two cluster configs because the
+# racks peer with different ToRs: rack1 (node01, node02) peers with
+# leaf01's SVI, rack2 (node03) with leaf02's port. One shared peer config
+# and one advertisement: every node speaks with the shared node ASN and
+# advertises its PodCIDR, nothing else.
+apiVersion: cilium.io/v2alpha1
+kind: CiliumBGPClusterConfig
+metadata:
+  name: rack1
+spec:
+  nodeSelector:
+    matchLabels: {rack: rack1}
+  bgpInstances:
+  - name: fabric
+    localASN: 65510
+    peers:
+    - name: tor
+      peerASN: 65101
+      peerAddress: 172.16.1.1
+      peerConfigRef: {name: tor}
+---
+apiVersion: cilium.io/v2alpha1
+kind: CiliumBGPClusterConfig
+metadata:
+  name: rack2
+spec:
+  nodeSelector:
+    matchLabels: {rack: rack2}
+  bgpInstances:
+  - name: fabric
+    localASN: 65510
+    peers:
+    - name: tor
+      peerASN: 65102
+      peerAddress: 172.16.2.1
+      peerConfigRef: {name: tor}
+---
+apiVersion: cilium.io/v2alpha1
+kind: CiliumBGPPeerConfig
+metadata:
+  name: tor
+spec:
+  timers:
+    holdTimeSeconds: 9
+    keepAliveTimeSeconds: 3
+  gracefulRestart:
+    enabled: false
+  families:
+  - afi: ipv4
+    safi: unicast
+    advertisements:
+      matchLabels: {advertise: fabric}
+---
+apiVersion: cilium.io/v2alpha1
+kind: CiliumBGPAdvertisement
+metadata:
+  name: pods
+  labels: {advertise: fabric}
+spec:
+  advertisements:
+  - advertisementType: PodCIDR

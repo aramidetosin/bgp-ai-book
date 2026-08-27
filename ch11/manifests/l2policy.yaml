@@ -1,0 +1,14 @@
+# Layer 2 announcement: a leader among the rack1 nodes answers ARP for
+# the service address on the leaf01 segment. Selects services labeled
+# expose-l2=true.
+apiVersion: cilium.io/v2alpha1
+kind: CiliumL2AnnouncementPolicy
+metadata:
+  name: rack1-l2
+spec:
+  serviceSelector:
+    matchLabels: {expose-l2: "true"}
+  nodeSelector:
+    matchLabels: {rack: rack1}
+  interfaces: [eth1]
+  loadBalancerIPs: true

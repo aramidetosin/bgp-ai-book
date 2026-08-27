@@ -4,7 +4,7 @@ SSH   = sshpass -p $(PASS) ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile
 D     = docker exec clab-$(LAB)
 
 .PHONY: generate node-image host-image up base down verify audit
-.PHONY: mh routed bfd break-9a heal-9a
+.PHONY: mh routed bfd conditional break-9a heal-9a
 .PHONY: ssh-% shell-%
 
 generate:
@@ -43,6 +43,9 @@ routed:
 
 bfd:
 	./bfd.sh
+
+conditional:
+	./conditional.sh
 
 # --- the asymmetric return path blackhole (on the routed design) ---
 break-9a:

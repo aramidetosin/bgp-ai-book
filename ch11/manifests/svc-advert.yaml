@@ -1,0 +1,16 @@
+# BGP announcement: the service's LoadBalancer address becomes a /32
+# route, advertised per Cilium's rules by externalTrafficPolicy: every
+# node under eTP Cluster, only nodes with ready local endpoints under
+# eTP Local. Selects services labeled expose=bgp.
+apiVersion: cilium.io/v2alpha1
+kind: CiliumBGPAdvertisement
+metadata:
+  name: services
+  labels: {advertise: fabric}
+spec:
+  advertisements:
+  - advertisementType: Service
+    service:
+      addresses: [LoadBalancerIP]
+    selector:
+      matchLabels: {expose-bgp: "true"}

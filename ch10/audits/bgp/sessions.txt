@@ -1,0 +1,14 @@
+=== The sessions: the CNI in the same neighbor list as the fabric ===
+--- leaf01 ---
+Peers 4, using 79 KiB of memory
+
+Neighbor            V         AS   MsgRcvd   MsgSent   TblVer  InQ OutQ  Up/Down State/PfxRcd   PfxSnt Desc
+spine01(swp4)       4      65100       307       309        0    0    0 00:14:51            6       11 N/A
+spine02(swp5)       4      65100       307       309        0    0    0 00:14:51            6       11 N/A
+node01(172.16.1.11) 4      65510         8        16        0    0    0 00:00:15            1       11 N/A
+node02(172.16.1.12) 4      65510         7        15        0    0    0 00:00:13            1       11 N/A
+
+Total number of neighbors 4
+--- node03's agent, from inside ---
+Local AS   Peer AS   Peer Address     Session       Uptime   Family         Received   Advertised
+65510      65102     172.16.2.1:179   established   15s      ipv4/unicast   11         1    

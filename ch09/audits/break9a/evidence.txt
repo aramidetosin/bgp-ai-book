@@ -3,7 +3,7 @@
 PING 172.16.3.11 (172.16.3.11): 56 data bytes
 ping: sendto: Network unreachable
 --- server03 -> host01's loopback ---
-5 packets transmitted, 0 received, 100% packet loss, time 4073ms
+5 packets transmitted, 0 received, 100% packet loss, time 4093ms
 
 
 === The investigation ===
@@ -11,10 +11,11 @@ ping: sendto: Network unreachable
 2494: eth1@if2495: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9216 qdisc noqueue state UP mode DEFAULT group default 
 --- the sessions that tell the truth ---
 Neighbor        V         AS   MsgRcvd   MsgSent   TblVer  InQ OutQ  Up/Down State/PfxRcd   PfxSnt Desc
-leaf01(eth1)    4      65101       182       187        0    0    0 00:00:20      Connect        0 N/A
-leaf02(eth2)    4      65102       198       193       82    0    0 00:00:31            0        3 N/A
+leaf01(eth1)    4      65101      2186      2184        0    0    0 00:00:20      Connect        0 N/A
+leaf02(eth2)    4      65102      2232      2223      140    0    0 00:00:34            0        3 N/A
 
 Total number of neighbors 2
 --- the verdict: where outbound packets actually go ---
+RTNETLINK answers: Network unreachable
 --- what the fabric still knows (leaf02 keeps the /32) ---
-172.16.101.1 nhid 32 proto bgp metric 20 
+172.16.101.1 nhid 49 proto bgp metric 20 

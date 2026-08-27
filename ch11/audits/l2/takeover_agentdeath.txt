@@ -1,0 +1,7 @@
+=== The other half: the leader AGENT dies (its NIC down again first) ===
+--- deleting the leader agent (cilium-f78p9) five seconds in ---
+--- the lease now ---
+--- the client ARP entry now ---
+172.16.1.200             ether   aa:c1:ab:52:20:ed   C                     eth1
+--- probe verdict ---
+  polls ok: 0  FAIL: 53

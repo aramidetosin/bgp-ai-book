@@ -1,0 +1,24 @@
+=== The walk: walk-a (10.244.0.110, node01) to walk-b (10.244.3.90, node03) ===
+--- 1. the pod's reachability, proven first ---
+3 packets transmitted, 3 packets received, 0% packet loss
+round-trip min/avg/max = 0.696/0.789/0.922 ms
+--- 2. the eBPF view: pods are endpoints with identities, not interfaces ---
+NAME     SECURITY IDENTITY   INGRESS ENFORCEMENT   EGRESS ENFORCEMENT   VISIBILITY POLICY   ENDPOINT STATE   IPV4           IPV6
+walk-a   609                                                                                ready            10.244.0.110   
+walk-b   27468                                                                              ready            10.244.3.90    
+--- 3. node01's FIB: the remote pod range goes to the ToR ---
+10.244.3.90 via 172.16.1.1 dev eth1 src 172.16.1.11 uid 0 
+--- 4. leaf01's BGP table: the /24 behind node03, learned via the spines ---
+Paths: (2 available, best #1, table default)
+  65100 65102 65510
+    fe80::a8c1:abff:fe5b:1978 (spine01) from spine01(swp4) (10.0.0.101)
+      Origin IGP, valid, external, multipath, bestpath-from-AS 65100, best (Router ID)
+  65100 65102 65510
+    fe80::a8c1:abff:fefd:c6ca (spine02) from spine02(swp5) (10.0.0.102)
+--- 5. the spine's view ---
+10.244.3.0/24 nhid 26 proto bgp metric 20 
+--- 6. leaf02 delivers to node03's session address ---
+Paths: (1 available, best #1, table default)
+  65510
+    172.16.2.11 (node03) from node03(172.16.2.11) (172.17.0.4)
+      Origin IGP, valid, external, bestpath-from-AS 65510, best (First path received)

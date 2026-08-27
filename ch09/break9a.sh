@@ -49,7 +49,7 @@ sleep 15
   echo "--- the sessions that tell the truth ---"
   ${D}-host01 vtysh -c "show bgp summary" | tail -5
   echo "--- the verdict: where outbound packets actually go ---"
-  ${D}-host01 ip route get 172.16.3.11 | head -1
+  ${D}-host01 ip route get 172.16.3.11 2>&1 | head -1
   echo "--- what the fabric still knows (leaf02 keeps the /32) ---"
   sw leaf02 "ip route show 172.16.101.1/32"
 } | tee "${OUT}/evidence.txt"

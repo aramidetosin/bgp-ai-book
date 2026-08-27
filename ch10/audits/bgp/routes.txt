@@ -1,0 +1,17 @@
+=== What the fabric learned: one /24 per node, and nothing else ===
+--- leaf03 (no nodes attached; the routes arrived over the fabric) ---
+10.244.0.0/24 nhid 30 proto bgp metric 20 
+10.244.1.0/24 nhid 30 proto bgp metric 20 
+10.244.3.0/24 nhid 30 proto bgp metric 20 
+--- leaf01's filter at work ---
+RPKI validation codes: V valid, I invalid, N Not found
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*> 10.244.0.0/24    172.16.1.11                            0 65510 i
+
+Total number of prefixes 1
+   Network          Next Hop            Metric LocPrf Weight Path
+*> 10.244.0.0/24    172.16.1.11(node01)
+                                                           0 65510 i
+
+Displayed  1 routes and 16 total paths

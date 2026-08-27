@@ -1,0 +1,22 @@
+=== The diagnosis, without touching a switch ===
+--- the agent's view on node03 ---
+Local AS   Peer AS   Peer Address     Session   Uptime   Family         Received   Advertised
+65510      65103     172.16.2.1:179   idle      0s       ipv4/unicast   0          0    
+--- the node's BGP status conditions ---
+status:
+  bgpInstances:
+  - localASN: 65510
+    name: fabric
+    peers:
+    - name: tor
+      peerASN: 65103
+      peerAddress: 172.16.2.1
+      peeringState: idle
+      routeCount:
+      - advertised: 0
+        afi: ipv4
+        received: 0
+        safi: unicast
+      timers:
+        appliedHoldTimeSeconds: 0
+        appliedKeepaliveSeconds: 0

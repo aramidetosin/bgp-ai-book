@@ -1,22 +1,22 @@
 === The multipath ladder: relax, host first, then fabric ===
 --- host01's default, before relax (two ToRs, two ASNs, one path) ---
-default nhid 18 via inet6 fe80::a8c1:abff:fe61:caaa dev eth2 proto bgp metric 20 
+default nhid 17 via inet6 fe80::a8c1:abff:fe63:9964 dev eth1 proto bgp metric 20 
 --- host01: bestpath as-path multipath-relax ---
 default nhid 22 proto bgp metric 20 
 	nexthop via inet6 fe80::a8c1:abff:fe63:9964 dev eth1 weight 1 
 	nexthop via inet6 fe80::a8c1:abff:fe61:caaa dev eth2 weight 1 
 
 --- spine01's route to the host loopback, before fabric relax ---
-172.16.101.1 nhid 36 proto bgp metric 20 
+172.16.101.1 nhid 25 proto bgp metric 20 
 Paths: (2 available, best #1, table default)
-  65102 65500
-      Origin incomplete, valid, external, multipath, bestpath-from-AS 65102, best (Older Path)
   65101 65500
-      Origin incomplete, valid, external, multipath, bestpath-from-AS 65101
+      Origin incomplete, valid, external, bestpath-from-AS 65101, best (Older Path)
+  65102 65500
+      Origin incomplete, valid, external, bestpath-from-AS 65102
 --- applying multipath relax fabric-wide ---
 --- spine01 after ---
-172.16.101.1 nhid 36 proto bgp metric 20 
-id 36 group 25/26 proto zebra 
+172.16.101.1 nhid 74 proto bgp metric 20 
+id 74 group 25/26 proto zebra 
 --- leaf03 after ---
 172.16.101.1 nhid 29 proto bgp metric 20 
 id 29 group 24/30 proto zebra 

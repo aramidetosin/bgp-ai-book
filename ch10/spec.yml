@@ -1,0 +1,22 @@
+# Chapter 10: the Kubernetes fabric. Three leafs, two spines. leaf01
+# bridges a small server segment (node01, node02, and client01 share
+# 172.16.1.0/24 behind one SVI, which chapter 11's layer 2 announcement
+# story needs); node03 sits routed behind leaf02; client02 sits routed
+# behind leaf03 as the cross-fabric client. The Kubernetes nodes are
+# kindest/node containers run by nodes-up.sh and wired in by containerlab
+# as external containers; kubeadm and Cilium are applied by cluster.sh.
+name: bgpbook-ch10
+mgmt_subnet: 172.20.39.0/24
+
+switch_image: vrnetlab/nvidia_cumulus-vx:5.12.0
+node_image: bgpbook-multitool-lldpd      # the two clients
+k8s_image: kindest/node:v1.31.2          # the three Kubernetes nodes
+k8s_version: v1.31.2
+cilium_version: 1.16.5
+
+spine_asn: 65100
+leaf_asn_base: 65100    # leaf i gets leaf_asn_base + i
+node_asn: 65510         # every Kubernetes node shares this (host block)
+
+pod_cidr: 10.244.0.0/16
+lb_pool: 172.16.200.0/24    # chapter 11's service addresses

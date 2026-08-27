@@ -1,0 +1,15 @@
+=== The VIP in the fabric: anycast from every node ===
+--- leaf01 (two node sessions) ---
+Paths: (2 available, best #1, table default)
+  65510
+    172.16.1.11 (node01) from node01(172.16.1.11) (172.16.1.11)
+      Origin IGP, valid, external, multipath, bestpath-from-AS 65510, best (Router ID)
+  65510
+    172.16.1.12 (node02) from node02(172.16.1.12) (172.16.1.12)
+--- leaf03 (no nodes; the routes crossed the fabric) ---
+172.16.200.1 nhid 30 proto bgp metric 20 
+id 30 group 24/26 proto zebra 
+
+=== The routed client, now served ===
+serving pod=inference-6bf5b45cc-pffb8 node=node02
+token 0

@@ -1,0 +1,17 @@
+=== Native routing: the fabric sees the pods themselves ===
+--- leaf02 swp1 (node03-facing), pod-to-pod ping, native mode ---
+18:25:18.132302 IP 10.244.0.110 > 10.244.3.90: ICMP echo request, id 91, seq 0, length 64
+18:25:18.132408 IP 10.244.3.90 > 10.244.0.110: ICMP echo reply, id 91, seq 0, length 64
+18:25:19.132302 IP 10.244.0.110 > 10.244.3.90: ICMP echo request, id 91, seq 1, length 64
+18:25:19.132389 IP 10.244.3.90 > 10.244.0.110: ICMP echo reply, id 91, seq 1, length 64
+
+=== Switching to tunnel mode (VXLAN) ===
+  routingMode now: tunnel
+--- leaf02 swp1, the same ping, tunnel mode ---
+18:26:07.377245 IP 172.16.1.11.45339 > 172.16.2.11.8472: OTV, flags [I] (0x08), overlay 0, instance 609
+IP 10.244.0.110 > 10.244.3.90: ICMP echo request, id 97, seq 0, length 64
+18:26:07.377349 IP 172.16.2.11.45339 > 172.16.1.11.8472: OTV, flags [I] (0x08), overlay 0, instance 27468
+IP 10.244.3.90 > 10.244.0.110: ICMP echo reply, id 97, seq 0, length 64
+
+=== Back to native ===
+  routingMode now: native

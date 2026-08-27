@@ -1,0 +1,19 @@
+=== Who answers: the lease names the leader ===
+NAME                                     HOLDER                                                                      AGE
+cilium-l2announce-default-inference-l2   node02                                                                      5m51s
+
+=== The client's view: one ARP entry, one node's MAC ===
+Address                  HWtype  HWaddress           Flags Mask            Iface
+172.16.1.200             ether   aa:c1:ab:52:20:ed   C                     eth1
+--- the nodes' MACs, for comparison ---
+  node01 eth1: aa:c1:ab:5e:0b:07
+  node02 eth1: aa:c1:ab:52:20:ed
+
+=== The stream, from the same segment ===
+serving pod=inference-6bf5b45cc-pffb8 node=node02
+token 0
+token 1
+
+=== The routed client: served, but every packet trombones through leaf01 ===
+  tokens received in 4 seconds: 8
+serving pod=inference-6bf5b45cc-bz2ll node=node01

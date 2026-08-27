@@ -1,0 +1,40 @@
+=== eTP Local: only nodes with ready backends advertise ===
+--- leaf02's view: node03 advertises while it has a ready backend ---
+Paths: (3 available, best #1, table default)
+  65510
+    172.16.2.11 (node03) from node03(172.16.2.11) (172.16.2.11)
+      Origin IGP, valid, external, bestpath-from-AS 65510, best (AS Path)
+  65100 65101 65510
+    fe80::a8c1:abff:fef6:6d16 (spine01) from spine01(swp2) (10.0.0.101)
+      Origin IGP, valid, external, bestpath-from-AS 65100
+  65100 65101 65510
+    fe80::a8c1:abff:fe9f:c2ea (spine02) from spine02(swp3) (10.0.0.102)
+
+=== Round 1: node death mid-stream, no drain ===
+--- freezing node03 four seconds in ---
+node03
+  stream 1: broken after 8 tokens (serving pod=inference-5bf8b84798-jvwsn node=node03)
+  stream 2: broken after 8 tokens (serving pod=inference-5bf8b84798-jvwsn node=node03)
+  stream 5: broken after 8 tokens (serving pod=inference-5bf8b84798-jvwsn node=node03)
+  stream 6: broken after 8 tokens (serving pod=inference-5bf8b84798-jvwsn node=node03)
+  streams completed: 2/6
+node03
+
+=== Round 2: the same node leaves politely: out of rotation first ===
+--- streams open; then cordon node03 and take its pod out of the service ---
+--- inference-5bf8b84798-jvwsn out of rotation: still running, no longer an endpoint;
+    the replacement schedules elsewhere, node03 withdraws the VIP ---
+  stream 1: broken after 10 tokens
+  stream 2: broken after 10 tokens
+  stream 3: broken after 19 tokens
+  stream 4: broken after 10 tokens
+  stream 5: broken after 13 tokens
+  stream 6: broken after 10 tokens
+  streams completed: 0/6
+--- leaf02's view after the drain: no local backend, no direct path ---
+Paths: (2 available, best #1, table default)
+  65100 65101 65510
+    fe80::a8c1:abff:fef6:6d16 (spine01) from spine01(swp2) (10.0.0.101)
+      Origin IGP, valid, external, multipath, bestpath-from-AS 65100, best (Router ID)
+  65100 65101 65510
+    fe80::a8c1:abff:fe9f:c2ea (spine02) from spine02(swp3) (10.0.0.102)

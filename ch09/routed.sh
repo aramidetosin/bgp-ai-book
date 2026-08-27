@@ -80,7 +80,10 @@ sleep 20
 {
   echo "=== The multipath ladder: relax, host first, then fabric ==="
   ${D}-host01 vtysh -c "conf t" -c "router bgp 65500" -c "no bgp bestpath as-path multipath-relax" >/dev/null 2>&1
-  sleep 5
+  for dev in leaf01 leaf02 leaf03 spine01 spine02; do
+    sw ${dev} "nv unset vrf default router bgp path-selection multipath aspath-ignore 2>/dev/null; nv config apply -y" >/dev/null
+  done
+  sleep 10
   echo "--- host01's default, before relax (two ToRs, two ASNs, one path) ---"
   ${D}-host01 ip route show default
   echo "--- host01: bestpath as-path multipath-relax ---"
