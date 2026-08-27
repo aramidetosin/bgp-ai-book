@@ -1,0 +1,112 @@
+=== host01's view: one LACP partner (the lie, recorded) ===
+Slave Interface: eth1
+MII Status: up
+Speed: 10000 Mbps
+Duplex: full
+--
+Slave Interface: eth2
+MII Status: up
+Speed: 10000 Mbps
+Duplex: full
+System MAC address: aa:c1:ab:a4:c8:b4
+Active Aggregator Info:
+--
+	Partner Mac Address: 44:38:39:be:ef:aa
+
+--
+    system mac address: aa:c1:ab:a4:c8:b4
+    port key: 15
+--
+    system mac address: 44:38:39:be:ef:aa
+    oper key: 9
+--
+    system mac address: aa:c1:ab:a4:c8:b4
+    port key: 15
+--
+    system mac address: 44:38:39:be:ef:aa
+    oper key: 9
+
+=== leaf01: the Ethernet segment and its designated forwarder ===
+ESI: 03:44:38:39:be:ef:aa:00:00:01
+ Type: Local,Remote
+ Interface: bond0
+ State: up
+ Bridge port: yes
+ Ready for BGP: yes
+ VNI Count: 1
+ MAC Count: 2
+ DF status: df 
+ DF preference: 32767
+ Nexthop group: 536870913
+ VTEPs:
+     10.0.0.2     10.0.0.2(local) df_alg: preference df_pref: 32767 sph: tc-filter
+ nh: 268435458
+
+
+=== leaf03: the segment's routes, learned like any other BGP routes ===
+--- type-4 (Ethernet segment) ---
+BGP table version is 10, local router ID is 10.0.0.3
+Status codes: s suppressed, d damped, h history, * valid, > best, i - internal
+Origin codes: i - IGP, e - EGP, ? - incomplete
+EVPN type-1 prefix: [1]:[EthTag]:[ESI]:[IPlen]:[VTEP-IP]:[Frag-id]
+EVPN type-2 prefix: [2]:[EthTag]:[MAClen]:[MAC]:[IPlen]:[IP]
+EVPN type-3 prefix: [3]:[EthTag]:[IPlen]:[OrigIP]
+EVPN type-4 prefix: [4]:[ESI]:[IPlen]:[OrigIP]
+EVPN type-5 prefix: [5]:[EthTag]:[IPlen]:[IP]
+
+   Network          Next Hop            Metric LocPrf Weight Path
+                    Extended Community
+Route Distinguisher: 10.0.0.1:3
+*> [4]:[03:44:38:39:be:ef:aa:00:00:01]:[32]:[10.0.0.1] RD 10.0.0.1:3
+                    10.0.0.1 (spine01)
+                                                           0 65100 65101 i
+                    ET:8 ES-Import-Rt:44:38:39:be:ef:aa DF: (alg: 2, pref: 32767)
+*  [4]:[03:44:38:39:be:ef:aa:00:00:01]:[32]:[10.0.0.1] RD 10.0.0.1:3
+                    10.0.0.1 (spine02)
+                                                           0 65100 65101 i
+                    ET:8 ES-Import-Rt:44:38:39:be:ef:aa DF: (alg: 2, pref: 32767)
+Route Distinguisher: 10.0.0.2:3
+*> [4]:[03:44:38:39:be:ef:aa:00:00:01]:[32]:[10.0.0.2] RD 10.0.0.2:3
+                    10.0.0.2 (spine01)
+                                                           0 65100 65102 i
+                    ET:8 ES-Import-Rt:44:38:39:be:ef:aa DF: (alg: 2, pref: 32767)
+*  [4]:[03:44:38:39:be:ef:aa:00:00:01]:[32]:[10.0.0.2] RD 10.0.0.2:3
+                    10.0.0.2 (spine02)
+                                                           0 65100 65102 i
+                    ET:8 ES-Import-Rt:44:38:39:be:ef:aa DF: (alg: 2, pref: 32767)
+
+--- type-1 (Ethernet auto-discovery) ---
+BGP table version is 8, local router ID is 10.0.0.3
+Status codes: s suppressed, d damped, h history, * valid, > best, i - internal
+Origin codes: i - IGP, e - EGP, ? - incomplete
+EVPN type-1 prefix: [1]:[EthTag]:[ESI]:[IPlen]:[VTEP-IP]:[Frag-id]
+EVPN type-2 prefix: [2]:[EthTag]:[MAClen]:[MAC]:[IPlen]:[IP]
+EVPN type-3 prefix: [3]:[EthTag]:[IPlen]:[OrigIP]
+EVPN type-4 prefix: [4]:[ESI]:[IPlen]:[OrigIP]
+EVPN type-5 prefix: [5]:[EthTag]:[IPlen]:[IP]
+
+   Network          Next Hop            Metric LocPrf Weight Path
+                    Extended Community
+Route Distinguisher: 10.0.0.1:2
+*> [1]:[0]:[03:44:38:39:be:ef:aa:00:00:01]:[32]:[0.0.0.0]:[0] RD 10.0.0.1:2
+                    10.0.0.1 (spine01)
+                                                           0 65100 65101 i
+                    RT:65101:10100 ET:8
+*  [1]:[0]:[03:44:38:39:be:ef:aa:00:00:01]:[32]:[0.0.0.0]:[0] RD 10.0.0.1:2
+                    10.0.0.1 (spine02)
+                                                           0 65100 65101 i
+                    RT:65101:10100 ET:8
+Route Distinguisher: 10.0.0.1:3
+*> [1]:[4294967295]:[03:44:38:39:be:ef:aa:00:00:01]:[32]:[0.0.0.0]:[0] RD 10.0.0.1:3
+                    10.0.0.1 (spine01)
+                                                           0 65100 65101 i
+                    RT:65101:10100 ET:8 ESI-label-Rt:AA
+*  [1]:[4294967295]:[03:44:38:39:be:ef:aa:00:00:01]:[32]:[0.0.0.0]:[0] RD 10.0.0.1:3
+                    10.0.0.1 (spine02)
+                                                           0 65100 65101 i
+                    RT:65101:10100 ET:8 ESI-label-Rt:AA
+Route Distinguisher: 10.0.0.2:2
+
+=== Reachability: server03 -> host01 across the fabric ===
+3 packets transmitted, 3 received, 0% packet loss, time 2005ms
+rtt min/avg/max/mdev = 0.923/0.986/1.087/0.071 ms

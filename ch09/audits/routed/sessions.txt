@@ -1,0 +1,19 @@
+=== The sessions, from both sides ===
+--- host01 ---
+RIB entries 17, using 1632 bytes of memory
+Peers 2, using 26 KiB of memory
+
+Neighbor        V         AS   MsgRcvd   MsgSent   TblVer  InQ OutQ  Up/Down State/PfxRcd   PfxSnt Desc
+leaf01(eth1)    4      65101        76        77       27    0    0 00:01:57            7       10 N/A
+leaf02(eth2)    4      65102        73        78       27    0    0 00:03:10            7       10 N/A
+
+Total number of neighbors 2
+--- leaf01 ---
+Peers 3, using 60 KiB of memory
+
+Neighbor        V         AS   MsgRcvd   MsgSent   TblVer  InQ OutQ  Up/Down State/PfxRcd   PfxSnt Desc
+host01(swp1)    4      65500        78        81        0    0    0 00:01:57            1        8 N/A
+spine01(swp2)   4      65100       102       106        0    0    0 00:04:39            5        7 N/A
+spine02(swp3)   4      65100       101       105        0    0    0 00:04:39            5        7 N/A
+
+Total number of neighbors 3

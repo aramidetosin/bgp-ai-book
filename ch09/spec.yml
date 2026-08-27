@@ -1,0 +1,26 @@
+# Chapter 9: the host fabric. Three leafs and two spines; leaf01 and
+# leaf02 are the ToR pair that dual-homes host01 (the chapter's subject),
+# leaf03 carries server03 (the remote vantage point). The base bootstrap
+# is the plain chapter 6 underlay; both redundancy designs are applied
+# to it as recorded steps (make mh, make routed).
+name: bgpbook-ch09
+mgmt_subnet: 172.20.38.0/24
+
+leafs: 3
+spines: 2
+server_on: 3           # server03 behind leaf03
+host_on: [1, 2]        # host01 dual-homed to leaf01 and leaf02
+
+switch_image: vrnetlab/nvidia_cumulus-vx:5.12.0
+node_image: bgpbook-multitool-lldpd     # server03
+host_image: bgpbook-frr-host            # host01: FRR 9.1.0 + lldpd (Dockerfile.host)
+
+# ASN plan: chapter 6's allocation, extended by this chapter's decision:
+# every host shares one ASN from the reserved host block.
+spine_asn: 65100
+leaf_asn_base: 65100   # leaf i gets leaf_asn_base + i
+host_asn: 65500        # first number of the reserved 65500-65534 block
+
+# Address plan additions this chapter introduces:
+#   172.16.101.0/24   host service loopbacks (host01 uses 172.16.101.1/32)
+#   172.16.10.0/24    the multihoming design's stretched subnet (vlan 100)

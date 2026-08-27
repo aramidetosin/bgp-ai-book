@@ -1,0 +1,10 @@
+--- pulling host01 eth1 at packet ~25 ---
+--- outbound during the pull (host01 -> server03: the bond's own repair) ---
+100 packets transmitted, 26 packets received, 74% packet loss
+--- inbound during the pull (server03 -> host01: the fabric's side) ---
+100 packets transmitted, 25 received, 75% packet loss, time 20457ms
+--- the segment after the pull (leaf01 now non-DF, peer still listed) ---
+Type: B bypass, L local, R remote, N non-DF
+ESI                            Type ES-IF                 VTEPs
+03:44:38:39:be:ef:aa:00:00:01  LRN  bond0                 10.0.0.2
+--- restoring eth1 ---

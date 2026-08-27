@@ -1,0 +1,62 @@
+name: bgpbook-ch09
+mgmt:
+  network: bgpbook-ch09
+  ipv4-subnet: 172.20.38.0/24
+topology:
+  defaults:
+    kind: nvidia_cumulusvx
+    image: vrnetlab/nvidia_cumulus-vx:5.12.0
+  nodes:
+    leaf01:
+      startup-config: bootstrap/leaf01.cfg
+    leaf02:
+      startup-config: bootstrap/leaf02.cfg
+    leaf03:
+      startup-config: bootstrap/leaf03.cfg
+    spine01:
+      startup-config: bootstrap/spine01.cfg
+    spine02:
+      startup-config: bootstrap/spine02.cfg
+    server03:
+      kind: linux
+      image: bgpbook-multitool-lldpd
+      exec:
+      - ip link set eth1 mtu 9216
+      - ip addr add 172.16.3.11/24 dev eth1
+      - ip route replace default via 172.16.3.1 dev eth1
+      - lldpd
+    host01:
+      kind: linux
+      image: bgpbook-frr-host
+      exec:
+      - ip link set eth1 mtu 9216
+      - ip link set eth2 mtu 9216
+      - lldpd
+  links:
+  - endpoints:
+    - leaf01:swp1
+    - host01:eth1
+  - endpoints:
+    - leaf02:swp1
+    - host01:eth2
+  - endpoints:
+    - leaf03:swp1
+    - server03:eth1
+  - endpoints:
+    - leaf01:swp2
+    - spine01:swp1
+  - endpoints:
+    - leaf01:swp3
+    - spine02:swp1
+  - endpoints:
+    - leaf02:swp2
+    - spine01:swp2
+  - endpoints:
+    - leaf02:swp3
+    - spine02:swp2
+  - endpoints:
+    - leaf03:swp2
+    - spine01:swp3
+  - endpoints:
+    - leaf03:swp3
+    - spine02:swp3

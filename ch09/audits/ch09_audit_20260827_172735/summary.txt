@@ -1,0 +1,13 @@
+=== Fabric BGP sessions ===
+  leaf01: 3 Established (fabric baseline 2) - OK
+  leaf02: 3 Established (fabric baseline 2) - OK
+  leaf03: 2 Established (fabric baseline 2) - OK
+  spine01: 3 Established (fabric baseline 3) - OK
+  spine02: 3 Established (fabric baseline 3) - OK
+=== Server path ===
+  server03 -> leaf03 gateway - OK
+=== Host design currently applied ===
+  host01 runs FRR with established sessions: routed design (make routed) present
+=== Cabling versus intent (LLDP) ===
+  CABLING MATCHES INTENT
+

@@ -1,0 +1,17 @@
+--- pulling host01 eth1 at packet ~25 (default timers, no BFD yet) ---
+--- 172.16.101.1 ping statistics ---
+100 packets transmitted, 69 received, 31% packet loss, time 20441ms
+rtt min/avg/max/mdev = 0.333/0.496/1.119/0.106 ms
+17:22:14.337708 IP6 fe80::a8c1:abff:fe01:a181.46380 > fe80::a8c1:abff:fe61:caaa.179: Flags [P.], seq 1950972623:1950972642, ack 181015794, win 63, options [nop,nop,TS val 284314525 ecr 1419319700], length 19: BGP
+17:22:14.339917 IP6 fe80::a8c1:abff:fe61:caaa.179 > fe80::a8c1:abff:fe01:a181.46380: Flags [P.], seq 1:20, ack 19, win 248, options [nop,nop,TS val 1419322700 ecr 284314525], length 19: BGP
+17:22:14.339931 IP6 fe80::a8c1:abff:fe01:a181.46380 > fe80::a8c1:abff:fe61:caaa.179: Flags [.], ack 20, win 63, options [nop,nop,TS val 284314527 ecr 1419322700], length 0
+17:22:17.337766 IP6 fe80::a8c1:abff:fe01:a181.46380 > fe80::a8c1:abff:fe61:caaa.179: Flags [P.], seq 19:38, ack 20, win 63, options [nop,nop,TS val 284317525 ecr 1419322700], length 19: BGP
+17:22:17.340013 IP6 fe80::a8c1:abff:fe61:caaa.179 > fe80::a8c1:abff:fe01:a181.46380: Flags [P.], seq 20:39, ack 38, win 248, options [nop,nop,TS val 1419325700 ecr 284317525], length 19: BGP
+17:22:17.340024 IP6 fe80::a8c1:abff:fe01:a181.46380 > fe80::a8c1:abff:fe61:caaa.179: Flags [.], ack 39, win 63, options [nop,nop,TS val 284317527 ecr 1419325700], length 0
+...
+17:22:18.263329 IP6 fe80::a8c1:abff:fe01:a181.46380 > fe80::a8c1:abff:fe61:caaa.179: Flags [P.], seq 38:133, ack 39, win 63, options [nop,nop,TS val 284318451 ecr 1419325700], length 95: BGP
+--- restoring eth1 ---
+leaf01(eth1)    4      65101       100       102       49    0    0 00:00:13            7       10 N/A
+leaf02(eth2)    4      65102        93       100       49    0    0 00:04:11            7       10 N/A
+
+Total number of neighbors 2

@@ -1,0 +1,27 @@
+=== The filter, doing its job on leaf01 ===
+--- what host01 offered (received-routes) ---
+*> 10.0.0.3/32      fe80::a8c1:abff:fe5d:927a
+                                                           0 65500 65102 65100 65103 ?
+*> 10.0.0.101/32    fe80::a8c1:abff:fe5d:927a
+                                                           0 65500 65102 65100 ?
+*> 10.0.0.102/32    fe80::a8c1:abff:fe5d:927a
+                                                           0 65500 65102 65100 ?
+*> 10.66.66.0/24    fe80::a8c1:abff:fe5d:927a
+                                             0             0 65500 ?
+*> 172.16.3.0/24    fe80::a8c1:abff:fe5d:927a
+                                                           0 65500 65102 65100 65103 ?
+*> 172.16.101.1/32  fe80::a8c1:abff:fe5d:927a
+                                             0             0 65500 ?
+*> 172.20.38.0/24   fe80::a8c1:abff:fe5d:927a
+                                             0             0 65500 ?
+
+Total number of prefixes 10 (9 filtered)
+--- what leaf01 accepted (routes) ---
+Nexthop codes: @NNN nexthop's vrf id, < announce-nh-self
+Origin codes:  i - IGP, e - EGP, ? - incomplete
+RPKI validation codes: V valid, I invalid, N Not found
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*> 172.16.101.1/32  swp1                     0             0 65500 ?
+
+Displayed  1 routes and 12 total paths

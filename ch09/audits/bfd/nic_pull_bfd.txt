@@ -1,0 +1,13 @@
+=== The BFD peers, from the host ===
+Session count: 2
+SessionId  LocalAddress                             PeerAddress                             Status         
+=========  ============                             ===========                             ======         
+2728184190 fe80::a8c1:abff:fe01:a181                fe80::a8c1:abff:fe61:caaa               up             
+2812196489 fe80::a8c1:abff:fe5d:927a                fe80::a8c1:abff:fe63:9964               up             
+
+=== The same pull, with BFD watching ===
+--- pulling host01 eth1 at packet ~25 ---
+--- 172.16.101.1 ping statistics ---
+100 packets transmitted, 97 received, 3% packet loss, time 20449ms
+rtt min/avg/max/mdev = 0.340/0.510/4.152/0.406 ms
+--- restoring eth1 ---

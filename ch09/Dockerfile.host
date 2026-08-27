@@ -1,0 +1,10 @@
+# The chapter 9 host image: FRR (the same routing suite the switches
+# run) plus the lab's usual tools, with bgpd and bfdd enabled at image
+# build so the container never needs a daemon restart (restarting FRR's
+# PID 1 restarts the container and takes the lab links with it).
+# Built once on the lab host with
+#   docker build --network host -t bgpbook-frr-host -f Dockerfile.host .
+FROM quay.io/frrouting/frr:9.1.0
+RUN apk add --no-cache lldpd iperf3 tcpdump && \
+    sed -i 's/^bgpd=no/bgpd=yes/; s/^bfdd=no/bfdd=yes/' /etc/frr/daemons && \
+    touch /etc/frr/vtysh.conf

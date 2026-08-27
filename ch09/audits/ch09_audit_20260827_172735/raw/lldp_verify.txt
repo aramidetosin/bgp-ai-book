@@ -1,0 +1,17 @@
+  OK        leaf01:swp1 <-> host01:eth1
+  OK        leaf01:swp2 <-> spine01:swp1
+  OK        leaf01:swp3 <-> spine02:swp1
+  OK        leaf02:swp1 <-> host01:eth2
+  OK        leaf02:swp2 <-> spine01:swp2
+  OK        leaf02:swp3 <-> spine02:swp2
+  OK        leaf03:swp1 <-> server03:eth1
+  OK        leaf03:swp2 <-> spine01:swp3
+  OK        leaf03:swp3 <-> spine02:swp3
+  OK        spine01:swp1 <-> leaf01:swp2
+  OK        spine01:swp2 <-> leaf02:swp2
+  OK        spine01:swp3 <-> leaf03:swp2
+  OK        spine02:swp1 <-> leaf01:swp3
+  OK        spine02:swp2 <-> leaf02:swp3
+  OK        spine02:swp3 <-> leaf03:swp3
+
+CABLING MATCHES INTENT
