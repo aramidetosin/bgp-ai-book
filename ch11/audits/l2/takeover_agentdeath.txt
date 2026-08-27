@@ -1,7 +1,13 @@
-=== The other half: the leader AGENT dies (its NIC down again first) ===
---- deleting the leader agent (cilium-f78p9) five seconds in ---
---- the lease now ---
---- the client ARP entry now ---
-172.16.1.200             ether   aa:c1:ab:52:20:ed   C                     eth1
---- probe verdict ---
-  polls ok: 0  FAIL: 53
+=== The agent-death arc, with the device down ===
+--- the leader (node02) loses its segment NIC, then its agent ---
+--- the lease, just after the delete (released) ---
+cilium-l2announce-default-inference-l2   node02                                                                      36m
+--- the replacement agent, having started with the device down ---
+  cilium-btmpx CrashLoopBackOff
+--- the lease it re-acquired ---
+cilium-l2announce-default-inference-l2   node02                                                                      37m
+--- and the service it cannot serve ---
+  curl: 000
+--- the repair: link up, then one more agent restart ---
+No ARP entry for 172.16.1.200
+  curl after repair: 200

@@ -1,0 +1,8 @@
+=== The docker pause aside: frozen userland, live datapath ===
+--- node03 frozen; five polls of the anycast VIP (its kernel still forwards) ---
+  poll 1: 000
+  poll 2: 000
+  poll 3: 200
+  poll 4: 200
+  poll 5: 200
+--- unfrozen ---

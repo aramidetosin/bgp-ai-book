@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Chapter 10: native routing against tunnel mode, on the wire. Captures
-# the same pod-to-pod ping on spine01 in native mode (bare pod addresses)
-# and in VXLAN tunnel mode (node addresses on UDP 8472), then returns to
-# native. Evidence under audits/tunnel/.
+# the same pod-to-pod ping on leaf02 swp1 in native mode (bare pod
+# addresses) and in VXLAN tunnel mode (node addresses on UDP 8472),
+# then returns to native. Evidence under audits/tunnel/.
 set -uo pipefail
 
 LAB=bgpbook-ch10
