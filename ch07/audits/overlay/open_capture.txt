@@ -1,0 +1,31 @@
+$ sudo tcpdump -n -r /tmp/evpn_open.pcap -vv   (leaf01 swp2, captured during the address-family activation)
+06:05:04.269450 IP6 (class 0xc0, flowlabel 0x20f67, hlim 1, next-header TCP (6) payload length: 159) fe80::a8c1:abff:feca:2050.35760 > fe80::a8c1:abff:feb9:7509.179: Flags [P.], cksum 0x3a08 (incorrect -> 0x2af8), seq 1:128, ack 1, win 251, options [nop,nop,TS val 1964479217 ecr 3671797421], length 127: BGP
+	Open Message (1), length: 127
+	  Version 4, my AS 65101, Holdtime 9s, ID 10.0.0.1
+	  Optional parameters, length: 98
+	    Option Capabilities Advertisement (2), length: 6
+	      Multiprotocol Extensions (1), length: 4
+		AFI IPv4 (1), SAFI Unicast (1)
+		0x0000:  0001 0001
+	    Option Capabilities Advertisement (2), length: 8
+	      Extended Next Hop Encoding (5), length: 6
+		no decoder for Capability 5
+		0x0000:  0001 0001 0002
+	    Option Capabilities Advertisement (2), length: 6
+	      Multiprotocol Extensions (1), length: 4
+		AFI VPLS (25), SAFI EVPN (70)
+		0x0000:  0019 0046
+	    Option Capabilities Advertisement (2), length: 2
+	      Route Refresh (Cisco) (128), length: 0
+	    Option Capabilities Advertisement (2), length: 2
+	      Route Refresh (2), length: 0
+	    Option Capabilities Advertisement (2), length: 2
+	      Enhanced Route Refresh (70), length: 0
+		no decoder for Capability 70
+	    Option Capabilities Advertisement (2), length: 6
+	      32-Bit AS Number (65), length: 4
+		 4 Byte AS 65101
+		0x0000:  0000 fe4d
+	    Option Capabilities Advertisement (2), length: 2
+	      Unknown (6), length: 0
+		no decoder for Capability 6

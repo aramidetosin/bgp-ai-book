@@ -1,0 +1,14 @@
+$ sshpass -p Clab123! ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null cumulus@clab-bgpbook-ch06-leaf01 "sudo vtysh -c 'show bgp summary' | sed -n '/L2VPN EVPN Summary/,\$p'"
+Warning: Permanently added 'clab-bgpbook-ch06-leaf01' (ECDSA) to the list of known hosts.
+Welcome to NVIDIA Cumulus (R) Linux (R)
+L2VPN EVPN Summary (VRF default):
+BGP router identifier 10.0.0.1, local AS number 65101 vrf-id 0
+BGP table version 0
+RIB entries 15, using 3360 bytes of memory
+Peers 2, using 40 KiB of memory
+
+Neighbor        V         AS   MsgRcvd   MsgSent   TblVer  InQ OutQ  Up/Down State/PfxRcd   PfxSnt Desc
+spine01(swp2)   4      65100      1661      1676        0    0    0 00:11:46            8       16 N/A
+spine02(swp3)   4      65100      1659      1672        0    0    0 00:11:42            8       16 N/A
+
+Total number of neighbors 2

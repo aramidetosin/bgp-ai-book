@@ -1,0 +1,31 @@
+== TENANTC applied on leaf01 only ==
+nv set vrf TENANTC evpn enable on 
+nv set vrf TENANTC evpn vni 4003 
+nv set vrf TENANTC loopback ip address 10.203.1.1/32 
+nv set vrf TENANTC router bgp enable on 
+nv set vrf TENANTC router bgp address-family ipv4-unicast enable on 
+nv set vrf TENANTC router bgp address-family ipv4-unicast redistribute connected enable on 
+nv set vrf TENANTC router bgp address-family ipv4-unicast route-export to-evpn enable on 
+leaf01: TENANTC applied
+
+$ sudo vtysh -c "show bgp l2vpn evpn route type prefix" | grep -B 1 -A 4 10.203.1.1   (leaf04)
+Route Distinguisher: 10.0.0.1:5
+*> [5]:[0]:[32]:[10.203.1.1] RD 10.0.0.1:5
+                    10.0.0.1 (spine01)
+                                                           0 65100 65101 ?
+                    RT:65101:4003 ET:8 Rmac:0c:00:c3:a1:5f:c6
+*  [5]:[0]:[32]:[10.203.1.1] RD 10.0.0.1:5
+                    10.0.0.1 (spine02)
+                                                           0 65100 65101 ?
+                    RT:65101:4003 ET:8 Rmac:0c:00:c3:a1:5f:c6
+Route Distinguisher: 10.0.0.4:2
+
+$ ip route show vrf TENANTA 10.203.1.1; ip vrf show   (leaf04: in the EVPN table, installed nowhere)
+Warning: Permanently added 'clab-bgpbook-ch06-leaf04' (ECDSA) to the list of known hosts.
+Welcome to NVIDIA Cumulus (R) Linux (R)
+Name              Table
+-----------------------
+mgmt              1001
+TENANTA           1002
+TENANTB           1003
+leaf01: TENANTC removed

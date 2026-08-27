@@ -1,0 +1,63 @@
+capture armed on leaf01 swp2
+== leaf01 ==
+nv set evpn enable on 
+nv set evpn route-advertise svi-ip on 
+nv set nve vxlan enable on 
+nv set nve vxlan source address 10.0.0.1 
+nv set bridge domain br_default vlan 100 vni 10100 
+nv set bridge domain br_default vlan 200 vni 10200 
+nv set vrf TENANTA evpn enable on 
+nv set vrf TENANTA evpn vni 4001 
+nv set vrf TENANTA loopback ip address 10.201.1.1/32 
+nv set vrf TENANTA router bgp enable on 
+nv set vrf TENANTA router bgp address-family ipv4-unicast enable on 
+nv set vrf TENANTA router bgp address-family ipv4-unicast redistribute connected enable on 
+nv set vrf TENANTA router bgp address-family ipv4-unicast route-export to-evpn enable on 
+nv set interface vlan100 ip vrf TENANTA 
+nv set interface vlan100 ip address 10.200.1.1/24 
+nv set vrf TENANTB table auto 
+nv set interface vlan200 ip vrf TENANTB 
+nv set interface vlan200 ip address 10.200.1.1/24 
+nv set vrf default router bgp neighbor swp2 address-family l2vpn-evpn enable on 
+nv set vrf default router bgp neighbor swp3 address-family l2vpn-evpn enable on 
+nv set vrf default router bgp address-family l2vpn-evpn enable on 
+leaf01: applied
+== spine01 ==
+nv set vrf default router bgp neighbor swp1 address-family l2vpn-evpn enable on 
+nv set vrf default router bgp neighbor swp2 address-family l2vpn-evpn enable on 
+nv set vrf default router bgp neighbor swp3 address-family l2vpn-evpn enable on 
+nv set vrf default router bgp neighbor swp4 address-family l2vpn-evpn enable on 
+nv set vrf default router bgp address-family l2vpn-evpn enable on 
+spine01: applied
+== spine02 ==
+nv set vrf default router bgp neighbor swp1 address-family l2vpn-evpn enable on 
+nv set vrf default router bgp neighbor swp2 address-family l2vpn-evpn enable on 
+nv set vrf default router bgp neighbor swp3 address-family l2vpn-evpn enable on 
+nv set vrf default router bgp neighbor swp4 address-family l2vpn-evpn enable on 
+nv set vrf default router bgp address-family l2vpn-evpn enable on 
+spine02: applied
+== leaf04 ==
+nv set evpn enable on 
+nv set evpn route-advertise svi-ip on 
+nv set nve vxlan enable on 
+nv set nve vxlan source address 10.0.0.4 
+nv set bridge domain br_default vlan 100 vni 10100 
+nv set bridge domain br_default vlan 200 vni 10200 
+nv set vrf TENANTA evpn enable on 
+nv set vrf TENANTA evpn vni 4001 
+nv set vrf TENANTA loopback ip address 10.201.4.1/32 
+nv set vrf TENANTA router bgp enable on 
+nv set vrf TENANTA router bgp address-family ipv4-unicast enable on 
+nv set vrf TENANTA router bgp address-family ipv4-unicast redistribute connected enable on 
+nv set vrf TENANTA router bgp address-family ipv4-unicast route-export to-evpn enable on 
+nv set interface vlan100 ip vrf TENANTA 
+nv set interface vlan100 ip address 10.200.1.4/24 
+nv set vrf TENANTB table auto 
+nv set interface vlan200 ip vrf TENANTB 
+nv set interface vlan200 ip address 10.200.1.4/24 
+nv set vrf default router bgp neighbor swp2 address-family l2vpn-evpn enable on 
+nv set vrf default router bgp neighbor swp3 address-family l2vpn-evpn enable on 
+nv set vrf default router bgp address-family l2vpn-evpn enable on 
+leaf04: applied
+waiting for sessions and the overlay to settle
+OPEN capture in audits/overlay/open_capture.txt

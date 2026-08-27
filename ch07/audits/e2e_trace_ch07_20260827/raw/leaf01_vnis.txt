@@ -1,0 +1,7 @@
+$ sshpass -p Clab123! ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null cumulus@clab-bgpbook-ch06-leaf01 "sudo vtysh -c 'show evpn vni'"
+Warning: Permanently added 'clab-bgpbook-ch06-leaf01' (ECDSA) to the list of known hosts.
+Welcome to NVIDIA Cumulus (R) Linux (R)
+VNI        Type VxLAN IF              # MACs   # ARPs   # Remote VTEPs  Tenant VRF      VLAN       BRIDGE                               
+10200      L2   vxlan48               2        4        1               TENANTB         200        br_default                            
+10100      L2   vxlan48               2        4        1               TENANTA         100        br_default                            
+4001       L3   vxlan99               1        1        n/a             TENANTA                              

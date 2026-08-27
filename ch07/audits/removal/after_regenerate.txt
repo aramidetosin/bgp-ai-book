@@ -1,0 +1,29 @@
+$ make remove   (regenerate the chapter 6 underlay from its spec)
+
+$ sudo vtysh -c "show bgp l2vpn evpn summary"   (leaf01: the address family is simply gone)
+% No BGP neighbors found in VRF default
+
+$ sudo vtysh -c "show evpn vni"   (leaf01: no VNIs)
+
+$ ip vrf show   (leaf01: the tenants never happened)
+Name              Table
+-----------------------
+mgmt              1001
+
+== and the chapter 6 audit, green again ==
+=== BGP sessions on the core underlay ===
+  leaf01: 2/2 Established - OK
+  leaf02: 2/2 Established - OK
+  leaf03: 2/2 Established - OK
+  leaf04: 2/2 Established - OK
+  spine01: 4/4 Established - OK
+  spine02: 4/4 Established - OK
+=== Every loopback reachable from leaf01 ===
+  leaf01 -> 10.0.0.2 - OK
+  leaf01 -> 10.0.0.3 - OK
+  leaf01 -> 10.0.0.4 - OK
+  leaf01 -> 10.0.0.101 - OK
+  leaf01 -> 10.0.0.102 - OK
+=== Server to server across the fabric ===
+  server01 -> server02 (172.16.4.11) - OK
+=== Cabling versus intent (LLDP) ===

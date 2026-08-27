@@ -1,0 +1,19 @@
+$ sudo ip vrf exec TENANTA ping -c 3 -W 2 -M do -s 9100 10.200.1.4   (leaf01)
+3 packets transmitted, 3 received, 0% packet loss, time 2032ms
+rtt min/avg/max/mdev = 0.417/0.528/0.654/0.097 ms
+$ sudo tcpdump -n -r /tmp/frag_9100.pcap   (spine01 swp1, the same ping on the wire)
+Warning: Permanently added 'clab-bgpbook-ch06-spine01' (ECDSA) to the list of known hosts.
+Welcome to NVIDIA Cumulus (R) Linux (R)
+06:15:09.601202 IP 10.0.0.1.56810 > 10.0.0.4.4789: VXLAN, flags [I] (0x08), vni 4001
+IP 10.201.1.1 > 10.200.1.4: ICMP echo request, id 11968, seq 1, length 9108
+
+$ sudo ip vrf exec TENANTA ping -c 3 -W 2 -M do -s 9188 10.200.1.4   (leaf01)
+3 packets transmitted, 3 received, 0% packet loss, time 2048ms
+rtt min/avg/max/mdev = 0.489/0.530/0.573/0.034 ms
+$ sudo tcpdump -n -r /tmp/frag_9188.pcap   (spine01 swp1, the same ping on the wire)
+Warning: Permanently added 'clab-bgpbook-ch06-spine01' (ECDSA) to the list of known hosts.
+Welcome to NVIDIA Cumulus (R) Linux (R)
+06:15:23.121114 IP 10.0.0.1.56810 > 10.0.0.4.4789: VXLAN, flags [I] (0x08), vni 4001
+IP truncated-ip - 54 bytes missing! 10.201.1.1 > 10.200.1.4: ICMP echo request, id 12028, seq 1, length 9196
+06:15:23.121114 IP 10.0.0.1 > 10.0.0.4: ip-proto-17
+

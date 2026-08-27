@@ -1,0 +1,22 @@
+=== Underlay: BGP sessions still Established ===
+  leaf01: 2/2 ipv4 Established - OK
+  leaf04: 2/2 ipv4 Established - OK
+  spine01: 4/4 ipv4 Established - OK
+=== Overlay: the same sessions carry l2vpn evpn ===
+  leaf01: 2/2 evpn Established - OK
+  leaf04: 2/2 evpn Established - OK
+  spine01: 4/4 evpn Established - OK
+=== Route types on leaf04 ===
+  type-2 best routes: 8 - OK
+  type-3 best routes: 4 - OK
+  type-5 best routes: 4 - OK
+=== TENANTA: routed tenant across the overlay ===
+  leaf01 -> 10.200.1.4 in TENANTA - OK
+  leaf01 -> 10.201.4.1 (type-5 route) in TENANTA - OK
+=== TENANTB: the same addresses, a different world ===
+  leaf01 -> 10.200.1.4 in TENANTB - OK
+=== Isolation: TENANTB holds no route to TENANTA's exports ===
+  TENANTB has no route to 10.201.4.1 - OK
+=== Type-5 next hop is the far VTEP loopback ===
+  leaf04 sees 10.201.1.1/32 via 10.0.0.1 - OK
+

@@ -15,6 +15,7 @@ chapter's bootstrap configuration, with nothing hand-typed.
 | [ch04](ch04/) | Completing the Map | One node, four fabrics: frontend, backend, routed storage, and out-of-band with the BMC in a VRF; four simultaneous jobs, a diagonal isolation matrix, and a blackout demo where only the OOB path survives |
 | [ch05](ch05/) | Clos and Rail-Optimized Topologies | The topology generator's debut: a rail-optimized backend (4 rail leafs, 2 spines, 2 nodes) generated from a five-number YAML spec, verified against generated intent with LLDP, plus a miscable that survives smoke tests and gets caught by the diff |
 | [ch06](ch06/) | eBGP Underlay Design | The book's core underlay, generated and measured: the failover ladder (6.77 s bare, 3.01 s tuned, sub-second with BFD), graceful-restart and reconnect timings, the over-tuning trap sprung with deterministic CPU stalls, a duplicate-ASN break-fix, and the whole fabric converted to numbered peering and back with one generator flag |
+| [ch07](ch07/) | EVPN-VXLAN: Deciding Whether You Need an Overlay | The overlay added to the running ch06 fabric as recorded steps: two tenants on deliberately overlapping subnets, the OPEN renegotiation captured with the EVPN capability, the VXLAN tunnel and its silent fragmentation on the wire, a one-digit VNI typo that becomes an invisible route filter, and removal by regenerating the underlay from its spec |
 
 Each chapter directory contains:
 

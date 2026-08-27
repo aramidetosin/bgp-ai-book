@@ -1,0 +1,13 @@
+$ nv set vrf TENANTX evpn --help   (leaf01: the EVPN options a VRF carries)
+usage: 
+  nv [options] set vrf <vrf-id> evpn [enable ...]
+  nv [options] set vrf <vrf-id> evpn [prefix-routes-only ...]
+  nv [options] set vrf <vrf-id> evpn [vlan ...]
+  nv [options] set vrf <vrf-id> evpn [vni ...]
+
+Description:
+  evpn                EVPN control plane config and info for VRF
+
+Identifiers:
+  <vrf-id>            VRF (vrf-name)
+

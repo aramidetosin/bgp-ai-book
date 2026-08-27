@@ -1,0 +1,6 @@
+$ sshpass -p Clab123! ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null cumulus@clab-bgpbook-ch06-leaf01 'ip route show vrf TENANTB'
+Warning: Permanently added 'clab-bgpbook-ch06-leaf01' (ECDSA) to the list of known hosts.
+Welcome to NVIDIA Cumulus (R) Linux (R)
+unreachable default metric 4278198272 
+10.200.1.0/24 dev vlan200 proto kernel scope link src 10.200.1.1 
+127.0.0.0/8 dev TENANTB proto kernel scope link src 127.0.0.1 

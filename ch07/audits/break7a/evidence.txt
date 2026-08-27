@@ -1,0 +1,31 @@
+$ nv unset vrf TENANTA evpn vni 4001 && nv set vrf TENANTA evpn vni 4009 && nv config apply -y   (leaf04: the typo)
+
+$ sudo ip vrf exec TENANTA ping -c 3 -W 2 -I 10.201.1.1 10.201.4.1   (leaf01: the routed tenant destination, dead)
+3 packets transmitted, 0 received, 100% packet loss, time 2025ms
+
+
+$ sudo ip vrf exec TENANTA ping -c 3 -W 2 10.200.1.4   (leaf01: the stretched segment, still alive on the L2VNI)
+3 packets transmitted, 3 received, 0% packet loss, time 2028ms
+rtt min/avg/max/mdev = 0.393/0.422/0.468/0.032 ms
+
+$ sudo ip vrf exec TENANTB ping -c 3 -W 2 10.200.1.4   (leaf01: tenant B, untouched)
+3 packets transmitted, 3 received, 0% packet loss, time 2041ms
+rtt min/avg/max/mdev = 0.445/0.468/0.509/0.029 ms
+
+$ ip route show vrf TENANTA 10.201.4.1   (leaf01: the route is gone from the VRF)
+
+$ sudo vtysh -c "show bgp l2vpn evpn route type prefix" | grep -A 3 "\[10.201.4.1\]"   (leaf01: still in the EVPN table, with the tell)
+*> [5]:[0]:[32]:[10.201.4.1] RD 10.0.0.4:2
+                    10.0.0.4 (spine01)
+                                                           0 65100 65104 ?
+                    RT:65104:4009 ET:8 Rmac:0c:00:51:52:c2:b2
+*  [5]:[0]:[32]:[10.201.4.1] RD 10.0.0.4:2
+                    10.0.0.4 (spine02)
+                                                           0 65100 65104 ?
+                    RT:65104:4009 ET:8 Rmac:0c:00:51:52:c2:b2
+
+$ sudo vtysh -c "show evpn vni"   (leaf04: the mismatch in plain sight)
+VNI        Type VxLAN IF              # MACs   # ARPs   # Remote VTEPs  Tenant VRF      VLAN       BRIDGE                               
+10200      L2   vxlan48               2        4        1               TENANTB         200        br_default                            
+10100      L2   vxlan48               2        4        1               TENANTA         100        br_default                            
+4009       L3   vxlan99               0        0        n/a             TENANTA                              
