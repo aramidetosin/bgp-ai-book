@@ -1,0 +1,7 @@
+=== The chain of defaults: provider to border to leaf to host ===
+--- border01 ---
+default nhid 22 proto bgp metric 20 
+--- leaf01 ---
+default nhid 22 proto bgp metric 20 
+--- intserver01 ---
+default nhid 14 via inet6 fe80::a8c1:abff:fee6:eac8 dev eth1 proto bgp metric 20 

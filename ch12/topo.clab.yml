@@ -42,7 +42,9 @@ topology:
       kind: linux
       image: bgpbook-frr-host
       exec:
-        - ip link set eth1 mtu 9216
+        # the edge path is 1500; a jumbo server MSS blackholes at the
+        # firewall for anything bigger than a page
+        - ip link set eth1 mtu 1500
         - lldpd
     extclient01:
       kind: linux

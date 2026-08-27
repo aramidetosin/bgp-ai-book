@@ -1,0 +1,19 @@
+=== Before: fw-b is active ===
+  fw-a: passive   fw-b: active
+
+=== The download starts (60 MB, rate-limited so it lives long enough) ===
+--- suspending fw-b six seconds in ---
+<result>Successfully changed HA state to suspended</result>
+--- states mid-transfer ---
+  172.20.40.11: <state>active</state>
+  172.20.40.12: <state>suspended</state>
+
+=== The verdict ===
+  bytes received: 62914560 of 62914560
+real	0m 30.71s
+  the download survived the failover
+
+=== The session, now owned by the survivor ===
+  sessions on the new active: 1
+--- restoring the suspended unit to functional ---
+<result>Successfully changed HA state to functional</result>

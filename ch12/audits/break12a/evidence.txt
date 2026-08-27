@@ -1,0 +1,18 @@
+=== The symptom pair ===
+--- a short request works ---
+bgpbook inference endpoint
+--- a long transfer dies mid-flight ---
+  curl exit: 28
+  bytes received:  of 62914560
+
+=== The investigation, from the server outward ===
+--- the interface, freshly standardized ---
+2623: eth1@if2622: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9216 qdisc noqueue state UP mode DEFAULT group default 
+--- the server keeps sending big frames; nothing but silence comes back ---
+20:18:07.400444 IP 172.16.200.1.80 > 198.51.100.11.48070: Flags [.], seq 257917690:257926854, ack 3032239229, win 63, options [nop,nop,TS val 2791763378 ecr 1220604993], length 9164: HTTP
+20:18:07.400449 IP 172.16.200.1.80 > 198.51.100.11.48070: Flags [.], seq 9164:18328, ack 1, win 63, options [nop,nop,TS val 2791763378 ecr 1220604993], length 9164: HTTP
+20:18:07.400453 IP 172.16.200.1.80 > 198.51.100.11.48070: Flags [.], seq 18328:27492, ack 1, win 63, options [nop,nop,TS val 2791763378 ecr 1220604993], length 9164: HTTP
+20:18:07.400455 IP 172.16.200.1.80 > 198.51.100.11.48070: Flags [.], seq 27492:36656, ack 1, win 63, options [nop,nop,TS val 2791763378 ecr 1220604993], length 9164: HTTP
+20:18:07.400458 IP 172.16.200.1.80 > 198.51.100.11.48070: Flags [.], seq 36656:45820, ack 1, win 63, options [nop,nop,TS val 2791763378 ecr 1220604993], length 9164: HTTP
+20:18:07.400461 IP 172.16.200.1.80 > 198.51.100.11.48070: Flags [.], seq 45820:54984, ack 1, win 63, options [nop,nop,TS val 2791763378 ecr 1220604993], length 9164: HTTP
+--- no ICMP fragmentation-needed arrives: the edge ate the hint ---

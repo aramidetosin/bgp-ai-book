@@ -1,0 +1,26 @@
+=== The border's contract, from both sides of the session ===
+--- what the provider offered, and what the border accepted (default only) ---
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*> 0.0.0.0/0        203.0.113.1(upstream01)
+                                             0             0 64900 i
+
+Displayed  1 routes and 8 total paths
+--- what the border announced, and nothing else ---
+RPKI validation codes: V valid, I invalid, N Not found
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*> 203.0.113.100/32 0.0.0.0                  0         32768 ?
+
+Total number of prefixes 1
+--- the provider's own filter agrees (received vs accepted) ---
+RPKI validation codes: V valid, I invalid, N Not found
+
+    Network          Next Hop            Metric LocPrf Weight Path
+ *> 203.0.113.100/32 172.31.1.0               0             0 65401 ?
+
+Total number of prefixes 1
+ *> 203.0.113.100/32 172.31.1.0(border01)
+                                             0             0 65401 ?
+
+Displayed  1 routes and 4 total paths

@@ -174,6 +174,27 @@ TEMPLATE = """<config version="12.1.0" urldb="paloaltonetworks" detail-version="
                   <action>allow</action>
                   <log-end>yes</log-end>
                 </entry>
+                <entry name="drop-vip-other">
+                  <from>
+                    <member>untrust</member>
+                  </from>
+                  <to>
+                    <member>untrust</member>
+                  </to>
+                  <source>
+                    <member>any</member>
+                  </source>
+                  <destination>
+                    <member>203.0.113.100</member>
+                  </destination>
+                  <application>
+                    <member>any</member>
+                  </application>
+                  <service>
+                    <member>any</member>
+                  </service>
+                  <action>drop</action>
+                </entry>
                 <entry name="outbound-cluster">
                   <from>
                     <member>trust</member>

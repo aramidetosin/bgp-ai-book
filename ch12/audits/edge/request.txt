@@ -1,0 +1,22 @@
+=== One customer request, end to end ===
+--- the client fetches the public address ---
+bgpbook inference endpoint
+--- the active firewall's session table entry, mid-request ---
+      <dst>203.0.113.100</dst>
+      <xsource>198.51.100.11</xsource>
+      <source>198.51.100.11</source>
+      <xdst>172.16.200.1</xdst>
+      <xsport>58668</xsport>
+      <xdport>80</xdport>
+      <sport>58668</sport>
+      <dport>80</dport>
+      <from>untrust</from>
+      <to>trust</to>
+      <state>ACTIVE</state>
+      <type>FLOW</type>
+      <total-byte-count>923</total-byte-count>
+      <application>web-browsing</application>
+      <dst>203.0.113.100</dst>
+      <xsource>198.51.100.11</xsource>
+      <source>198.51.100.11</source>
+      <xdst>172.16.200.1</xdst>

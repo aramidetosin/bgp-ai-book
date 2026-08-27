@@ -1,0 +1,13 @@
+=== BGP sessions ===
+  leaf01: 2/2 Established - OK
+  border01: 2/2 Established - OK
+  upstream01: 1/1 Established - OK
+=== The pair ===
+  fw-a: passive   fw-b: active - OK
+=== Reach: the public VIP from the internet ===
+  extclient01 -> 203.0.113.100 (HTTP) - OK
+=== Containment: nothing else answers ===
+  extclient01 -> 172.16.1.11 unreachable - OK
+  extclient01 -> 10.0.0.9 unreachable - OK
+  extclient01 -> 172.31.1.0 unreachable - OK
+

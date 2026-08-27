@@ -46,8 +46,9 @@ echo "  br0 bridges both firewalls' outside ports; default originated; customer 
 echo "=== intserver01: the internal service host (chapter 9's pattern) ==="
 ${D}-intserver01 sh -c "ip addr add 172.16.1.11/24 dev eth1 2>/dev/null; \
   ip addr add 172.16.200.1/32 dev lo 2>/dev/null; \
+  ip route del default 2>/dev/null; \
   mkdir -p /www && printf 'bgpbook inference endpoint\n' > /www/index.html && \
-  (pgrep -f 'httpd' >/dev/null || httpd -p 80 -h /www); \
+  (pgrep -x httpd >/dev/null || httpd -p 80 -h /www); \
   cat > /etc/frr/frr.conf <<'EOF'
 frr defaults datacenter
 hostname intserver01

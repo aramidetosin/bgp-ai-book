@@ -1,0 +1,7 @@
+=== The NATs, on the wire ===
+--- inbound (DNAT): what the server actually receives ---
+19:57:10.650959 IP 198.51.100.11.52316 > 172.16.200.1.80: Flags [S], seq 579964978, win 56760, options [mss 9460,sackOK,TS val 1949451880 ecr 0,nop,wscale 10], length 0
+19:57:10.650988 IP 172.16.200.1.80 > 198.51.100.11.52316: Flags [S.], seq 4263433425, ack 579964979, win 64148, options [mss 9176,sackOK,TS val 2000364311 ecr 1949451880,nop,wscale 10], length 0
+--- outbound (SNAT): what the internet sees of the cluster ---
+19:57:12.797611 IP 203.0.113.0.45036 > 198.51.100.11.80: Flags [S], seq 1891297228, win 64232, options [mss 9176,sackOK,TS val 1875438210 ecr 0,nop,wscale 10], length 0
+19:57:12.797632 IP 198.51.100.11.80 > 203.0.113.0.45036: Flags [S.], seq 3104770703, ack 1891297229, win 56688, options [mss 9460,sackOK,TS val 4143734717 ecr 1875438210,nop,wscale 10], length 0

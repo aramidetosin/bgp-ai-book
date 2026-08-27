@@ -73,7 +73,7 @@ sw border01 "sudo ip neigh flush dev vlan10" >/dev/null 2>&1
   ${D}-extclient01 sh -c "timeout 6 tcpdump -c 2 -n -i eth1 'tcp port 80' 2>/dev/null" &
   CAP=$!
   sleep 1
-  ${D}-intserver01 curl -s --max-time 4 http://198.51.100.11/ -o /dev/null
+  ${D}-intserver01 wget -q -T 4 -O /dev/null http://198.51.100.11/
   wait ${CAP}
 } | tee "${OUT}/nats.txt"
 echo "Evidence written to ${OUT}/"

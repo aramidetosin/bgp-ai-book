@@ -16,7 +16,7 @@ if [ "$(pa_state 172.20.40.12)" = "active" ]; then
   ACTIVE_IP=172.20.40.12; ACTIVE_NAME=fw-b; STANDBY_IP=172.20.40.11
 fi
 
-${D}-intserver01 sh -c "[ -f /www/big.bin ] || head -c 60m /dev/urandom > /www/big.bin"
+${D}-intserver01 sh -c "[ -s /www/big.bin ] || dd if=/dev/urandom of=/www/big.bin bs=1M count=60 2>/dev/null"
 
 {
   echo "=== Before: ${ACTIVE_NAME} is active ==="
@@ -28,9 +28,11 @@ ${D}-intserver01 sh -c "[ -f /www/big.bin ] || head -c 60m /dev/urandom > /www/b
   sleep 6
   echo "--- suspending ${ACTIVE_NAME} six seconds in ---"
   pa_op ${ACTIVE_IP} "<request><high-availability><state><suspend/></state></high-availability></request>" | grep -o "<result>[^<]*</result>" | head -1
-  sleep 8
+  sleep 10
   echo "--- states mid-transfer ---"
-  echo "  fw-a: $(pa_state 172.20.40.11)   fw-b: $(pa_state 172.20.40.12)"
+  for ip in 172.20.40.11 172.20.40.12; do
+    echo "  ${ip}: $(pa_op ${ip} "<show><high-availability><state/></high-availability></show>" | grep -o "<state>[a-z-]*</state>" | head -1)"
+  done
   wait ${DL}
   echo
   echo "=== The verdict ==="

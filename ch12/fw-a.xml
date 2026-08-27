@@ -51,6 +51,12 @@
                       <ip-address>172.31.1.0</ip-address>
                     </nexthop>
                   </entry>
+                  <entry name="public-vip-discard">
+                    <destination>203.0.113.100/32</destination>
+                    <nexthop>
+                      <discard />
+                    </nexthop>
+                  </entry>
                   <entry name="fabric-loopbacks">
                     <destination>10.0.0.0/24</destination>
                     <interface>ethernet1/1</interface>
@@ -66,7 +72,7 @@
       </network>
       <deviceconfig>
         <system>
-          <hostname>fw-b</hostname>
+          <hostname>fw-a</hostname>
           <timezone>UTC</timezone>
         </system>
         <high-availability>
@@ -74,27 +80,27 @@
           <interface>
             <ha1>
               <port>ethernet1/3</port>
-              <ip-address>169.254.1.2</ip-address>
+              <ip-address>169.254.1.1</ip-address>
               <netmask>255.255.255.0</netmask>
             </ha1>
             <ha2>
               <port>ethernet1/4</port>
-              <ip-address>169.254.2.2</ip-address>
+              <ip-address>169.254.2.1</ip-address>
               <netmask>255.255.255.0</netmask>
             </ha2>
           </interface>
           <group>
             <group-id>1</group-id>
             <description>chapter 12 edge pair</description>
-            <peer-ip>169.254.1.1</peer-ip>
+            <peer-ip>169.254.1.2</peer-ip>
             <mode>
               <active-passive>
                 <passive-link-state>auto</passive-link-state>
               </active-passive>
             </mode>
             <election-option>
-              <device-priority>200</device-priority>
-              
+              <device-priority>100</device-priority>
+              <preemptive>yes</preemptive>
             </election-option>
             <state-synchronization>
               <enabled>yes</enabled>
@@ -161,27 +167,6 @@
                   </service>
                   <action>allow</action>
                   <log-end>yes</log-end>
-                </entry>
-                <entry name="drop-vip-other">
-                  <from>
-                    <member>untrust</member>
-                  </from>
-                  <to>
-                    <member>untrust</member>
-                  </to>
-                  <source>
-                    <member>any</member>
-                  </source>
-                  <destination>
-                    <member>203.0.113.100</member>
-                  </destination>
-                  <application>
-                    <member>any</member>
-                  </application>
-                  <service>
-                    <member>any</member>
-                  </service>
-                  <action>drop</action>
                 </entry>
                 <entry name="outbound-cluster">
                   <from>
