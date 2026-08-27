@@ -1,0 +1,2 @@
+$ python3 gen_topo.py
+generated: 4 rail leafs, 2 spines, 2 nodes, 16 links, intent for 32 endpoints
