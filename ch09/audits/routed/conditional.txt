@@ -1,0 +1,9 @@
+=== The health-check withdrawal: the address is the advertisement ===
+--- leaf01 before ---
+172.16.101.1 nhid 64 proto bgp metric 20 
+--- the failing health check removes the address ---
+$ ip addr del 172.16.101.1/32 dev lo
+--- leaf01 after ---
+--- recovery restores it ---
+$ ip addr add 172.16.101.1/32 dev lo
+172.16.101.1 nhid 66 proto bgp metric 20 
