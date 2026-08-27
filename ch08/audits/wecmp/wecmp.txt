@@ -1,0 +1,54 @@
+=== Phase 0: the healthy fabric ===
+  172.16.1.0/24 nhid 30 proto bgp metric 20 
+  id 30 group 24/26 proto zebra 
+--- baseline: iperf3 -P 8 -t 8, server02 -> server01 ---
+  leaf02's split across the spines:
+    leaf02.swp2    2793.6 MB   25.0%
+    leaf02.swp3    8393.3 MB   75.0%
+  per surviving link toward leaf01:
+    spine01.swp2    2793.8 MB
+    spine02.swp1    4712.1 MB
+    spine02.swp2    3682.4 MB
+
+=== Phase 1: leaf01 swp5 down (spine02 keeps one path to leaf01) ===
+  172.16.1.0/24 nhid 30 proto bgp metric 20 
+  id 30 group 24/26 proto zebra 
+--- after the failure, no weighting: iperf3 -P 8 -t 8, server02 -> server01 ---
+  leaf02's split across the spines:
+    leaf02.swp2    6428.1 MB   56.4%
+    leaf02.swp3    4976.5 MB   43.6%
+  per surviving link toward leaf01:
+    spine01.swp1    3607.9 MB
+    spine01.swp2    2822.6 MB
+    spine02.swp1    4981.2 MB
+
+=== Phase 2: the spines advertise their real capacity ===
+  --- leaf02's view of 172.16.1.0/24 in BGP ---
+  BGP routing table entry for 172.16.1.0/24, version 8
+  Paths: (2 available, best #1, table default)
+    Advertised to non peer-group peers:
+    spine01(swp2) spine02(swp3)
+    65100 65101
+      fe80::a8c1:abff:fec4:1b3f (spine01) from spine01(swp2) (10.0.0.101)
+      (fe80::a8c1:abff:fec4:1b3f) (used)
+        Origin incomplete, valid, external, multipath, bestpath-from-AS 65100, best (Older Path)
+        Extended Community: LB:65100:250000 (2.000 Mbps)
+        Last update: Thu Aug 27 10:29:33 2026
+    65100 65101
+      fe80::a8c1:abff:fef5:18ab (spine02) from spine02(swp3) (10.0.0.102)
+      (fe80::a8c1:abff:fef5:18ab) (used)
+        Origin incomplete, valid, external, multipath
+        Extended Community: LB:65100:125000 (1.000 Mbps)
+        Last update: Thu Aug 27 10:29:36 2026
+  --- and in the forwarding table ---
+  172.16.1.0/24 nhid 37 proto bgp metric 20 
+  id 37 group 24,127/26,255 proto zebra 
+--- weighted: iperf3 -P 8 -t 8, server02 -> server01 ---
+  leaf02's split across the spines:
+    leaf02.swp2    7951.6 MB   66.9%
+    leaf02.swp3    3930.3 MB   33.1%
+  per surviving link toward leaf01:
+    spine01.swp1    4642.3 MB
+    spine01.swp2    3304.5 MB
+    spine02.swp1    3934.4 MB
+

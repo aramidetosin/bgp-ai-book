@@ -1,0 +1,42 @@
+=== leaf01: the four-way fan toward server02's subnet ===
+Routing entry for 172.16.2.0/24
+  Known via "bgp", distance 20, metric 0, best
+  Last update 00:00:22 ago
+  * fe80::a8c1:abff:fe07:c024, via swp5, weight 1
+  * fe80::a8c1:abff:fe29:1e4f, via swp4, weight 1
+  * fe80::a8c1:abff:fe76:700d, via swp2, weight 1
+  * fe80::a8c1:abff:feca:d27b, via swp3, weight 1
+
+--- and the next-hop group the kernel FIB installs ---
+172.16.2.0/24 nhid 120 proto bgp metric 20 
+id 35 via fe80::a8c1:abff:fe07:c024 dev swp5 scope link proto zebra 
+id 36 via fe80::a8c1:abff:fe29:1e4f dev swp4 scope link proto zebra 
+id 37 via fe80::a8c1:abff:fe76:700d dev swp2 scope link proto zebra 
+id 38 via fe80::a8c1:abff:feca:d27b dev swp3 scope link proto zebra 
+id 39 group 35/36 proto zebra 
+id 40 group 37/38 proto zebra 
+id 120 group 35/36/37/38 proto zebra 
+
+=== leaf02: the two-way fan toward server01's subnet ===
+Routing entry for 172.16.1.0/24
+  Known via "bgp", distance 20, metric 0, best
+  Last update 00:00:22 ago
+  * fe80::a8c1:abff:fec4:1b3f, via swp2, weight 1
+  * fe80::a8c1:abff:fef5:18ab, via swp3, weight 1
+
+--- and the next-hop group the kernel FIB installs ---
+172.16.1.0/24 nhid 30 proto bgp metric 20 
+id 26 via fe80::a8c1:abff:fec4:1b3f dev swp2 scope link proto zebra 
+id 30 group 26/31 proto zebra 
+id 31 via fe80::a8c1:abff:fef5:18ab dev swp3 scope link proto zebra 
+
+=== what the kernel hashes on ===
+leaf01 fib_multipath_hash_policy = 1
+
+=== six traceroutes, server01 -> server02, middle hop ===
+run 1: 10.0.0.101
+run 2: 10.0.0.102
+run 3: 10.0.0.102
+run 4: 10.0.0.101
+run 5: 10.0.0.101
+run 6: 10.0.0.101

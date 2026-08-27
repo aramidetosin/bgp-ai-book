@@ -1,0 +1,78 @@
+{
+ "leaf01": {
+  "swp1": [
+   "server01",
+   "eth1"
+  ],
+  "swp2": [
+   "spine01",
+   "swp1"
+  ],
+  "swp3": [
+   "spine01",
+   "swp2"
+  ],
+  "swp4": [
+   "spine02",
+   "swp1"
+  ],
+  "swp5": [
+   "spine02",
+   "swp2"
+  ]
+ },
+ "leaf02": {
+  "swp1": [
+   "server02",
+   "eth1"
+  ],
+  "swp2": [
+   "spine01",
+   "swp3"
+  ],
+  "swp3": [
+   "spine02",
+   "swp3"
+  ]
+ },
+ "server01": {
+  "eth1": [
+   "leaf01",
+   "swp1"
+  ]
+ },
+ "server02": {
+  "eth1": [
+   "leaf02",
+   "swp1"
+  ]
+ },
+ "spine01": {
+  "swp1": [
+   "leaf01",
+   "swp2"
+  ],
+  "swp2": [
+   "leaf01",
+   "swp3"
+  ],
+  "swp3": [
+   "leaf02",
+   "swp2"
+  ]
+ },
+ "spine02": {
+  "swp1": [
+   "leaf01",
+   "swp4"
+  ],
+  "swp2": [
+   "leaf01",
+   "swp5"
+  ],
+  "swp3": [
+   "leaf02",
+   "swp3"
+  ]
+ }
+}

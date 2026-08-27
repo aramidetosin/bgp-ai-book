@@ -1,0 +1,22 @@
+# Chapter 8: the collision fabric. Two leafs, two spines, and capacity
+# made deliberately unequal: leaf01 attaches to each spine twice, leaf02
+# once. leaf01's four-way uplink fan hosts the collision ladder, and the
+# parallel links give the spines something to weight when one fails.
+name: bgpbook-ch08
+mgmt_subnet: 172.20.37.0/24
+
+leafs: 2
+spines: 2
+servers_on: [1, 2]     # server01 on leaf01, server02 on leaf02
+
+uplinks:               # links from each leaf to EACH spine
+  1: 2
+  2: 1
+
+switch_image: vrnetlab/nvidia_cumulus-vx:5.12.0
+node_image: bgpbook-multitool-lldpd   # built once by ch06's make node-image
+
+# Same ASN plan as the core underlay: spines share one ASN, each leaf
+# gets its own (chapter 6's allocation policy, unchanged).
+spine_asn: 65100
+leaf_asn_base: 65100

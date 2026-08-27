@@ -1,0 +1,4 @@
+$ ip route show table 10000   (leaf02, PBR map PIN applied)
+
+$ ip route get 172.16.1.11 from 172.16.2.11 iif swp1
+172.16.1.11 from 172.16.2.11 via inet6 fe80::a8c1:abff:fef5:18ab dev swp3 

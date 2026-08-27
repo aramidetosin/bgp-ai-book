@@ -1,0 +1,40 @@
+=== Before any pin: ECMP decides ===
+--- the kernel's own verdict: ip route get (baseline) ---
+  172.16.1.11 from 172.16.2.11 via inet6 fe80::a8c1:abff:fec4:1b3f dev swp2 
+  eight iperf3 flows, leaf02's split:
+    swp2    6594.9 MB   57.4%
+    swp3    4890.6 MB   42.6%
+
+=== Act one: the platform's PBR, configured and believed ===
+  spine01's link-local on swp2: fe80::a8c1:abff:fec4:1b3f
+  --- what the daemon believes ---
+    pbr-map PIN valid: yes
+      Seq: 10 rule: 309
+          Installed: yes Reason: Valid
+          SRC IP Match: 172.16.2.11/32
+          DST IP Match: 172.16.1.0/24
+          Nexthop-Group: VIA-SPINE01
+            Installed: yes Tableid: 10000
+  --- what the daemon installed ---
+  309:	from 172.16.2.11 to 172.16.1.0/24 iif swp1 lookup 10000 proto zebra
+--- the kernel's own verdict: ip route get (with PBR applied) ---
+  172.16.1.11 from 172.16.2.11 via inet6 fe80::a8c1:abff:fef5:18ab dev swp3 
+  eight iperf3 flows, leaf02's split:
+    swp2    5148.5 MB   44.1%
+    swp3    6535.7 MB   55.9%
+
+=== Act two: the kernel's policy routing, a specific prefix ===
+  $ sudo ip route add 172.16.1.0/24 via inet6 fe80::a8c1:abff:fec4:1b3f dev swp2 table 200
+  $ sudo ip rule add from 172.16.2.11/32 to 172.16.1.0/24 iif swp1 table 200 priority 250
+--- the kernel's own verdict: ip route get (with the kernel pin) ---
+  172.16.1.11 from 172.16.2.11 via inet6 fe80::a8c1:abff:fec4:1b3f dev swp2 table 200 
+--- six traceroutes, middle hop only (pinned) ---
+  run 1: 10.0.0.101
+  run 2: 10.0.0.101
+  run 3: 10.0.0.101
+  run 4: 10.0.0.101
+  run 5: 10.0.0.101
+  run 6: 10.0.0.101
+  eight iperf3 flows, leaf02's split:
+    swp2   10917.4 MB  100.0%
+    swp3       0.0 MB    0.0%

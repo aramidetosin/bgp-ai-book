@@ -1,0 +1,28 @@
+--- one elephant: iperf3 -P 1 -t 8, server01 -> server02 ---
+[  5]   0.00-8.00   sec  11.5 GBytes  12.3 Gbits/sec                  receiver
+  swp2       0.0 MB    0.0%  
+  swp3   12362.9 MB  100.0%  ########################################
+  swp4       0.0 MB    0.0%  
+  swp5       0.0 MB    0.0%  
+
+--- four flows, first roll: iperf3 -P 4 -t 8, server01 -> server02 ---
+[SUM]   0.00-8.01   sec  9.60 GBytes  10.3 Gbits/sec                  receiver
+  swp2       0.0 MB    0.0%  
+  swp3    4738.8 MB   45.9%  ##################
+  swp4    2108.9 MB   20.4%  ########
+  swp5    3487.7 MB   33.7%  #############
+
+--- four flows, second roll: iperf3 -P 4 -t 8, server01 -> server02 ---
+[SUM]   0.00-8.01   sec  10.1 GBytes  10.8 Gbits/sec                  receiver
+  swp2       0.0 MB    0.0%  
+  swp3    4447.3 MB   41.0%  ################
+  swp4    2128.2 MB   19.6%  ########
+  swp5    4269.2 MB   39.4%  ################
+
+--- sixteen flows: iperf3 -P 16 -t 8, server01 -> server02 ---
+[SUM]   0.00-8.01   sec  9.38 GBytes  10.1 Gbits/sec                  receiver
+  swp2    2266.1 MB   22.4%  #########
+  swp3    2666.1 MB   26.4%  ###########
+  swp4    1951.9 MB   19.3%  ########
+  swp5    3223.2 MB   31.9%  #############
+

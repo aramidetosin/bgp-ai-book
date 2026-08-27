@@ -1,0 +1,8 @@
+172.16.2.0/24 nhid 120 proto bgp metric 20 
+id 35 via fe80::a8c1:abff:fe07:c024 dev swp5 scope link proto zebra 
+id 36 via fe80::a8c1:abff:fe29:1e4f dev swp4 scope link proto zebra 
+id 37 via fe80::a8c1:abff:fe76:700d dev swp2 scope link proto zebra 
+id 38 via fe80::a8c1:abff:feca:d27b dev swp3 scope link proto zebra 
+id 39 group 35/36 proto zebra 
+id 40 group 37/38 proto zebra 
+id 120 group 35/36/37/38 proto zebra 

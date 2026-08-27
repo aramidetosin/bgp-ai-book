@@ -1,0 +1,15 @@
+=== BGP sessions ===
+  leaf01: 4/4 Established - OK
+  leaf02: 2/2 Established - OK
+  spine01: 3/3 Established - OK
+  spine02: 3/3 Established - OK
+=== The ECMP fans ===
+  leaf01 -> 172.16.2.0/24: 4 next hops - OK
+  leaf02 -> 172.16.1.0/24: 2 next hops - OK
+=== The hash the kernel plays with ===
+  fib_multipath_hash_policy = 1 (1 = 5-tuple) - OK
+=== Server to server across the fabric ===
+  server01 -> server02 (172.16.2.11) - OK
+=== Cabling versus intent (LLDP) ===
+  CABLING MATCHES INTENT
+
