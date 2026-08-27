@@ -5,6 +5,6 @@
 # Built once on the lab host with
 #   docker build --network host -t bgpbook-frr-host -f Dockerfile.host .
 FROM quay.io/frrouting/frr:9.1.0
-RUN apk add --no-cache lldpd iperf3 tcpdump && \
+RUN apk add --no-cache lldpd iperf3 tcpdump busybox-extras && \
     sed -i 's/^bgpd=no/bgpd=yes/; s/^bfdd=no/bfdd=yes/' /etc/frr/daemons && \
     touch /etc/frr/vtysh.conf

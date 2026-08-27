@@ -1,0 +1,63 @@
+# Chapter 12: the edge in miniature. One fabric leaf with the internal
+# service host, a border leaf, a Palo Alto active/passive pair inline,
+# an upstream provider router (FRR, bridging the outside segment), and
+# an external client on "the internet".
+name: bgpbook-ch12
+mgmt:
+  network: bgpbook-ch12
+  ipv4-subnet: 172.20.40.0/24
+topology:
+  defaults:
+    kind: nvidia_cumulusvx
+    image: vrnetlab/nvidia_cumulus-vx:5.12.0
+  nodes:
+    leaf01:
+      startup-config: bootstrap/leaf01.cfg
+    border01:
+      startup-config: bootstrap/border01.cfg
+    fw-a:
+      kind: paloalto_panos
+      image: vrnetlab/paloalto_pa-vm:12.1.2
+      mgmt-ipv4: 172.20.40.11
+      startup-config: bootstrap/fw-a.xml
+      env:
+        QEMU_CPU: host
+        QEMU_SMP: 8
+        QEMU_MEMORY: 16384
+    fw-b:
+      kind: paloalto_panos
+      image: vrnetlab/paloalto_pa-vm:12.1.2
+      mgmt-ipv4: 172.20.40.12
+      startup-config: bootstrap/fw-b.xml
+      env:
+        QEMU_CPU: host
+        QEMU_SMP: 8
+        QEMU_MEMORY: 16384
+    upstream01:
+      kind: linux
+      image: bgpbook-frr-host
+      exec:
+        - lldpd
+    intserver01:
+      kind: linux
+      image: bgpbook-frr-host
+      exec:
+        - ip link set eth1 mtu 9216
+        - lldpd
+    extclient01:
+      kind: linux
+      image: bgpbook-multitool-lldpd
+      exec:
+        - ip addr add 198.51.100.11/24 dev eth1
+        - ip route replace default via 198.51.100.1 dev eth1
+        - lldpd
+  links:
+    - endpoints: ["leaf01:swp1", "intserver01:eth1"]
+    - endpoints: ["leaf01:swp2", "border01:swp1"]
+    - endpoints: ["border01:swp2", "fw-a:eth1"]
+    - endpoints: ["border01:swp3", "fw-b:eth1"]
+    - endpoints: ["fw-a:eth2", "upstream01:eth1"]
+    - endpoints: ["fw-b:eth2", "upstream01:eth2"]
+    - endpoints: ["fw-a:eth3", "fw-b:eth3"]
+    - endpoints: ["fw-a:eth4", "fw-b:eth4"]
+    - endpoints: ["upstream01:eth3", "extclient01:eth1"]
