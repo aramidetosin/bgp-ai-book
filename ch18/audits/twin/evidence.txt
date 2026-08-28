@@ -1,0 +1,29 @@
+=== the twin parses as Cumulus, every device a node ===
+          File_Name                 Status          File_Format
+ configs/leaf01.cfg PARTIALLY_UNRECOGNIZED CUMULUS_CONCATENATED
+ configs/leaf02.cfg PARTIALLY_UNRECOGNIZED CUMULUS_CONCATENATED
+ configs/leaf03.cfg PARTIALLY_UNRECOGNIZED CUMULUS_CONCATENATED
+ configs/leaf04.cfg PARTIALLY_UNRECOGNIZED CUMULUS_CONCATENATED
+configs/spine01.cfg PARTIALLY_UNRECOGNIZED CUMULUS_CONCATENATED
+configs/spine02.cfg PARTIALLY_UNRECOGNIZED CUMULUS_CONCATENATED
+
+=== every eBGP session the twin would establish ===
+   Node Local_Interface Remote_Node Established_Status
+ leaf01    leaf01[swp2]     spine01        ESTABLISHED
+ leaf01    leaf01[swp3]     spine02        ESTABLISHED
+ leaf02    leaf02[swp2]     spine01        ESTABLISHED
+ leaf02    leaf02[swp3]     spine02        ESTABLISHED
+ leaf03    leaf03[swp2]     spine01        ESTABLISHED
+ leaf03    leaf03[swp3]     spine02        ESTABLISHED
+ leaf04    leaf04[swp2]     spine01        ESTABLISHED
+ leaf04    leaf04[swp3]     spine02        ESTABLISHED
+spine01   spine01[swp2]      leaf02        ESTABLISHED
+spine01   spine01[swp3]      leaf03        ESTABLISHED
+spine01   spine01[swp1]      leaf01        ESTABLISHED
+spine01   spine01[swp4]      leaf04        ESTABLISHED
+spine02   spine02[swp2]      leaf02        ESTABLISHED
+spine02   spine02[swp3]      leaf03        ESTABLISHED
+spine02   spine02[swp1]      leaf01        ESTABLISHED
+spine02   spine02[swp4]      leaf04        ESTABLISHED
+
+total: 16 sessions, all ['ESTABLISHED']

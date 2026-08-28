@@ -1,0 +1,27 @@
+
+===== STAGE 1: lint the spec =====
+LINT PASSED: 4 leafs, 2 spines, 4 unique leaf ASNs, all private
+
+===== STAGE 2: render the configs =====
+generated from spec.yml via switch.cfg.j2: 4 leafs, 2 spines, 6 device configs, 10 links, intent for 6 devices
+
+===== STAGE 3: build the digital twin =====
+  wrote leaf01.cfg (72 lines, bgp=True, ifaces=6)
+  wrote leaf02.cfg (68 lines, bgp=True, ifaces=5)
+  wrote leaf03.cfg (68 lines, bgp=True, ifaces=5)
+  wrote leaf04.cfg (72 lines, bgp=True, ifaces=6)
+  wrote spine01.cfg (86 lines, bgp=True, ifaces=7)
+  wrote spine02.cfg (86 lines, bgp=True, ifaces=7)
+  wrote layer1_topology.json (8 switch-to-switch edges)
+
+===== STAGE 4: property checks (Batfish) =====
+[ok] sessions: 16 modeled, all ESTABLISHED
+[ok] reachability: every leaf reaches every other leaf (12 ordered pairs)
+[ok] ECMP width: 2 paths (one per spine) on every leaf-to-leaf route; survives any one spine
+
+VALIDATION PASSED: the twin satisfies every invariant; safe to promote
+
+===== STAGE 5: golden snapshot test =====
+GOLDEN MATCH: every device's established peer count is as recorded {'leaf01': 2, 'leaf02': 2, 'leaf03': 2, 'leaf04': 2, 'spine01': 4, 'spine02': 4}
+
+ALL STAGES PASSED: the change is safe to promote to production

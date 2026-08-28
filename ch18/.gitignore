@@ -1,0 +1,5 @@
+# Batfish snapshots are built from the running fabric by mksnapshot.py;
+# regenerable, not committed. The golden reference IS committed.
+snapshot/
+snapshot-broken/
+__pycache__/

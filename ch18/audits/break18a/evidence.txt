@@ -1,0 +1,15 @@
+===== STAGE 1: lint the spec =====
+LINT PASSED: 4 leafs, 2 spines, 4 unique leaf ASNs, all private
+
+===== STAGE 4: property checks catch the bad route policy =====
+built snapshot-broken/: spine01 filters 10.0.0.4/32 outbound (intended a storage prefix, hit leaf04's loopback)
+[ok] sessions: 16 modeled, all ESTABLISHED
+[ok] reachability: every leaf reaches every other leaf (12 ordered pairs)
+[FAIL] ECMP width: 2 paths (one per spine) on every leaf-to-leaf route; survives any one spine
+
+VALIDATION FAILED (3 finding(s)):
+  - leaf01 -> leaf04: ECMP width 1, expected 2
+  - leaf02 -> leaf04: ECMP width 1, expected 2
+  - leaf03 -> leaf04: ECMP width 1, expected 2
+
+pipeline exit code: 1 (non-zero blocks the promotion)
