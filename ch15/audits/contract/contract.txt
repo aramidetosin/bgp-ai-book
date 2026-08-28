@@ -1,0 +1,14 @@
+=== Origin tags: each site stamps WAN-OK (64512:1) on exportable prefixes,
+    SITE-LOCAL (64512:9) on the backend ===
+  tags applied at sa-leaf and sb-leaf
+
+=== Before the contract: site B backend 10.99.2.0/24 leaks into site A ===
+    65611 65600 65601
+        Community: 64512:9
+
+=== Apply the contract: borders advertise and accept only WAN-OK ===
+--- site B backend 10.99.2.0/24, now at site A's border: ---
+  % Network not in table
+--- the WAN-OK anycast VIP 100.64.0.1/32 still crosses: ---
+    65611 65600 65601
+CONTRACT HOLDS: backend stopped at the border, service VIP crosses

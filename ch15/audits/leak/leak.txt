@@ -1,0 +1,13 @@
+=== Site A backend 10.99.1.0/24: present in site A, absent in site B ===
+--- at sa-border (in site A): ---
+    65100 65101
+      fe80::a8c1:abff:feb7:3826 (sa-spine) from sa-spine(swp1) (10.0.0.101)
+--- at sb-border (across the WAN in site B): ---
+  % Network not in table
+=== Site B backend 10.99.2.0/24: present in site B, absent in site A ===
+--- at sb-border (in site B): ---
+    65600 65601
+      fe80::a8c1:abff:fe5e:42b1 (sb-spine) from sb-spine(swp1) (10.1.0.101)
+--- at sa-border (across the WAN in site A): ---
+  % Network not in table
+RESIDENCY HELD: neither backend crosses the WAN; the policy is testable

@@ -1,0 +1,10 @@
+=== break-15a: VIP best path at sa-border (now the WAN copy, localpref 200) ===
+  Paths: (2 available, best #1, table default)
+    65611 65600 65601
+        Origin incomplete, localpref 200, valid, external, bestpath-from-AS 65611, best (Local Pref)
+    65100 65101
+        Origin incomplete, valid, external, bestpath-from-AS 65100
+=== VIP RTT from sa-border: hairpinned across the WAN ===
+  4 packets transmitted, 4 received, 0% packet loss, time 903ms
+  rtt min/avg/max/mdev = 40.547/40.574/40.637/0.036 ms
+The local route still exists (AS-path 65100 65101); local-pref 200 overrode it.

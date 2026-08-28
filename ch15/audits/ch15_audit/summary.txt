@@ -1,0 +1,18 @@
+=== BGP sessions (each device) ===
+  sa-spine   sessions up: 2
+  sa-leaf    sessions up: 1
+  sa-border  sessions up: 2
+  sb-spine   sessions up: 2
+  sb-leaf    sessions up: 1
+  sb-border  sessions up: 2
+=== The WAN session (numbered eBGP, sa-border <-> sb-border) ===
+  sb-border(10.255.0.1) 4      65611       620       608        0    0    0 00:26:03            2        3 N/A
+=== Anycast VIP prefers LOCAL at each border (healthy) ===
+  sa-border best AS-path:       Origin incomplete, valid, external, bestpath-from-AS 65100, best (AS Path)
+  sb-border best AS-path:       Origin incomplete, valid, external, bestpath-from-AS 65600, best (AS Path)
+=== Contract holds: neither backend crosses the WAN ===
+  sa-border sees site B backend 10.99.2.0/24: NO (correct)
+  sb-border sees site A backend 10.99.1.0/24: NO (correct)
+=== Cross-site reachability: site A server -> site B server (over the WAN) ===
+  3 packets transmitted, 3 received, 0% packet loss, time 601ms
+  rtt min/avg/max/mdev = 41.068/41.218/41.507/0.204 ms

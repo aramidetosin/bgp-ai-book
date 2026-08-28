@@ -1,0 +1,74 @@
+{
+ "sa-border": {
+  "swp1": [
+   "sa-spine",
+   "swp2"
+  ],
+  "swp2": [
+   "sb-border",
+   "swp2"
+  ]
+ },
+ "sa-leaf": {
+  "swp1": [
+   "sa-srv",
+   "eth1"
+  ],
+  "swp2": [
+   "sa-spine",
+   "swp1"
+  ]
+ },
+ "sa-spine": {
+  "swp1": [
+   "sa-leaf",
+   "swp2"
+  ],
+  "swp2": [
+   "sa-border",
+   "swp1"
+  ]
+ },
+ "sa-srv": {
+  "eth1": [
+   "sa-leaf",
+   "swp1"
+  ]
+ },
+ "sb-border": {
+  "swp1": [
+   "sb-spine",
+   "swp2"
+  ],
+  "swp2": [
+   "sa-border",
+   "swp2"
+  ]
+ },
+ "sb-leaf": {
+  "swp1": [
+   "sb-srv",
+   "eth1"
+  ],
+  "swp2": [
+   "sb-spine",
+   "swp1"
+  ]
+ },
+ "sb-spine": {
+  "swp1": [
+   "sb-leaf",
+   "swp2"
+  ],
+  "swp2": [
+   "sb-border",
+   "swp1"
+  ]
+ },
+ "sb-srv": {
+  "eth1": [
+   "sb-leaf",
+   "swp1"
+  ]
+ }
+}

@@ -1,0 +1,59 @@
+name: bgpbook-ch15
+mgmt:
+  network: bgpbook-ch15
+  ipv4-subnet: 172.20.45.0/24
+topology:
+  defaults:
+    kind: nvidia_cumulusvx
+    image: vrnetlab/nvidia_cumulus-vx:5.12.0
+  nodes:
+    sa-spine:
+      startup-config: bootstrap/sa-spine.cfg
+    sa-leaf:
+      startup-config: bootstrap/sa-leaf.cfg
+    sa-border:
+      startup-config: bootstrap/sa-border.cfg
+    sa-srv:
+      kind: linux
+      image: bgpbook-multitool-lldpd
+      exec:
+      - ip link set eth1 mtu 9216
+      - ip addr add 172.16.1.11/24 dev eth1
+      - ip route replace default via 172.16.1.1 dev eth1
+      - lldpd
+    sb-spine:
+      startup-config: bootstrap/sb-spine.cfg
+    sb-leaf:
+      startup-config: bootstrap/sb-leaf.cfg
+    sb-border:
+      startup-config: bootstrap/sb-border.cfg
+    sb-srv:
+      kind: linux
+      image: bgpbook-multitool-lldpd
+      exec:
+      - ip link set eth1 mtu 9216
+      - ip addr add 172.17.1.11/24 dev eth1
+      - ip route replace default via 172.17.1.1 dev eth1
+      - lldpd
+  links:
+  - endpoints:
+    - sa-leaf:swp1
+    - sa-srv:eth1
+  - endpoints:
+    - sa-leaf:swp2
+    - sa-spine:swp1
+  - endpoints:
+    - sa-border:swp1
+    - sa-spine:swp2
+  - endpoints:
+    - sb-leaf:swp1
+    - sb-srv:eth1
+  - endpoints:
+    - sb-leaf:swp2
+    - sb-spine:swp1
+  - endpoints:
+    - sb-border:swp1
+    - sb-spine:swp2
+  - endpoints:
+    - sa-border:swp2
+    - sb-border:swp2

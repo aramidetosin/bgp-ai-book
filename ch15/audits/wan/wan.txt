@@ -1,0 +1,8 @@
+=== Emulated WAN: 20 ms netem each way on the inter-border link ===
+=== Across the WAN: sa-border -> site B server subnet 172.17.1.1 (~40 ms) ===
+  4 packets transmitted, 4 received, 0% packet loss, time 903ms
+  rtt min/avg/max/mdev = 40.562/40.614/40.655/0.038 ms
+=== Local: sa-border -> the anycast VIP 100.64.0.1 (local site, sub-ms) ===
+  4 packets transmitted, 4 received, 0% packet loss, time 943ms
+  rtt min/avg/max/mdev = 0.290/0.341/0.379/0.033 ms
+The WAN is far; the local service is near. break-15a confuses the two.

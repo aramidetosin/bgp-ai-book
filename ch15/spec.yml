@@ -1,0 +1,36 @@
+# Chapter 15: two GPU sites joined across a WAN. Each site is a scaled
+# chapter 6 fabric (one spine, one compute leaf, one border leaf) with a
+# server behind the compute leaf. The two borders peer numbered eBGP
+# across an emulated WAN link (netem latency added post-deploy). Site A
+# uses the primary ASN block; site B uses chapter 6's reserved
+# second-site block. An anycast service VIP is originated at BOTH sites
+# so a local and a WAN path to it compete; a per-site backend prefix is
+# originated to demonstrate the communities contract stopping a leak.
+name: bgpbook-ch15
+mgmt_subnet: 172.20.45.0/24
+switch_image: vrnetlab/nvidia_cumulus-vx:5.12.0
+node_image: bgpbook-multitool-lldpd
+
+# the anycast service VIP, originated by both compute leafs
+vip: 100.64.0.1
+
+# contract communities (both sites agree on these)
+comm_wan_ok: "64512:1"      # may cross the WAN
+comm_site_local: "64512:9"  # backend/internal, never crosses the WAN
+
+# the two sites. Each: spine, compute leaf (server + VIP + backend), border.
+sites:
+  A:
+    spine:  { host: sa-spine,  lo: 10.0.0.101, asn: 65100 }
+    leaf:   { host: sa-leaf,   lo: 10.0.0.1,   asn: 65101 }
+    border: { host: sa-border, lo: 10.0.0.2,   asn: 65401 }
+    server: { host: sa-srv,    subnet: "172.16.1", ip: 172.16.1.11 }
+    backend: 10.99.1.0/24
+    wan_ip: 10.255.0.0     # /31 with site B's .1
+  B:
+    spine:  { host: sb-spine,  lo: 10.1.0.101, asn: 65600 }
+    leaf:   { host: sb-leaf,   lo: 10.1.0.1,   asn: 65601 }
+    border: { host: sb-border, lo: 10.1.0.2,   asn: 65611 }
+    server: { host: sb-srv,    subnet: "172.17.1", ip: 172.17.1.11 }
+    backend: 10.99.2.0/24
+    wan_ip: 10.255.0.1
