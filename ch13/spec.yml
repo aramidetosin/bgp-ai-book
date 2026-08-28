@@ -1,0 +1,15 @@
+# Chapter 13: a backend fabric to carry the RoCE QoS config. Two rail
+# leafs, two spines, one GPU-node stand-in per leaf. The underlay is
+# the book's standard eBGP (chapter 6); the RoCE lossless QoS rides on
+# top, applied and audited by the chapter's scripts. The dataplane
+# behavior (PFC, ECN marking, buffers) is not modelled by containerlab;
+# the real counters come from the hardware testbed under hw/.
+name: bgpbook-ch13
+mgmt_subnet: 172.20.41.0/24
+leafs: 2
+spines: 2
+servers_on: [1, 2]
+switch_image: vrnetlab/nvidia_cumulus-vx:5.12.0
+node_image: bgpbook-multitool-lldpd
+spine_asn: 65100
+leaf_asn_base: 65100

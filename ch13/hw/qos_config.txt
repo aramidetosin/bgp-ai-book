@@ -1,0 +1,1117 @@
+==== DSCP_TO_TC_MAP
+{
+    "ROCE": {
+        "0": "0",
+        "1": "0",
+        "2": "0",
+        "3": "0",
+        "4": "4",
+        "5": "0",
+        "6": "0",
+        "7": "0",
+        "8": "0",
+        "9": "0",
+        "10": "0",
+        "11": "0",
+        "12": "0",
+        "13": "0",
+        "14": "0",
+        "15": "0",
+        "16": "0",
+        "17": "0",
+        "18": "0",
+        "19": "0",
+        "20": "0",
+        "21": "0",
+        "22": "0",
+        "23": "0",
+        "24": "3",
+        "25": "0",
+        "26": "3",
+        "27": "0",
+        "28": "0",
+        "29": "0",
+        "30": "0",
+        "31": "0",
+        "32": "0",
+        "33": "0",
+        "34": "0",
+        "35": "0",
+        "36": "0",
+        "37": "0",
+        "38": "0",
+        "39": "0",
+        "40": "0",
+        "41": "0",
+        "42": "0",
+        "43": "0",
+        "44": "0",
+        "45": "0",
+        "46": "0",
+        "47": "0",
+        "48": "6",
+        "49": "0",
+        "50": "0",
+        "51": "0",
+        "52": "0",
+        "53": "0",
+        "54": "0",
+        "55": "0",
+        "56": "0",
+        "57": "0",
+        "58": "0",
+        "59": "0",
+        "60": "0",
+        "61": "0",
+        "62": "0",
+        "63": "0"
+    }
+}
+==== TC_TO_QUEUE_MAP
+{
+    "ROCE": {
+        "0": "0",
+        "1": "0",
+        "2": "0",
+        "3": "3",
+        "4": "4",
+        "5": "0",
+        "6": "6",
+        "7": "0"
+    }
+}
+==== TC_TO_PRIORITY_GROUP_MAP
+{
+    "ROCE": {
+        "0": "7",
+        "1": "7",
+        "2": "7",
+        "3": "3",
+        "4": "4",
+        "5": "7",
+        "6": "7",
+        "7": "7"
+    }
+}
+==== WRED_PROFILE
+{
+    "ROCE": {
+        "ecn": "ecn_all",
+        "green_drop_probability": "5",
+        "green_max_threshold": "2097152",
+        "green_min_threshold": "1048576",
+        "wred_green_enable": "true"
+    }
+}
+==== BUFFER_PROFILE
+{
+    "egress_lossless_profile": {
+        "pool": "[BUFFER_POOL|egress_lossless_pool]",
+        "size": "0",
+        "static_th": "165867080"
+    },
+    "egress_lossy_cpu_profile": {
+        "dynamic_th": "-2",
+        "pool": "[BUFFER_POOL|egress_lossless_pool]",
+        "size": "9398"
+    },
+    "egress_lossy_profile": {
+        "dynamic_th": "0",
+        "pool": "[BUFFER_POOL|egress_lossless_pool]",
+        "size": "1778"
+    },
+    "ingress_lossy_profile": {
+        "pool": "[BUFFER_POOL|ingress_lossless_pool]",
+        "size": "0",
+        "static_th": "165867080"
+    },
+    "pg_lossless_25000_40m_profile": {
+        "dynamic_th": "-2",
+        "pool": "[BUFFER_POOL|ingress_lossless_pool]",
+        "size": "18796",
+        "xoff": "94742",
+        "xon": "0",
+        "xon_offset": "3556"
+    },
+    "pg_lossless_400000_40m_profile": {
+        "dynamic_th": "-2",
+        "pool": "[BUFFER_POOL|ingress_lossless_pool]",
+        "size": "18796",
+        "xoff": "446024",
+        "xon": "0",
+        "xon_offset": "3556"
+    }
+}
+==== BUFFER_POOL
+{
+    "egress_lossless_pool": {
+        "mode": "static",
+        "size": "162539680",
+        "type": "egress"
+    },
+    "ingress_lossless_pool": {
+        "mode": "dynamic",
+        "size": "162539680",
+        "type": "ingress",
+        "xoff": "33374584"
+    }
+}
+==== SCHEDULER
+{
+    "ROCE@0": {
+        "type": "DWRR",
+        "weight": "50"
+    },
+    "ROCE@3": {
+        "type": "DWRR",
+        "weight": "50"
+    },
+    "ROCE@4": {
+        "type": "DWRR",
+        "weight": "50"
+    },
+    "ROCE@6": {
+        "type": "STRICT"
+    },
+    "copp-scheduler-policy@0": {
+        "meter_type": "packets",
+        "pir": "100",
+        "type": "WRR",
+        "weight": "1"
+    },
+    "copp-scheduler-policy@1": {
+        "meter_type": "packets",
+        "pir": "100",
+        "type": "WRR",
+        "weight": "1"
+    },
+    "copp-scheduler-policy@2": {
+        "meter_type": "packets",
+        "pir": "600",
+        "type": "WRR",
+        "weight": "2"
+    },
+    "copp-scheduler-policy@3": {
+        "meter_type": "packets",
+        "pir": "8000",
+        "type": "WRR",
+        "weight": "1"
+    },
+    "copp-scheduler-policy@4": {
+        "meter_type": "packets",
+        "pir": "500",
+        "type": "WRR",
+        "weight": "1"
+    },
+    "copp-scheduler-policy@6": {
+        "meter_type": "packets",
+        "pir": "2000",
+        "type": "WRR",
+        "weight": "2"
+    },
+    "copp-scheduler-policy@7": {
+        "meter_type": "packets",
+        "pir": "6000",
+        "type": "WRR",
+        "weight": "2"
+    },
+    "copp-scheduler-policy@8": {
+        "meter_type": "packets",
+        "pir": "1000",
+        "type": "WRR",
+        "weight": "2"
+    },
+    "copp-scheduler-policy@9": {
+        "meter_type": "packets",
+        "pir": "300",
+        "type": "WRR",
+        "weight": "2"
+    },
+    "copp-scheduler-policy@10": {
+        "meter_type": "packets",
+        "pir": "3000",
+        "type": "WRR",
+        "weight": "2"
+    },
+    "copp-scheduler-policy@11": {
+        "meter_type": "packets",
+        "pir": "3000",
+        "type": "WRR",
+        "weight": "2"
+    },
+    "copp-scheduler-policy@12": {
+        "meter_type": "packets",
+        "pir": "2000",
+        "type": "WRR",
+        "weight": "2"
+    },
+    "copp-scheduler-policy@13": {
+        "meter_type": "packets",
+        "pir": "5000",
+        "type": "WRR",
+        "weight": "2"
+    },
+    "copp-scheduler-policy@14": {
+        "meter_type": "packets",
+        "pir": "10000",
+        "type": "WRR",
+        "weight": "6"
+    },
+    "copp-scheduler-policy@15": {
+        "meter_type": "packets",
+        "pir": "5000",
+        "type": "WRR",
+        "weight": "4"
+    },
+    "copp-scheduler-policy@16": {
+        "meter_type": "packets",
+        "pir": "5000",
+        "type": "WRR",
+        "weight": "4"
+    },
+    "copp-scheduler-policy@17": {
+        "meter_type": "packets",
+        "pir": "500",
+        "type": "WRR",
+        "weight": "2"
+    },
+    "copp-scheduler-policy@18": {
+        "meter_type": "packets",
+        "pir": "500",
+        "type": "WRR",
+        "weight": "2"
+    },
+    "copp-scheduler-policy@19": {
+        "meter_type": "packets",
+        "pir": "5000",
+        "type": "WRR",
+        "weight": "3"
+    },
+    "copp-scheduler-policy@20": {
+        "meter_type": "packets",
+        "pir": "2000",
+        "type": "WRR",
+        "weight": "10"
+    },
+    "copp-scheduler-policy@21": {
+        "meter_type": "packets",
+        "pir": "16000",
+        "type": "WRR",
+        "weight": "30"
+    },
+    "copp-scheduler-policy@22": {
+        "meter_type": "packets",
+        "pir": "500",
+        "type": "WRR",
+        "weight": "10"
+    },
+    "copp-scheduler-policy@23": {
+        "meter_type": "packets",
+        "pir": "500",
+        "type": "WRR",
+        "weight": "10"
+    },
+    "copp-scheduler-policy@28": {
+        "meter_type": "packets",
+        "pir": "100",
+        "type": "WRR",
+        "weight": "1"
+    },
+    "copp-scheduler-policy@29": {
+        "meter_type": "packets",
+        "pir": "200",
+        "type": "WRR",
+        "weight": "1"
+    },
+    "copp-scheduler-policy@255": {
+        "meter_type": "packets"
+    }
+}
+==== CABLE_LENGTH
+{
+    "ROCE": {
+        "Ethernet0": "40m",
+        "Ethernet4": "40m",
+        "Ethernet8": "40m",
+        "Ethernet12": "40m",
+        "Ethernet16": "40m",
+        "Ethernet20": "40m",
+        "Ethernet24": "40m",
+        "Ethernet28": "40m",
+        "Ethernet32": "40m",
+        "Ethernet36": "40m",
+        "Ethernet40": "40m",
+        "Ethernet44": "40m",
+        "Ethernet48": "40m",
+        "Ethernet52": "40m",
+        "Ethernet56": "40m",
+        "Ethernet60": "40m",
+        "Ethernet64": "40m",
+        "Ethernet68": "40m",
+        "Ethernet72": "40m",
+        "Ethernet76": "40m",
+        "Ethernet80": "40m",
+        "Ethernet84": "40m",
+        "Ethernet88": "40m",
+        "Ethernet92": "40m",
+        "Ethernet96": "40m",
+        "Ethernet100": "40m",
+        "Ethernet104": "40m",
+        "Ethernet108": "40m",
+        "Ethernet112": "40m",
+        "Ethernet116": "40m",
+        "Ethernet120": "40m",
+        "Ethernet124": "40m",
+        "Ethernet128": "40m",
+        "Ethernet132": "40m",
+        "Ethernet136": "40m",
+        "Ethernet140": "40m",
+        "Ethernet144": "40m",
+        "Ethernet148": "40m",
+        "Ethernet152": "40m",
+        "Ethernet156": "40m",
+        "Ethernet160": "40m",
+        "Ethernet164": "40m",
+        "Ethernet168": "40m",
+        "Ethernet172": "40m",
+        "Ethernet176": "40m",
+        "Ethernet180": "40m",
+        "Ethernet184": "40m",
+        "Ethernet188": "40m",
+        "Ethernet192": "40m",
+        "Ethernet196": "40m",
+        "Ethernet200": "40m",
+        "Ethernet204": "40m",
+        "Ethernet208": "40m",
+        "Ethernet212": "40m",
+        "Ethernet216": "40m",
+        "Ethernet220": "40m",
+        "Ethernet224": "40m",
+        "Ethernet228": "40m",
+        "Ethernet232": "40m",
+        "Ethernet236": "40m",
+        "Ethernet240": "40m",
+        "Ethernet244": "40m",
+        "Ethernet248": "40m",
+        "Ethernet252": "40m",
+        "Ethernet256": "40m",
+        "Ethernet260": "40m",
+        "Ethernet264": "40m",
+        "Ethernet268": "40m",
+        "Ethernet272": "40m",
+        "Ethernet276": "40m",
+        "Ethernet280": "40m",
+        "Ethernet284": "40m",
+        "Ethernet288": "40m",
+        "Ethernet292": "40m",
+        "Ethernet296": "40m",
+        "Ethernet300": "40m",
+        "Ethernet304": "40m",
+        "Ethernet308": "40m",
+        "Ethernet312": "40m",
+        "Ethernet316": "40m",
+        "Ethernet320": "40m",
+        "Ethernet324": "40m",
+        "Ethernet328": "40m",
+        "Ethernet332": "40m",
+        "Ethernet336": "40m",
+        "Ethernet340": "40m",
+        "Ethernet344": "40m",
+        "Ethernet348": "40m",
+        "Ethernet352": "40m",
+        "Ethernet356": "40m",
+        "Ethernet360": "40m",
+        "Ethernet364": "40m",
+        "Ethernet368": "40m",
+        "Ethernet372": "40m",
+        "Ethernet376": "40m",
+        "Ethernet380": "40m",
+        "Ethernet384": "40m",
+        "Ethernet388": "40m",
+        "Ethernet392": "40m",
+        "Ethernet396": "40m",
+        "Ethernet400": "40m",
+        "Ethernet404": "40m",
+        "Ethernet408": "40m",
+        "Ethernet412": "40m",
+        "Ethernet416": "40m",
+        "Ethernet420": "40m",
+        "Ethernet424": "40m",
+        "Ethernet428": "40m",
+        "Ethernet432": "40m",
+        "Ethernet436": "40m",
+        "Ethernet440": "40m",
+        "Ethernet444": "40m",
+        "Ethernet448": "40m",
+        "Ethernet452": "40m",
+        "Ethernet456": "40m",
+        "Ethernet460": "40m",
+        "Ethernet464": "40m",
+        "Ethernet468": "40m",
+        "Ethernet472": "40m",
+        "Ethernet476": "40m",
+        "Ethernet480": "40m",
+        "Ethernet484": "40m",
+        "Ethernet488": "40m",
+        "Ethernet492": "40m",
+        "Ethernet496": "40m",
+        "Ethernet500": "40m",
+        "Ethernet504": "40m",
+        "Ethernet508": "40m",
+        "Ethernet512": "40m",
+        "Ethernet513": "40m"
+    }
+}
+==== PFC_WD
+{
+    "Ethernet0": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet4": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet8": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet12": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet16": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet20": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet24": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet28": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet32": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet36": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet40": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet44": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet48": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet52": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet56": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet60": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet64": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet68": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet72": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet76": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet80": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet84": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet88": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet92": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet96": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet100": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet104": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet108": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet112": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet116": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet120": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet124": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet128": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet132": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet136": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet140": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet144": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet148": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet152": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet156": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet160": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet164": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet168": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet172": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet176": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet180": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet184": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet188": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet192": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet196": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet200": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet204": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet208": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet212": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet216": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet220": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet224": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet228": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet232": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet236": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet240": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet244": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet248": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet252": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet256": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet260": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet264": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet268": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet272": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet276": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet280": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet284": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet288": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet292": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet296": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet300": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet304": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet308": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet312": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet316": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet320": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet324": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet328": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet332": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet336": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet340": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet344": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet348": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet352": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet356": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet360": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet364": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet368": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet372": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet376": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet380": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet384": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet388": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet392": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet396": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet400": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet404": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet408": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet412": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet416": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet420": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet424": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet428": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet432": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet436": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet440": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet444": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet448": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet452": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet456": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet460": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet464": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet468": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet472": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet476": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet480": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet484": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet488": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet492": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet496": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet500": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet504": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet508": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet512": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    },
+    "Ethernet513": {
+        "action": "drop",
+        "detection_time": "200",
+        "restoration_time": "400"
+    }
+}

@@ -1,0 +1,15 @@
+     Port    TxQ    Counter/pkts    Counter/bytes    Drop/pkts    Drop/bytes    Pkts/s    Bytes/s    Bits/s
+---------  -----  --------------  ---------------  -----------  ------------  --------  ---------  --------
+Ethernet0    UC0           76485         22809303            0             0         0          0         0
+Ethernet0    UC1               0                0            0             0         0          0         0
+Ethernet0    UC2               0                0            0             0         0          0         0
+Ethernet0    UC3        36842637     110111578126            0             0         0          0         0
+Ethernet0    UC4               0                0            0             0         0          0         0
+Ethernet0    UC5               0                0            0             0         0          0         0
+Ethernet0    UC6               0                0            0             0         0          0         0
+Ethernet0    UC7               0                0            0             0         0          0         0
+Ethernet0    MC8          393143         68456055            0             0         0          0         0
+Ethernet0    MC9               0                0            0             0         0          0         0
+Ethernet0   MC10               0                0            0             0         0          0         0
+Ethernet0   MC11               0                0            0             0         0          0         0
+

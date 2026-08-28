@@ -1,0 +1,11 @@
+=== RoCE data DSCP 26: the queue it lands on, every hop ===
+  leaf01: DSCP 26 -> switch-priority 3 -> queue 3
+  leaf02: DSCP 26 -> switch-priority 3 -> queue 3
+  spine01: DSCP 26 -> switch-priority 3 -> queue 3
+  spine02: DSCP 26 -> switch-priority 3 -> queue 3
+=== Verdict ===
+  leaf01: queue 3 - OK
+  leaf02: queue 3 - OK
+  spine01: queue 3 - OK
+  spine02: queue 3 - OK
+CLASSIFICATION CONSISTENT: DSCP 26 rides queue 3 on every hop

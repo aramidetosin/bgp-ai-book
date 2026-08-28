@@ -1,0 +1,10 @@
+    Port Rx    PFC0    PFC1    PFC2    PFC3    PFC4    PFC5    PFC6    PFC7
+-----------  ------  ------  ------  ------  ------  ------  ------  ------
+        CPU       0       0       0       0       0       0       0       0
+  Ethernet0       0       0       0       0       0       0       0       0
+  Ethernet4       0       0       0       0       0       0       0       0
+  Ethernet8       0       0       0       0       0       0       0       0
+ Ethernet12       0       0       0       0       0       0       0       0
+ Ethernet16       0       0       0       0       0       0       0       0
+ Ethernet20       0       0       0       0       0       0       0       0
+ Ethernet24       0       0       0       0       0       0       0       0

@@ -1,0 +1,20 @@
+  Interface            Lanes    Speed    MTU    FEC      Alias    Vlan    Oper    Admin     Type    Asym PFC
+-----------  ---------------  -------  -----  -----  ---------  ------  ------  -------  -------  ----------
+  Ethernet0          1,2,3,4     400G   9216     rs   Eth1/1/1   trunk      up       up  OSFP112         N/A
+  Ethernet4          5,6,7,8     400G   9216     rs   Eth1/1/2   trunk      up       up  OSFP112         N/A
+  Ethernet8      17,18,19,20     400G   9216     rs   Eth1/2/1   trunk      up       up  OSFP112         N/A
+ Ethernet12      21,22,23,24     400G   9216     rs   Eth1/2/2   trunk      up       up  OSFP112         N/A
+ Ethernet16      33,34,35,36     400G   9216     rs   Eth1/3/1   trunk      up       up  OSFP112         N/A
+ Ethernet20      37,38,39,40     400G   9216     rs   Eth1/3/2   trunk      up       up  OSFP112         N/A
+ Ethernet24      49,50,51,52     400G   9216     rs   Eth1/4/1   trunk      up       up  OSFP112         N/A
+ Ethernet28      53,54,55,56     400G   9216     rs   Eth1/4/2   trunk      up       up  OSFP112         N/A
+ Ethernet32      65,66,67,68     400G   9216     rs   Eth1/5/1   trunk      up       up  OSFP112         N/A
+ Ethernet36      69,70,71,72     400G   9216     rs   Eth1/5/2   trunk      up       up  OSFP112         N/A
+ Ethernet40      81,82,83,84     400G   9216     rs   Eth1/6/1   trunk      up       up  OSFP112         N/A
+ Ethernet44      85,86,87,88     400G   9216     rs   Eth1/6/2   trunk      up       up  OSFP112         N/A
+ Ethernet48     97,98,99,100     400G   9216     rs   Eth1/7/1   trunk      up       up  OSFP112         N/A
+ Ethernet52  101,102,103,104     400G   9216     rs   Eth1/7/2   trunk      up       up  OSFP112         N/A
+ Ethernet56  113,114,115,116     400G   9216     rs   Eth1/8/1   trunk      up       up  OSFP112         N/A
+ Ethernet60  117,118,119,120     400G   9216     rs   Eth1/8/2   trunk      up       up  OSFP112         N/A
+ Ethernet64  129,130,131,132     400G   9216     rs   Eth1/9/1   trunk      up       up  OSFP112         N/A
+ Ethernet68  133,134,135,136     400G   9216     rs   Eth1/9/2   trunk      up       up  OSFP112         N/A

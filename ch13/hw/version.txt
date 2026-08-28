@@ -1,0 +1,12 @@
+
+SONiC Software Version: SONiC-OS-4.5.1-Enterprise_Advanced
+Product: Enterprise SONiC Distribution by Broadcom - Enterprise Advanced package
+Distribution: Debian 11.11
+Kernel: 5.10.0-35-amd64
+Config DB Version: version_4_5_3
+Build commit: 7ef4c1a1eb
+Build date: Tue Oct 21 06:01:21 UTC 2025
+Built by: sonicbld@bld-lvn-csg-01
+
+Platform: x86_64-supermicro_sse_t8164-r0
+HwSKU: Supermicro_sse_t8164

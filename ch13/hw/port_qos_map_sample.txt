@@ -1,0 +1,12 @@
+{
+    "CPU": {
+        "scheduler": "[SCHEDULER|copp-scheduler-policy@255]"
+    },
+    "Ethernet0": {
+        "dot1p_to_tc_map": "[DOT1P_TO_TC_MAP|ROCE]",
+        "dscp_to_tc_map": "[DSCP_TO_TC_MAP|ROCE]",
+        "pfc_enable": "3,4",
+        "pfc_to_pg_map": "[PFC_PRIORITY_TO_PRIORITY_GROUP_MAP|ROCE]",
+        "pfc_to_queue_map": "[MAP_PFC_PRIORITY_TO_QUEUE|ROCE]",
+        "tc_to_pg_map": "[TC_TO_PRIORITY_GROUP_MAP|ROCE]",
+        "tc_to_queue_map": "[TC_TO_QUEUE_MAP|ROCE]"

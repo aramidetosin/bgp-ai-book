@@ -1,0 +1,15 @@
+=== Underlay BGP ===
+  leaf01: 2/2 Established - OK
+  leaf02: 2/2 Established - OK
+  spine01: 2/2 Established - OK
+  spine02: 2/2 Established - OK
+=== RoCE preset applied everywhere ===
+  leaf01: roce lossless, congestion-control ECN - OK
+  leaf02: roce lossless, congestion-control ECN - OK
+  spine01: roce lossless, congestion-control ECN - OK
+  spine02: roce lossless, congestion-control ECN - OK
+=== Classification consistency ===
+  CLASSIFICATION CONSISTENT: DSCP 26 rides queue 3 on every hop
+=== Cabling versus intent (LLDP) ===
+  CABLING MATCHES INTENT
+

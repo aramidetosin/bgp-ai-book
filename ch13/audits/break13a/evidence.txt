@@ -1,0 +1,15 @@
+=== leaf02's egress map now sends the RoCE class to the lossy queue ===
+  leaf02 switch-priority 3 -> queue 0
+
+=== The checker finds the one hop that disagrees ===
+=== RoCE data DSCP 26: the queue it lands on, every hop ===
+  leaf01: DSCP 26 -> switch-priority 3 -> queue 3
+  leaf02: DSCP 26 -> switch-priority 3 -> queue 0
+  spine01: DSCP 26 -> switch-priority 3 -> queue 3
+  spine02: DSCP 26 -> switch-priority 3 -> queue 3
+=== Verdict ===
+  leaf01: queue 3 - OK
+  leaf02: queue 0 - MISMATCH (fabric agrees on queue 3)
+  spine01: queue 3 - OK
+  spine02: queue 3 - OK
+CLASSIFICATION INCONSISTENT: one or more hops disagree
