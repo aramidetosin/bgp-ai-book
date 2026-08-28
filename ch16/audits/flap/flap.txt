@@ -1,2 +1,20 @@
 === Flapping leaf01 the flow's spine uplink (down 2s / up 4s), no BFD, 18s window ===
-  step  1s  stalled=75%
+  step  1s  stalled=62%
+  step  2s  stalled=0%
+  step  3s  stalled=12%
+  step  4s  stalled=0%
+  step  5s  stalled=0%
+  step  6s  stalled=0%
+  step  7s  stalled=62%
+  step  8s  stalled=100%
+  step  9s  stalled=100%
+  step 10s  stalled=0%
+  step 11s  stalled=12%
+  step 12s  stalled=100%
+  step 13s  stalled=100%
+  step 14s  stalled=100%
+  step 15s  stalled=100%
+  step 16s  stalled=12%
+  step 17s  stalled=0%
+  step 18s  stalled=0%
+Each flap restarts the ~5s detection clock; the job never gets a clean run.

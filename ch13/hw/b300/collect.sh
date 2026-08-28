@@ -25,6 +25,9 @@ echo -n 'roce_np enable p0-7: '; for p in 0 1 2 3 4 5 6 7; do printf %s \$(cat /
 echo \"cnp_dscp: \$(cat /sys/class/net/${ND}/ecn/roce_np/cnp_dscp 2>/dev/null)  cnp_802p_prio: \$(cat /sys/class/net/${ND}/ecn/roce_np/cnp_802p_prio 2>/dev/null)  min_time_between_cnps: \$(cat /sys/class/net/${ND}/ecn/roce_np/min_time_between_cnps 2>/dev/null)\"
 echo -n 'PFC: '; sudo dcb pfc show dev ${ND} 2>/dev/null | grep prio-pfc
 echo 'DSCP->prio (CS3 block = RoCE data, CS6 = CNP):'; sudo dcb app show dev ${ND} 2>/dev/null | tr ' ' '\n' | grep -E 'CS3|AF3|^2[4-9]:|3[01]:|CS6|48:' | tr '\n' ' '; echo
-echo \"congestion counters: np_cnp_sent=\$(cat /sys/class/infiniband/${IB}/ports/1/hw_counters/np_cnp_sent) np_ecn_marked=\$(cat /sys/class/infiniband/${IB}/ports/1/hw_counters/np_ecn_marked_roce_packets) rp_cnp_handled=\$(cat /sys/class/infiniband/${IB}/ports/1/hw_counters/rp_cnp_handled) out_of_sequence=\$(cat /sys/class/infiniband/${IB}/ports/1/hw_counters/out_of_sequence)\"
+echo 'health counters (should stay zero; the alert is the first non-zero):'
+for c in out_of_sequence packet_seq_err roce_adp_retrans local_ack_timeout_err np_cnp_sent np_ecn_marked_roce_packets rp_cnp_handled; do
+  echo \"  \$c=\$(cat /sys/class/infiniband/${IB}/ports/1/hw_counters/\$c 2>/dev/null)\"
+done
 echo -n 'link_layer ${IB}: '; cat /sys/class/infiniband/${IB}/ports/1/link_layer 2>/dev/null
 "
