@@ -1,0 +1,11 @@
+=== BGP sessions (each device, Established count) ===
+  leaf01   established: 1
+  leaf02   established: 2
+  leaf03   established: 2
+  leaf04   established: 2
+  spine01  established: 4
+  spine02  established: 3
+=== BFD state on leaf01 (NVUE) ===
+  enable  off      off    
+=== the heartbeat mesh is fully connected ===
+  12/12 rank-to-rank paths healthy

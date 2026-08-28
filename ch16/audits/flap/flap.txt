@@ -1,0 +1,2 @@
+=== Flapping leaf01 the flow's spine uplink (down 2s / up 4s), no BFD, 18s window ===
+  step  1s  stalled=75%

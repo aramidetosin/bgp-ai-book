@@ -1,0 +1,6 @@
+=== The heartbeat mesh, healthy: every rank reaches every rank ===
+  server01 -> rank2:0.795ms rank3:0.588ms rank4:0.661ms
+  server02 -> rank1:0.581ms rank3:0.727ms rank4:0.713ms
+  server03 -> rank1:0.525ms rank2:0.578ms rank4:0.683ms
+  server04 -> rank1:0.748ms rank2:0.700ms rank3:0.569ms
+A healthy step is the slowest of these, well under a millisecond.

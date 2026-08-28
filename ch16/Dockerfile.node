@@ -1,0 +1,2 @@
+FROM ghcr.io/srl-labs/network-multitool
+RUN apk add --no-cache lldpd

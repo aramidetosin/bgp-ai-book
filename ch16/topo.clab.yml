@@ -1,0 +1,90 @@
+name: bgpbook-ch16
+mgmt:
+  network: bgpbook-ch16
+  ipv4-subnet: 172.20.46.0/24
+topology:
+  defaults:
+    kind: nvidia_cumulusvx
+    image: vrnetlab/nvidia_cumulus-vx:5.12.0
+  nodes:
+    leaf01:
+      startup-config: bootstrap/leaf01.cfg
+    leaf02:
+      startup-config: bootstrap/leaf02.cfg
+    leaf03:
+      startup-config: bootstrap/leaf03.cfg
+    leaf04:
+      startup-config: bootstrap/leaf04.cfg
+    spine01:
+      startup-config: bootstrap/spine01.cfg
+    spine02:
+      startup-config: bootstrap/spine02.cfg
+    server01:
+      kind: linux
+      image: bgpbook-multitool-lldpd
+      exec:
+      - ip link set eth1 mtu 9216
+      - ip addr add 172.16.1.11/24 dev eth1
+      - ip route replace default via 172.16.1.1 dev eth1
+      - lldpd
+    server02:
+      kind: linux
+      image: bgpbook-multitool-lldpd
+      exec:
+      - ip link set eth1 mtu 9216
+      - ip addr add 172.16.2.11/24 dev eth1
+      - ip route replace default via 172.16.2.1 dev eth1
+      - lldpd
+    server03:
+      kind: linux
+      image: bgpbook-multitool-lldpd
+      exec:
+      - ip link set eth1 mtu 9216
+      - ip addr add 172.16.3.11/24 dev eth1
+      - ip route replace default via 172.16.3.1 dev eth1
+      - lldpd
+    server04:
+      kind: linux
+      image: bgpbook-multitool-lldpd
+      exec:
+      - ip link set eth1 mtu 9216
+      - ip addr add 172.16.4.11/24 dev eth1
+      - ip route replace default via 172.16.4.1 dev eth1
+      - lldpd
+  links:
+  - endpoints:
+    - leaf01:swp1
+    - server01:eth1
+  - endpoints:
+    - leaf01:swp2
+    - spine01:swp1
+  - endpoints:
+    - leaf01:swp3
+    - spine02:swp1
+  - endpoints:
+    - leaf02:swp1
+    - server02:eth1
+  - endpoints:
+    - leaf02:swp2
+    - spine01:swp2
+  - endpoints:
+    - leaf02:swp3
+    - spine02:swp2
+  - endpoints:
+    - leaf03:swp1
+    - server03:eth1
+  - endpoints:
+    - leaf03:swp2
+    - spine01:swp3
+  - endpoints:
+    - leaf03:swp3
+    - spine02:swp3
+  - endpoints:
+    - leaf04:swp1
+    - server04:eth1
+  - endpoints:
+    - leaf04:swp2
+    - spine01:swp4
+  - endpoints:
+    - leaf04:swp3
+    - spine02:swp4

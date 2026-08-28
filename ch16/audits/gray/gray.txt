@@ -1,0 +1,8 @@
+=== Gray failure: 20% frame loss on both leaf01 uplinks ===
+--- the routing view (the dashboard stays green): ---
+  spine01(swp2) Established, PfxRcd=7
+  spine02(swp3) Established, PfxRcd=7
+--- the data plane (the job the dashboard cannot see): ---
+  window 1 (6s): 15% of steps stalled
+  window 2 (6s): 20% of steps stalled
+BGP Established on every session, and one in five steps silently lost.

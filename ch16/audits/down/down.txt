@@ -1,0 +1,19 @@
+=== WITHOUT BFD: down leaf01 uplink the flow uses, stalled steps until the hold timer ===
+  step  1s  stalled=100%
+  step  2s  stalled=100%
+  step  3s  stalled=100%
+  step  4s  stalled=100%
+  step  5s  stalled=50%
+  step  6s  stalled=0%
+  step  7s  stalled=0%
+  step  8s  stalled=0%
+  step  9s  stalled=0%
+
+=== WITH BFD: the same failure, detected in a fraction of a second ===
+  step  1s  stalled=87%
+  step  2s  stalled=0%
+  step  3s  stalled=0%
+  step  4s  stalled=0%
+  step  5s  stalled=0%
+  step  6s  stalled=0%
+Same link, same break. The detection time is the whole difference in step damage.
