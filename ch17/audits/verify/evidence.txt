@@ -1,0 +1,10 @@
+=== Every device's BGP, from a fabric no one configured by hand ===
+  leaf01   2 sessions Established
+  leaf02   2 sessions Established
+  leaf03   2 sessions Established
+  leaf04   2 sessions Established
+  spine01  4 sessions Established
+  spine02  4 sessions Established
+=== server01 -> server04 across the generated underlay ===
+  3 packets transmitted, 3 received, 0% packet loss, time 645ms
+  rtt min/avg/max/mdev = 0.644/0.772/0.865/0.093 ms

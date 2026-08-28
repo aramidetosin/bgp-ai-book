@@ -1,0 +1,12 @@
+=== At two spines (spec.yml): correct vs broken template, leaf01 ===
+  identical: the bug is invisible at four uplinks or fewer
+
+=== At six spines (spec-bigpod.yml): the CI render diff catches it ===
+--- diff: correct (>) vs broken (<) template, leaf01 with six uplinks ---
+  > nv set vrf default router bgp neighbor swp6 remote-as external
+  > nv set vrf default router bgp neighbor swp6 type unnumbered
+  > nv set vrf default router bgp neighbor swp7 remote-as external
+  > nv set vrf default router bgp neighbor swp7 type unnumbered
+The broken template stops emitting neighbors after the fourth uplink,
+so the fifth and sixth spines get no session on a six-uplink leaf. The
+render diff is the review artifact; the bug never reaches a device.

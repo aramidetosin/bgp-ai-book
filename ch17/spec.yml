@@ -1,0 +1,27 @@
+# Chapter 17: the fabric as data. This one file is the source of truth;
+# the generator turns it into a containerlab topology, per-device NVUE
+# configuration (rendered through Jinja2 templates), and an intent file
+# the drift check reads. Every number below is a decision from Part I-IV;
+# nothing about the fabric lives anywhere else.
+name: bgpbook-ch17
+mgmt_subnet: 172.20.47.0/24
+
+leafs: 4
+spines: 2
+servers_on: [1, 4]        # leaf01 and leaf04 carry a server
+
+switch_image: vrnetlab/nvidia_cumulus-vx:5.12.0
+node_image: bgpbook-multitool-lldpd
+
+# ASN plan (chapter 6): shared spine ASN, one ASN per leaf.
+spine_asn: 65100
+leaf_asn_base: 65100      # leaf i gets leaf_asn_base + i
+
+# BFD tuning (chapter 6's measured ladder), carried in the schema so the
+# template renders it and the drift check enforces it. Exercise 1 turns
+# this on.
+bfd:
+  enabled: false
+  min_rx: 300
+  min_tx: 300
+  multiplier: 3

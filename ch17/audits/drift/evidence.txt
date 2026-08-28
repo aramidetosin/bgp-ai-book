@@ -1,0 +1,17 @@
+=== The generated fabric, in sync ===
+NO DRIFT: every device matches the generated intent
+
+=== A hand-edit on leaf02: router-id changed off-spec ===
+  leaf02: router-id set to 10.0.0.222 by hand
+
+=== The drift check finds it, by line, without guessing ===
+    leaf02: DRIFT (1 intended line(s) not on the device)
+        - nv set router bgp router-id 10.0.0.2
+  DRIFT DETECTED: run the generator and push to reconcile
+
+=== The push reconciles leaf02 to the generated intent ===
+    leaf02: reconciled, all 20 intent lines present
+  Every device reconciled to the generated intent.
+
+=== The drift check, run again: clean ===
+  NO DRIFT: every device matches the generated intent

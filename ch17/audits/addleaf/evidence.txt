@@ -1,0 +1,19 @@
+# spec.yml today: leafs = 4
+$ sed -i s/leafs: 4/leafs: 5/ spec.yml   # the entire change request
+$ python3 gen.py
+generated from spec.yml via switch.cfg.j2: 5 leafs, 2 spines, 7 device configs, 12 links, intent for 7 devices
+
+# what the generator added, without a human touching a device config:
+  - a full bootstrap for the new leaf05:
+      nv set system hostname leaf05
+      nv set interface lo ip address 10.0.0.5/32
+      nv set interface lo type loopback
+      nv set interface swp2-3 type swp
+      nv set router bgp autonomous-system 65105
+      nv set router bgp enable on
+      nv set router bgp router-id 10.0.0.5
+      nv set vrf default router bgp address-family ipv4-unicast enable on
+  - and the new leaf on every spine (spine01 now faces swp1-5, was swp1-4):
+      nv set interface swp1-5 type swp
+
+# spec restored to leafs = 4; generated artifacts back to the running fabric

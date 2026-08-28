@@ -1,0 +1,1 @@
+generated from spec.yml via switch.cfg.j2: 4 leafs, 2 spines, 6 device configs, 10 links, intent for 6 devices

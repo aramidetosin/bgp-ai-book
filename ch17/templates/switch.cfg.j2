@@ -1,0 +1,33 @@
+{# Chapter 17: the NVUE config for one fabric switch, rendered from the
+   spec. One template serves leafs and spines; the differences (a server
+   subnet, the ASN, which ports face the fabric) are data, not branches in
+   a hand-written file. This is the template behind chapter 6's underlay. -#}
+nv set system hostname {{ dev.hostname }}
+nv set interface lo ip address {{ dev.loopback }}/32
+nv set interface lo type loopback
+nv set interface swp{{ dev.first_swp }}-{{ dev.last_swp }} type swp
+{% if dev.server_subnet -%}
+nv set interface swp1 ip address {{ dev.server_subnet }}.1/24
+{% endif -%}
+nv set router bgp autonomous-system {{ dev.asn }}
+nv set router bgp enable on
+nv set router bgp router-id {{ dev.router_id }}
+nv set vrf default router bgp address-family ipv4-unicast enable on
+nv set vrf default router bgp address-family ipv4-unicast redistribute connected enable on
+nv set vrf default router bgp enable on
+{% for port in dev.fabric_ports -%}
+nv set vrf default router bgp neighbor {{ port }} remote-as external
+nv set vrf default router bgp neighbor {{ port }} type unnumbered
+{% if bfd.enabled -%}
+nv set vrf default router bgp neighbor {{ port }} bfd enable on
+nv set vrf default router bgp neighbor {{ port }} bfd detect-multiplier {{ bfd.multiplier }}
+nv set vrf default router bgp neighbor {{ port }} bfd min-rx-interval {{ bfd.min_rx }}
+nv set vrf default router bgp neighbor {{ port }} bfd min-tx-interval {{ bfd.min_tx }}
+{% endif -%}
+{% endfor -%}
+nv set system api state enabled
+nv set system config auto-save state enabled
+nv set system control-plane acl acl-default-dos inbound
+nv set system control-plane acl acl-default-whitelist inbound
+nv set system reboot mode cold
+nv set system ssh-server state enabled

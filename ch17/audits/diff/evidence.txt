@@ -1,0 +1,11 @@
+=== The change request: bfd.enabled false -> true in spec.yml ===
+--- the rendered diff on leaf01 (what a reviewer approves) ---
+  > nv set vrf default router bgp neighbor swp2 bfd enable on
+  > nv set vrf default router bgp neighbor swp2 bfd detect-multiplier 3
+  > nv set vrf default router bgp neighbor swp2 bfd min-rx-interval 300
+  > nv set vrf default router bgp neighbor swp2 bfd min-tx-interval 300
+  > nv set vrf default router bgp neighbor swp3 bfd enable on
+  > nv set vrf default router bgp neighbor swp3 bfd detect-multiplier 3
+  > nv set vrf default router bgp neighbor swp3 bfd min-rx-interval 300
+  > nv set vrf default router bgp neighbor swp3 bfd min-tx-interval 300
+One line of intent, four lines of config per neighbor, every device, reviewable before it ships.
