@@ -1,0 +1,21 @@
+# Chapter 20: the hardened host-facing session, as a diff against chapter 9.
+# Chapter 9 built the import filter and the prefix limit; chapter 20 adds
+# session authentication and GTSM. What a host-facing peer looks like when
+# the threat model is a compromised host.
+
+  router bgp 65101
+   neighbor swp1 interface remote-as external
++  neighbor swp1 password <from-vault>          # MD5 (TCP-AO where supported)
++  neighbor swp1 ttl-security hops 1             # GTSM: reject > 1 hop away
+   address-family ipv4 unicast
+    neighbor swp1 maximum-prefix 5               # chapter 9: cap the count
+    neighbor swp1 route-map RM-HOSTS-IN in       # chapter 9: the import filter
+   exit-address-family
+  ip prefix-list HOSTS-IN seq 10 permit 172.16.101.0/24 ge 32 le 32
+  route-map RM-HOSTS-IN permit 10                # default-deny: only listed /32s
+   match ip address prefix-list HOSTS-IN
+
+# The route-map ends with an implicit deny, so anything not a /32 in the host's
+# own subnet, a default route or a bogus prefix among them, is dropped. The
+# password is resolved from the vault at push time (chapter 17), never rendered
+# into the committed config.

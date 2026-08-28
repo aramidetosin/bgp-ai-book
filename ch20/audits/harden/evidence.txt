@@ -1,0 +1,15 @@
+=== TCP-AO support on this platform, checked not assumed ===
+    'tcp-authopt' references in this bgpd binary: 0
+    TCP-AO is not available here, so session authentication uses MD5, the widely deployed fallback.
+
+=== MD5: the key is required on both ends ===
+    session before: PfxRcd=1
+    key on the leaf only (an attacker lacks it): Connect   <- session down
+    matching key supplied on the host: PfxRcd=1   <- session up
+
+=== GTSM: only a directly connected peer passes ===
+    session with GTSM + MD5 (host is one hop): PfxRcd=1
+    A peer more than one hop away fails the TTL check before BGP runs.
+
+=== cleanup ===
+    session restored: PfxRcd=1

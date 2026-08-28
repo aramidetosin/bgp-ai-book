@@ -1,0 +1,18 @@
+=== The compromised host advertises a default route, a bogus prefix, and its one legit /32 ===
+--- the leaf RECEIVES all three (an unhardened leaf installs whatever it receives) ---
+    received: 0.0.0.0/0
+    received: 10.66.66.0/24
+    received: 172.16.101.1/32
+--- the hardened leaf INSTALLS only the /32 the host may originate ---
+    0.0.0.0/0        installed: 0
+    10.66.66.0/24    installed: 0
+    172.16.101.1/32  installed: 1
+    accepted-prefix count on the session (PfxRcd): 1
+  The default-route hijack and the bogus prefix are dropped at the door.
+
+=== The compromised host floods /32s to exhaust the leaf's RIB ===
+    session state under the flood: (PfxCt) 0
+  maximum-prefix tears the session down (Idle, PfxCt) instead of letting the flood in.
+
+=== cleanup: the fabric returns to one accepted /32 ===
+    accepted /32 after cleanup: 1
