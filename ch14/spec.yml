@@ -1,0 +1,21 @@
+# Chapter 14: the storage fabric. Two storage leafs, two spines, a
+# storage array dual-homed to both leafs (the routed-host pattern of
+# chapter 9, applied to a storage head), and four compute-node
+# checkpoint writers behind a compute leaf. The synchronized burst is
+# every writer hitting the array's VIP at once; the array's two uplinks
+# are the funnel. containerlab does not model switch buffers, so the
+# array's ingest limit is shaped with tc on its links, labelled as
+# standing in for a real storage head's absorb rate.
+name: bgpbook-ch14
+mgmt_subnet: 172.20.42.0/24
+leafs: 3            # leaf01,leaf02 = storage (array dual-homed); leaf03 = compute
+spines: 2
+array_on: [1, 2]   # storage array dual-homed to leaf01 + leaf02
+writers_on: 3      # four writers behind leaf03
+switch_image: vrnetlab/nvidia_cumulus-vx:5.12.0
+host_image: bgpbook-frr-host
+node_image: bgpbook-multitool-lldpd
+spine_asn: 65100
+leaf_asn_base: 65100
+array_asn: 65520       # storage head shares an ASN from the host block
+# storage VIP 172.16.202.1/32 on the array loopback

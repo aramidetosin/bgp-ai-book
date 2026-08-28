@@ -1,0 +1,20 @@
+  OK        leaf01:swp1 <-> array01:eth1
+  OK        leaf01:swp2 <-> spine01:swp1
+  OK        leaf01:swp3 <-> spine02:swp1
+  OK        leaf02:swp1 <-> array01:eth2
+  OK        leaf02:swp2 <-> spine01:swp2
+  OK        leaf02:swp3 <-> spine02:swp2
+  OK        leaf03:swp1 <-> writer01:eth1
+  OK        leaf03:swp2 <-> writer02:eth1
+  OK        leaf03:swp3 <-> writer03:eth1
+  OK        leaf03:swp4 <-> writer04:eth1
+  OK        leaf03:swp5 <-> spine01:swp3
+  OK        leaf03:swp6 <-> spine02:swp3
+  OK        spine01:swp1 <-> leaf01:swp2
+  OK        spine01:swp2 <-> leaf02:swp2
+  OK        spine01:swp3 <-> leaf03:swp5
+  OK        spine02:swp1 <-> leaf01:swp3
+  OK        spine02:swp2 <-> leaf02:swp3
+  OK        spine02:swp3 <-> leaf03:swp6
+
+CABLING MATCHES INTENT

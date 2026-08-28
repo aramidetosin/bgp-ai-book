@@ -1,0 +1,6 @@
+=== Both uplinks up: full serve capacity ===
+  aggregate served: 4.01 Gbit/s
+=== One uplink drowned: array eth1 down ===
+  aggregate served: 2.03 Gbit/s
+=== The checkpoint-time cost ===
+  a fixed checkpoint that took T at 4.01 Gbit/s now takes 1.98 T at 2.03 Gbit/s

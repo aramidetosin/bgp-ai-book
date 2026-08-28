@@ -1,0 +1,95 @@
+name: bgpbook-ch14
+mgmt:
+  network: bgpbook-ch14
+  ipv4-subnet: 172.20.42.0/24
+topology:
+  defaults:
+    kind: nvidia_cumulusvx
+    image: vrnetlab/nvidia_cumulus-vx:5.12.0
+  nodes:
+    leaf01:
+      startup-config: bootstrap/leaf01.cfg
+    leaf02:
+      startup-config: bootstrap/leaf02.cfg
+    leaf03:
+      startup-config: bootstrap/leaf03.cfg
+    spine01:
+      startup-config: bootstrap/spine01.cfg
+    spine02:
+      startup-config: bootstrap/spine02.cfg
+    array01:
+      kind: linux
+      image: bgpbook-frr-host
+      exec:
+      - ip link set eth1 mtu 9216
+      - ip link set eth2 mtu 9216
+      - lldpd
+    writer01:
+      kind: linux
+      image: bgpbook-multitool-lldpd
+      exec:
+      - ip addr add 172.16.3.11/24 dev eth1
+      - ip link set eth1 mtu 9216
+      - ip route replace default via 172.16.3.1 dev eth1
+      - lldpd
+    writer02:
+      kind: linux
+      image: bgpbook-multitool-lldpd
+      exec:
+      - ip addr add 172.16.3.12/24 dev eth1
+      - ip link set eth1 mtu 9216
+      - ip route replace default via 172.16.3.1 dev eth1
+      - lldpd
+    writer03:
+      kind: linux
+      image: bgpbook-multitool-lldpd
+      exec:
+      - ip addr add 172.16.3.13/24 dev eth1
+      - ip link set eth1 mtu 9216
+      - ip route replace default via 172.16.3.1 dev eth1
+      - lldpd
+    writer04:
+      kind: linux
+      image: bgpbook-multitool-lldpd
+      exec:
+      - ip addr add 172.16.3.14/24 dev eth1
+      - ip link set eth1 mtu 9216
+      - ip route replace default via 172.16.3.1 dev eth1
+      - lldpd
+  links:
+  - endpoints:
+    - leaf01:swp1
+    - array01:eth1
+  - endpoints:
+    - leaf02:swp1
+    - array01:eth2
+  - endpoints:
+    - leaf03:swp1
+    - writer01:eth1
+  - endpoints:
+    - leaf03:swp2
+    - writer02:eth1
+  - endpoints:
+    - leaf03:swp3
+    - writer03:eth1
+  - endpoints:
+    - leaf03:swp4
+    - writer04:eth1
+  - endpoints:
+    - leaf01:swp2
+    - spine01:swp1
+  - endpoints:
+    - leaf01:swp3
+    - spine02:swp1
+  - endpoints:
+    - leaf02:swp2
+    - spine01:swp2
+  - endpoints:
+    - leaf02:swp3
+    - spine02:swp2
+  - endpoints:
+    - leaf03:swp5
+    - spine01:swp3
+  - endpoints:
+    - leaf03:swp6
+    - spine02:swp3

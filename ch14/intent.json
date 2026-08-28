@@ -1,0 +1,118 @@
+{
+ "array01": {
+  "eth1": [
+   "leaf01",
+   "swp1"
+  ],
+  "eth2": [
+   "leaf02",
+   "swp1"
+  ]
+ },
+ "leaf01": {
+  "swp1": [
+   "array01",
+   "eth1"
+  ],
+  "swp2": [
+   "spine01",
+   "swp1"
+  ],
+  "swp3": [
+   "spine02",
+   "swp1"
+  ]
+ },
+ "leaf02": {
+  "swp1": [
+   "array01",
+   "eth2"
+  ],
+  "swp2": [
+   "spine01",
+   "swp2"
+  ],
+  "swp3": [
+   "spine02",
+   "swp2"
+  ]
+ },
+ "leaf03": {
+  "swp1": [
+   "writer01",
+   "eth1"
+  ],
+  "swp2": [
+   "writer02",
+   "eth1"
+  ],
+  "swp3": [
+   "writer03",
+   "eth1"
+  ],
+  "swp4": [
+   "writer04",
+   "eth1"
+  ],
+  "swp5": [
+   "spine01",
+   "swp3"
+  ],
+  "swp6": [
+   "spine02",
+   "swp3"
+  ]
+ },
+ "spine01": {
+  "swp1": [
+   "leaf01",
+   "swp2"
+  ],
+  "swp2": [
+   "leaf02",
+   "swp2"
+  ],
+  "swp3": [
+   "leaf03",
+   "swp5"
+  ]
+ },
+ "spine02": {
+  "swp1": [
+   "leaf01",
+   "swp3"
+  ],
+  "swp2": [
+   "leaf02",
+   "swp3"
+  ],
+  "swp3": [
+   "leaf03",
+   "swp6"
+  ]
+ },
+ "writer01": {
+  "eth1": [
+   "leaf03",
+   "swp1"
+  ]
+ },
+ "writer02": {
+  "eth1": [
+   "leaf03",
+   "swp2"
+  ]
+ },
+ "writer03": {
+  "eth1": [
+   "leaf03",
+   "swp3"
+  ]
+ },
+ "writer04": {
+  "eth1": [
+   "leaf03",
+   "swp4"
+  ]
+ }
+}
