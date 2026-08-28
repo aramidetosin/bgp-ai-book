@@ -15,5 +15,5 @@ for ifc in eth1 eth2; do
   ${D}-array01 sh -c "tc qdisc replace dev ${ifc} root tbf rate ${RATE} burst 256kb latency 50ms 2>/dev/null"
 done
 sleep 2
-{ echo "=== The restore burst starves the control flow ==="; DUR=${DUR:-10} ./burst.sh 2>/dev/null | grep -A2 "control flow"; } | tee "${OUT}/evidence.txt"
+{ echo "=== The restore burst starves the control flow ==="; OUT=${OUT} OUTFILE=inner.txt DUR=${DUR:-10} ./burst.sh 2>/dev/null | grep -A2 "control flow"; } | tee "${OUT}/evidence.txt"
 echo; echo "break-14a armed and recorded. make heal-14a undoes it."

@@ -23,6 +23,6 @@ for ifc in eth1 eth2; do
 done
 echo "  ICMP -> class 1:10 (prio 0, 50mbit guaranteed); bulk -> 1:20"
 sleep 2
-DUR=${DUR:-10} ./burst.sh 2>/dev/null | tail -8 > /tmp/qos_burst.txt
+OUT=${OUT} OUTFILE=inner.txt DUR=${DUR:-10} ./burst.sh 2>/dev/null | tail -8 > /tmp/qos_burst.txt
 { echo "=== The same restore burst, control class protected ==="; cat /tmp/qos_burst.txt; } | tee "${OUT}/qos.txt"
 echo "Evidence written to ${OUT}/"

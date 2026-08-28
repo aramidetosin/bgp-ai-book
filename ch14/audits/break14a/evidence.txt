@@ -1,4 +1,4 @@
 === The restore burst starves the control flow ===
 === The control flow, sharing the burst's fate ===
-  70 packets transmitted, 70 received, 0% packet loss, time 13949ms
-  rtt min/avg/max/mdev = 0.333/2.521/3.605/1.211 ms
+  70 packets transmitted, 70 received, 0% packet loss, time 13944ms
+  rtt min/avg/max/mdev = 0.328/2.408/3.795/1.158 ms

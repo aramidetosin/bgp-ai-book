@@ -1,0 +1,10 @@
+=== Per-writer throughput and the aggregate the array absorbed ===
+  writer01    0.81 Gbit/s   retransmits 0
+  writer02    0.61 Gbit/s   retransmits 0
+  writer03    0.61 Gbit/s   retransmits 0
+  writer04    1.99 Gbit/s   retransmits 0
+  aggregate absorbed:   4.01 Gbit/s (the array's two shaped uplinks are the ceiling)
+
+=== The control flow, sharing the burst's fate ===
+  70 packets transmitted, 70 received, 0% packet loss, time 13944ms
+  rtt min/avg/max/mdev = 0.328/2.408/3.795/1.158 ms

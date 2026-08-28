@@ -1,4 +1,6 @@
-=== The same restore burst, control class protected ===
+=== Per-writer throughput and the aggregate the array absorbed ===
+  writer01    0.71 Gbit/s   retransmits 0
+  writer02    0.79 Gbit/s   retransmits 0
   writer03    0.53 Gbit/s   retransmits 0
   writer04    1.98 Gbit/s   retransmits 0
   aggregate absorbed:   4.01 Gbit/s (the array's two shaped uplinks are the ceiling)
@@ -6,4 +8,3 @@
 === The control flow, sharing the burst's fate ===
   70 packets transmitted, 70 received, 0% packet loss, time 14281ms
   rtt min/avg/max/mdev = 0.140/0.297/0.711/0.175 ms
-Evidence written to audits/qos/

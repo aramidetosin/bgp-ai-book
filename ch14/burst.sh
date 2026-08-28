@@ -9,7 +9,7 @@ set -uo pipefail
 LAB=bgpbook-ch14
 D="docker exec clab-${LAB}"
 VIP=172.16.202.1
-OUT=audits/burst
+OUT=${OUT:-audits/burst}
 mkdir -p "${OUT}"
 DUR=${DUR:-10}
 
@@ -38,5 +38,5 @@ kill ${CTRL} 2>/dev/null; wait ${CTRL} 2>/dev/null
   echo
   echo "=== The control flow, sharing the burst's fate ==="
   ${D}-writer01 grep -E "packet loss|rtt" /tmp/control.txt | head -2 | sed 's/^/  /'
-} | tee "${OUT}/burst.txt"
+} | tee "${OUT}/${OUTFILE:-burst.txt}"
 echo "Evidence written to ${OUT}/"

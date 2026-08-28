@@ -1,0 +1,13 @@
+=== Underlay BGP ===
+  leaf01: 3/3 Established - OK
+  leaf02: 3/3 Established - OK
+  leaf03: 2/2 Established - OK
+  spine01: 3/3 Established - OK
+  spine02: 3/3 Established - OK
+=== The array VIP, ECMP across both leafs on a compute leaf ===
+  leaf03 -> array VIP: 2 next hops - OK
+=== Writer to array ===
+  writer01 -> array VIP - OK
+=== Cabling versus intent (LLDP) ===
+  CABLING MATCHES INTENT
+
