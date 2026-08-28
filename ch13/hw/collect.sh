@@ -16,7 +16,7 @@ SW="sshpass -p '${SONIC_PASS}' ssh -o StrictHostKeyChecking=no -o UserKnownHosts
 
 run() { ssh ${JUMP} "${SW} '$1'" 2>/dev/null; }
 
-run 'show version | head -12'                                    > "${HERE}/version.txt"
+run 'show version | sed -n "1,18p"'                                    > "${HERE}/version.txt"
 run 'show interfaces status | head -20'                          > "${HERE}/ifstatus.txt"
 for T in DSCP_TO_TC_MAP TC_TO_QUEUE_MAP TC_TO_PRIORITY_GROUP_MAP WRED_PROFILE \
          BUFFER_PROFILE BUFFER_POOL SCHEDULER CABLE_LENGTH PFC_WD; do

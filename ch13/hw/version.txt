@@ -10,3 +10,9 @@ Built by: sonicbld@bld-lvn-csg-01
 
 Platform: x86_64-supermicro_sse_t8164-r0
 HwSKU: Supermicro_sse_t8164
+ASIC: broadcom
+ASIC Count: 1
+
+Platform: x86_64-supermicro_sse_t8164-r0
+Serial Number: SST64AR15A00010
+Uptime: 14:46:45 up 69 days, 19:03,  0 users,  load average: 3.35, 3.50, 3.54
