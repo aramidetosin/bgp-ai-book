@@ -1,0 +1,12 @@
+=== BMP: the RIB's history, collected off-box ===
+  collector holds 486 events (peer-up and the full RIB dump so far)
+
+=== Incident: leaf04 drops off the fabric, then returns ===
+
+=== Query: which prefixes were WITHDRAWN during the window (from BMP only) ===
+  10.0.0.4/32, 172.16.4.0/24
+=== Query: which prefixes were RE-ANNOUNCED when it returned ===
+  10.0.0.4/32, 172.16.4.0/24
+
+Answered without touching a switch: leaf04's loopback and server subnet
+left the fabric at the failure and returned at recovery, timestamped in BMP.

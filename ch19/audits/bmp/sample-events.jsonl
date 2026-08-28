@@ -1,0 +1,6 @@
+{"t": 1787946081.567, "event": "peer-up", "peer": "fe80::a8c1:abff:feeb:e1a", "as": 65100}
+{"t": 1787946081.567, "event": "peer-up", "peer": "fe80::a8c1:abff:febb:e50e", "as": 65100}
+{"t": 1787946081.724, "event": "peer-up", "peer": "fe80::a8c1:abff:fed5:1228", "as": 65100}
+{"t": 1787946111.495, "event": "update", "peer": "fe80::a8c1:abff:fed5:1228", "announce": [], "withdraw": ["10.0.0.4/32"]}
+{"t": 1787946111.495, "event": "update", "peer": "fe80::a8c1:abff:fed5:1228", "announce": [], "withdraw": ["10.0.0.4/32"]}
+{"t": 1787946111.495, "event": "update", "peer": "fe80::a8c1:abff:fec6:8b59", "announce": [], "withdraw": ["10.0.0.4/32"]}

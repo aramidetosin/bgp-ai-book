@@ -1,0 +1,12 @@
+=== One timeline: routing (BMP) and the job (mesh step) on one clock ===
+-- healthy --
+  t+0    healthy        routing=0   BMP-events   step-stall=0%    green: routing quiet, job clean
+-- GRAY FAILURE: 20% loss on leaf01 uplinks, sessions stay up --
+  t+4    gray           routing=0   BMP-events   step-stall=10%   routing SILENT, job bleeding
+  t+7    gray           routing=0   BMP-events   step-stall=10%   the gap: BMP sees nothing, steps stall
+-- CLEAN FAILURE: leaf04 loses both uplinks --
+  t+20   clean-fail     routing=50  BMP-events   step-stall=100%  routing SEES it: withdrawals in BMP
+  t+32   restored       routing=194 BMP-events   step-stall=0%    re-announced, job clean
+
+The gray failure moved the job metric and left the routing metric flat.
+On one timeline, the counter and the step time agree; the dashboard alone does not.
