@@ -26,4 +26,4 @@ spine02   spine02[swp3]      leaf03        ESTABLISHED
 spine02   spine02[swp1]      leaf01        ESTABLISHED
 spine02   spine02[swp4]      leaf04        ESTABLISHED
 
-total: 16 sessions, all ['ESTABLISHED']
+total: 16 session-ends (8 sessions), all ['ESTABLISHED']
