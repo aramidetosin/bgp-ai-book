@@ -1,0 +1,14 @@
+=== GAME DAY: a fault is injected; diagnose it with the chapter 19 stack ===
+A fault is active on the reference fabric. It started just now.
+Diagnose it with your chapter 19 stack, write the post-mortem, then: ./reveal.sh
+
+--- Step 1: the BMP collector shows an unplanned announcement ---
+{"t": 1787970148.248, "event": "update", "peer": "fe80::a8c1:abff:fe10:7c92", "announce": ["10.66.0.0/16"], "withdraw": []}
+{"t": 1787970148.248, "event": "update", "peer": "fe80::a8c1:abff:fed6:e287", "announce": ["10.66.0.0/16"], "withdraw": []}
+    A prefix nobody allocated (10.66.0.0/16) is being originated into the fabric.
+
+--- Step 2: reachability looks fine; only the routing history caught it ---
+    the job step is unaffected, so a ping test would pass. BMP is the tell.
+
+--- Step 3: reveal the fault and its reference post-mortem ---
+=== Injected fault 4: route leak ===
